@@ -19,8 +19,10 @@ eval "$(starship init zsh)"
 eval "$(tv init zsh)"
 
 # PNPM
-export PNPM_HOME="/home/codesmith28/.local/share/pnpm"
+export PNPM_HOME="/home/zeel/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 
 # NVM and Node.js
 export NVM_DIR="$HOME/.nvm"
