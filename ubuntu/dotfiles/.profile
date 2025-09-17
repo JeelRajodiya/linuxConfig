@@ -21,7 +21,7 @@ alias cursor='/opt/cursor.appimage --no-sandbox >/dev/null 2>&1 & disown'
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
-
+alias cpwd="pwd | tr -d '\n' | xclip -sel clip && echo 'pwd copied to clipboard'"
 alias c='clear'
 alias e='exit'
 alias nf='neofetch'
