@@ -161,12 +161,12 @@ alias setkb='setxkbmap us;echo "Keyboard set back to us."'
 #         echo >&2 "ntfs-3g is not installed. Installing..."
 #         yay -S ntfs-3g
 #     }
-#     [ -d "/media/codesmith28/D" ] || mkdir -p /media/codesmith28/D
+#     [ -d "/media/zeel/D" ] || mkdir -p /media/zeel/D
 #     sudo mount /dev/nvme0n1p4 /home/run/media/localdiskD && echo "Disk successfully mounted at /home/run/media/localdiskD"
 # }
-alias D='cd /media/codesmith28/D'
+alias D='cd /media/zeel/D'
 fixD() {
-    sudo umount /media/codesmith28/D && echo "Disk unmounted."
+    sudo umount /media/zeel/D && echo "Disk unmounted."
 }
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | cat'
 alias netrs='sudo systemctl restart NetworkManager && sudo systemctl restart iwd'

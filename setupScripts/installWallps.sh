@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git clone https://github.com/Codesmith28/wallpaper $HOME/
+git clone https://github.com/zeel/wallpaper $HOME/

@@ -41,7 +41,7 @@ DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAU
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/home/codesmith28/.bun/_bun" ] && source "/home/codesmith28/.bun/_bun"
+[ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
 
 # Pipx
 # Pyenv setup
