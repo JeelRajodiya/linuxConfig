@@ -1,4 +1,3 @@
-- add auto download of the fingerprint driver and installation
 - auto download of packages and softwares
 - applying the system settings which I currently have
 - auto download the widgets I use
