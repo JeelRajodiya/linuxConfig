@@ -6,7 +6,7 @@ return {
     event = "InsertEnter",
     -- You can also have it load at immediately at
     -- startup by commenting above and uncommenting below:
-    lazy = false,
+    -- lazy = false,
     opts = {
         -- Possible configurable fields can be found on:
         -- https://github.com/zbirenbaum/copilot.lua#setup-and-configuration
