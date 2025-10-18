@@ -135,6 +135,9 @@ plugin=org.kde.plasma.vault
 immutability=1
 plugin=org.kde.kscreen
 
+[Containments][398][Applets][403][Applets][414][Configuration]
+PreloadWeight=55
+
 [Containments][398][Applets][403][Applets][415]
 immutability=1
 plugin=org.kde.plasma.volume

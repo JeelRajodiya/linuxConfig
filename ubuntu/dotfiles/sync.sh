@@ -20,7 +20,8 @@ declare -A SYMLINKS=(
     [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config",
     [plasmashellrc]="$HOME/.config",
     [powerdevilrc]="$HOME/.config",
-    [plasmaparc]="$HOME/.config"
+    [plasmaparc]="$HOME/.config",
+    [plasma]="$HOME/.local/share"
 
 )
 
