@@ -1,0 +1,4 @@
+cursor pack: https://github.com/ful1e5/Bibata_Cursor, use ice version 
+icon pack: https://github.com/zayronxio/Mkos-Big-Sur, use night version 
+plasma style: https://github.com/vinceliuice/WhiteSur-kde, use whiteSur dark
+window decoration: https://github.com/L4ki/Vivid-Plasma-Themes.git, Vivid-Blur-Dark-Aurorae-6
