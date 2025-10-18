@@ -1,5 +1,5 @@
 [Activities][LastVirtualDesktop]
-f2442cd4-1f5c-448e-a7ea-0328c453ae21=605dffee-5dd3-4f1b-8de2-912cae128c92
+f2442cd4-1f5c-448e-a7ea-0328c453ae21=932de01e-69cd-4d22-8316-b6bbb8e3fada
 
 [Desktops]
 Id_1=165212a1-1569-4d70-9c07-79819d5054bd
@@ -7,10 +7,10 @@ Id_2=c195af3d-2596-428e-99ac-e4c180e4f1c7
 Id_3=83e6fd2d-7e08-437f-a394-8b00cfa87a95
 Id_4=db6ae5b4-7189-4b1d-9fde-0535e7a5e13c
 Id_5=605dffee-5dd3-4f1b-8de2-912cae128c92
+Id_6=932de01e-69cd-4d22-8316-b6bbb8e3fada
 Name_1=Main
-Number=5
+Number=6
 Rows=1
-
 
 [Effect-blur]
 BlurStrength=7
@@ -88,6 +88,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][83e6fd2d-7e08-437f-a394-8b00cfa87a95][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"floating","tiles":[{"height":0.8379629629629632,"width":0.8968749999999998,"x":0.10312500000000029,"y":0.08981481481481482}],"width":1}]}
+
+[Tiling][932de01e-69cd-4d22-8316-b6bbb8e3fada][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][a5f2b780-871a-48cc-adde-9f1b21f3077f][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
