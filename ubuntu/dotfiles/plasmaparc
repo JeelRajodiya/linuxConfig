@@ -1,0 +1,4 @@
+[General]
+AudioFeedback=false
+VolumeOsd=false
+VolumeStep=2
