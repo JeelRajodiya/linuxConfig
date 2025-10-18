@@ -19,7 +19,7 @@ eval "$(starship init zsh)"
 eval "$(tv init zsh)"
 
 # PNPM
-export PNPM_HOME="/home/zeel/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -41,7 +41,7 @@ DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAU
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-[ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Pipx
 # Pyenv setup
@@ -51,9 +51,25 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# GoPath
+# Go Path
 export PATH="$PATH:$(go env GOPATH)/bin"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Java Path
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Hadoop Path
+export HADOOP_HOME="$HOME/hadoop-2.7.3"
+export HADOOP_CONF_DIR="$HADOOP_HOME/etc/hadoop"
+export HADOOP_MAPRED_HOME="$HADOOP_HOME"
+export HADOOP_COMMON_HOME="$HADOOP_HOME"
+export HADOOP_HDFS_HOME="$HADOOP_HOME"
+export YARN_HOME="$HADOOP_HOME"
+export PATH="$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin"
+
+# Hive Path
+export HIVE_HOME="$HOME/apache-hive-2.1.0-bin"
+export PATH="$PATH:$HIVE_HOME/bin"
