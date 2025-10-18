@@ -15,7 +15,10 @@ declare -A SYMLINKS=(
     [tmux]="$HOME/.config"
     [yazi]="$HOME/.config"
     [work]="$HOME/.config"
-    [scripts]="$HOME/.config"
+    [scripts]="$HOME/.config",
+    [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config",
+    [plasmashellrc]="$HOME/.config"
+
 )
 
 link_item() {
