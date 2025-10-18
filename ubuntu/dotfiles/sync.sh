@@ -15,12 +15,13 @@ declare -A SYMLINKS=(
     [tmux]="$HOME/.config"
     [yazi]="$HOME/.config"
     [work]="$HOME/.config"
-    [scripts]="$HOME/.config",
+    [scripts]="$HOME/.config"
     # apply plasma settings
-    [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config",
-    [plasmashellrc]="$HOME/.config",
-    [powerdevilrc]="$HOME/.config",
-    [plasmaparc]="$HOME/.config",
+    [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config"
+    [plasmashellrc]="$HOME/.config"
+    [powerdevilrc]="$HOME/.config"
+    [plasmaparc]="$HOME/.config"
+    [kwinrc]="$HOME/.config"
     [plasma]="$HOME/.local/share"
 
 )
