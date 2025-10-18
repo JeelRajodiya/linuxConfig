@@ -1,0 +1,1 @@
+My linux configuration files and dotfiles repository. Suited for kde neon with plasma desktop environment.
