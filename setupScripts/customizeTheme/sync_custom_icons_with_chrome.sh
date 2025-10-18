@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Get active icon theme
 THEME=$(kreadconfig5 --group "Icons" --key "Theme")
 echo "Current icon theme: $THEME"
@@ -17,15 +19,10 @@ for s in "${sizes[@]}"; do
   done
 done
 
+# Clear caches and rebuild
 rm -f "$HOME/.cache/icon-cache.kcache"
 kbuildsycoca5 --noincremental
-# Optionally: restart plasmashell if icons don’t refresh immediately
-# kquitapp5 plasmashell; kstart5 plasmashell
 
-rm -rf ~/.cache/icon-cache.kcache
-rm -rf ~/.cache/plasmashellrc
-rm -rf ~/.cache/plasma*
-kbuildsycoca5 --noincremental
-
+# Restart plasmashell to apply changes
 kquitapp5 plasmashell
 kstart5 plasmashell
