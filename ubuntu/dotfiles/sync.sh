@@ -16,6 +16,7 @@ declare -A SYMLINKS=(
     [yazi]="$HOME/.config"
     [work]="$HOME/.config"
     [scripts]="$HOME/.config"
+    [fastfetch]="$HOME/.config"
     # apply plasma settings
     [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config"
     [plasmashellrc]="$HOME/.config"
