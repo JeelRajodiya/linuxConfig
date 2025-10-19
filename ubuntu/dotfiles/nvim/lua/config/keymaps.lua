@@ -8,6 +8,10 @@ local opts = { noremap = true, silent = true }
 -- Escape in insert mode
 map("i", "kj", "<Esc>", { noremap = false })
 
+-- Delete whole word with Ctrl+Backspace in insert mode
+map("i", "<C-BS>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward" })
+map("i", "<C-H>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward (alternative)" })
+
 -- editing
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
@@ -25,7 +29,7 @@ map("n", "<leader>lh", "<cmd>Telescope harpoon marks<CR>", { desc = "Toggle mark
 map("n", "<leader>fm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Toggle mark menu" })
 
 -- Move lines
-map("v", "<C-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move line down" })
+map("v", "<C-j>", ":m '>+1<CR>gv=gv", { noremap = ue, silent = true, desc = "Move line down" })
 map("v", "<C-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move line up" })
 
 -- change tab not buffer:
