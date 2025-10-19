@@ -22,6 +22,9 @@ o.cursorlineopt = "both"
 -- other utilities
 vim.g.copilot_assume_mapped = true
 
+o.number = true
+o.relativenumber = true
+
 -- shell and search settings
 o.shell = "zsh"
 o.ignorecase = true

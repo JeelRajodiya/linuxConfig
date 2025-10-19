@@ -408,14 +408,14 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][421][Applets][451][Applets][465][Configuration]
-PreloadWeight=56
+PreloadWeight=61
 
 [Containments][421][Applets][451][Applets][466]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][421][Applets][451][Applets][466][Configuration]
-PreloadWeight=36
+PreloadWeight=41
 
 [Containments][421][Applets][451][Applets][467]
 immutability=1
