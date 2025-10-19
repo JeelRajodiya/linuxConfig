@@ -106,15 +106,6 @@ ghcs() {
     gh copilot suggest "$1"
 }
 
-# -----------------------------------------------------
-# SCRIPTS
-# -----------------------------------------------------
-
-alias gr='python ~/dotfiles/scripts/growthrate.py'
-alias ChatGPT='python ~/mychatgpt/mychatgpt.py'
-alias chat='python ~/mychatgpt/mychatgpt.py'
-alias ascii='~/dotfiles/scripts/figlet.sh'
-alias fontsearch='~/dotfiles/scripts/fontsearch.sh'
 
 # -----------------------------------------------------
 # EDIT CONFIG FILES
@@ -126,12 +117,6 @@ alias confb='$EDITOR ~/.bashrc'
 alias confz='$EDITOR ~/.zshrc'
 alias confn='$EDITOR ~/.config/nvim'
 
-# -----------------------------------------------------
-# GoQuant
-# -----------------------------------------------------
-
-alias reset_db='~/.config/work/reset_db.sh'
-alias fastapiup='cd ~/gotrade/fastapi && source venv/bin/activate && poetry run uvicorn gotrade.src.main:app --host 0.0.0.0 --port 8001'
 
 # -----------------------------------------------------
 # EDIT NOTES
@@ -194,7 +179,7 @@ if [ "$TERM" = "xterm-256color" ] && [ -z "$VIM" ]; then
     echo -ne '\e[3 q'
 fi
 
-alias pj='cd ~/Projects'
+alias pj='cd "/media/zeel/Local Disc 1/languages"'
 alias thunar='setsid thunar'
 alias files='setsid $BROWSER'
 alias obsidian='setsid obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
