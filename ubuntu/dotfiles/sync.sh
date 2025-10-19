@@ -24,6 +24,7 @@ declare -A SYMLINKS=(
     [plasmaparc]="$HOME/.config"
     [kwinrc]="$HOME/.config"
     [plasma]="$HOME/.local/share"
+    [spectaclerc]="$HOME/.config"
 
 )
 
