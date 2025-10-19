@@ -9,7 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 # Define Editor
-export EDITOR=nvim
+export EDITOR=zed
 export BROWSER=nautilus
 
 # alias code='code --enable-features=UseOzonePlatform --ozone-platform=wayland'
