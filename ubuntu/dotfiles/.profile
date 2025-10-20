@@ -180,6 +180,7 @@ if [ "$TERM" = "xterm-256color" ] && [ -z "$VIM" ]; then
 fi
 
 alias pj='cd "/media/zeel/Local Disc 1/languages"'
+alias notes='cd ~/Documents/notes && zed .'
 alias thunar='setsid thunar'
 alias files='setsid $BROWSER'
 alias obsidian='setsid obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'

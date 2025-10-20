@@ -627,7 +627,7 @@ plugin=org.kde.plasma.systemmonitor.diskusage
 
 [Containments][438][Applets][449][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=90
+PreloadWeight=95
 popupHeight=269
 popupWidth=156
 
