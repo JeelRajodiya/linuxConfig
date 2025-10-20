@@ -26,6 +26,7 @@ declare -A SYMLINKS=(
     [plasma]="$HOME/.local/share"
     [spectaclerc]="$HOME/.config"
     [kglobalshortcutsrc]="$HOME/.config"
+    [kdeglobals]="$HOME/.config"
 
 )
 
