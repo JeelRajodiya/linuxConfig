@@ -25,6 +25,7 @@ declare -A SYMLINKS=(
     [kwinrc]="$HOME/.config"
     [plasma]="$HOME/.local/share"
     [spectaclerc]="$HOME/.config"
+    [kglobalshortcutsrc]="$HOME/.config"
 
 )
 
