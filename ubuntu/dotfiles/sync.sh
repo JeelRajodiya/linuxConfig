@@ -27,6 +27,7 @@ declare -A SYMLINKS=(
     [spectaclerc]="$HOME/.config"
     [kglobalshortcutsrc]="$HOME/.config"
     [kdeglobals]="$HOME/.config"
+    [kxkbrc]="$HOME/.config"
 
 )
 
