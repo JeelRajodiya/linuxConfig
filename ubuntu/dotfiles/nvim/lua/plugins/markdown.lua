@@ -28,4 +28,12 @@ return {
       vim.g.bullets_delete_last_bullet_if_empty = 1
     end,
   },
+  -- Table mode for markdown
+  {
+    "dhruvasagar/vim-table-mode",
+    ft = { "markdown" },
+    init = function()
+      vim.g.table_mode_map_prefix = "<leader>t"
+    end,
+  },
 }
