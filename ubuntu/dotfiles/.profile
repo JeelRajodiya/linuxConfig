@@ -23,6 +23,7 @@ alias cursor='/opt/cursor.appimage --no-sandbox >/dev/null 2>&1 & disown'
 alias cpwd="pwd | tr -d '\n' | xclip -sel clip && echo 'pwd copied to clipboard'"
 alias c='clear'
 alias e='exit'
+alias q='exit'
 alias nf='neofetch'
 alias pf='pfetch'
 alias ff='fastfetch'
@@ -122,7 +123,10 @@ alias confn='$EDITOR ~/.config/nvim'
 # EDIT NOTES
 # -----------------------------------------------------
 
-alias rough='$EDITOR ~/rough.md'
+alias rough='$EDITOR ~/Documents/notes/rough.md'
+alias notes='cd ~/Documents/notes && zed .'
+alias notes-path='cd ~/Documents/notes'
+alias general='$EDITOR ~/Documents/notes/general.md'
 
 # -----------------------------------------------------
 # MINECRAFT
@@ -180,7 +184,6 @@ if [ "$TERM" = "xterm-256color" ] && [ -z "$VIM" ]; then
 fi
 
 alias pj='cd "/media/zeel/Local Disc 1/languages"'
-alias notes='cd ~/Documents/notes && zed .'
 alias thunar='setsid thunar'
 alias files='setsid $BROWSER'
 alias obsidian='setsid obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'

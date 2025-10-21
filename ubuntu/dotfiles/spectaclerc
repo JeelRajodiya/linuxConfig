@@ -1,8 +1,9 @@
 [Annotations]
-annotationToolType=9
+annotationToolType=6
 blurStrength=0.07891845703125
 highlighterStrokeColor=255,0,111
 pixelateStrength=0.44097900390625
+rectangleStrokeColor=255,0,0
 
 [General]
 autoSaveImage=true
@@ -17,7 +18,7 @@ quitAfterSaveCopyExport=true
 
 [ImageSave]
 imageCompressionQuality=15
-lastImageSaveLocation=file:///home/zeel/Pictures/Screenshots/Screenshot_20251020_145120.jpeg
+lastImageSaveLocation=file:///home/zeel/Pictures/Screenshots/Screenshot_20251021_193140.jpeg
 preferredImageFormat=JPEG
 translatedScreenshotsFolder=Screenshots
 

@@ -24,7 +24,7 @@ DialogWidth=1061
 [Containments][397][General]
 arrangement=1
 iconSize=2
-positions={"1920x1080":["1","10","desktop:/notes","0","1","desktop:/languages","0","0","desktop:/configs","0","2"]}
+positions={"1920x1080":["1","10","desktop:/languages","0","0","desktop:/notes","0","1","desktop:/configs","0","2"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
@@ -100,7 +100,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][398][Applets][403][Applets][405][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][398][Applets][403][Applets][406]
 immutability=1
@@ -156,7 +156,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][398][Applets][403][Applets][450][Configuration]
-PreloadWeight=20
+PreloadWeight=0
 
 [Containments][398][Applets][403][Applets][451][Configuration]
 PreloadWeight=42
@@ -408,28 +408,28 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][421][Applets][451][Applets][465][Configuration]
-PreloadWeight=53
+PreloadWeight=50
 
 [Containments][421][Applets][451][Applets][466]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][421][Applets][451][Applets][466][Configuration]
-PreloadWeight=33
+PreloadWeight=25
 
 [Containments][421][Applets][451][Applets][467]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][421][Applets][451][Applets][467][Configuration]
-PreloadWeight=80
+PreloadWeight=85
 
 [Containments][421][Applets][451][Applets][468]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][421][Applets][451][Applets][468][Configuration]
-PreloadWeight=57
+PreloadWeight=64
 
 [Containments][421][Applets][451][ConfigDialog]
 DialogHeight=540
@@ -664,4 +664,4 @@ positions={"0x0":[]}
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/configs,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/languages,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/languages,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/notes,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/notes,0,fbfefef1-7f7c-4a29-9e16-540b84b02987
+screenMapping=desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/notes,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/configs,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/notes,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/languages,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/languages,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21
