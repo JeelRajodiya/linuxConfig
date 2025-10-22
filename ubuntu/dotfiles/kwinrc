@@ -14,7 +14,7 @@ BlurStrength=7
 NoiseStrength=14
 
 [Effect-blurplus]
-BlurStrength=8
+BlurStrength=7
 NoiseStrength=14
 
 [Effect-diminactive]
