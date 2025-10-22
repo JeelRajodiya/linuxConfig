@@ -128,4 +128,5 @@ ElectricBorderDelay=50
 Scale=1
 
 [org.kde.kdecoration2]
+library=org.kde.kwin.aurorae
 theme=__aurorae__svg__Vivid-Blur-Dark-Aurorae-6
