@@ -47,8 +47,8 @@ return {
                 },
             },
             filetypes = {
+              markdown = true,
                 yaml = false,
-                markdown = false,
                 help = false,
                 gitcommit = false,
                 gitrebase = false,

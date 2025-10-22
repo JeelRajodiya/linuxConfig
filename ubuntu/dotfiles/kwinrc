@@ -96,7 +96,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][83e6fd2d-7e08-437f-a394-8b00cfa87a95][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
-tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"floating","tiles":[{"height":0.8379629629629632,"width":0.8968749999999998,"x":0.10312500000000029,"y":0.08981481481481482}],"width":1}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"layoutDirection":"floating","tiles":[{"height":0.8379629629629632,"width":0.8968749999999999,"x":0.06614583333333358,"y":0.06759259259259257}],"width":1}]}
 
 [Tiling][932de01e-69cd-4d22-8316-b6bbb8e3fada][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}

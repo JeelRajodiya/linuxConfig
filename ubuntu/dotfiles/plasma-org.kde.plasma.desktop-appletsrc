@@ -640,7 +640,7 @@ immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][495][Applets][499][Applets][514][Configuration]
-PreloadWeight=19
+PreloadWeight=24
 
 [Containments][495][Applets][499][Applets][515]
 immutability=1
