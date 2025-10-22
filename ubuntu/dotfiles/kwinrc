@@ -13,6 +13,10 @@ Rows=1
 BlurStrength=7
 NoiseStrength=14
 
+[Effect-blurplus]
+BlurStrength=8
+NoiseStrength=14
+
 [Effect-diminactive]
 Strength=70
 
@@ -24,8 +28,9 @@ Active=true
 NightTemperature=5000
 
 [Plugins]
-blurEnabled=true
+blurEnabled=false
 contrastEnabled=true
+forceblurEnabled=true
 kzonesEnabled=false
 minimizeallEnabled=true
 sticky-window-snappingEnabled=false

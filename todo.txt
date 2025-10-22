@@ -7,3 +7,7 @@
 - setup auto download of fonts I use
 - download the icon pack, create symbolic links with the chrome apps
 
+
+- download better blur 
+
+
