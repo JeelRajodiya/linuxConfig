@@ -1,7 +1,3 @@
-[Activities][LastVirtualDesktop]
-f2442cd4-1f5c-448e-a7ea-0328c453ae21=c195af3d-2596-428e-99ac-e4c180e4f1c7
-fbfefef1-7f7c-4a29-9e16-540b84b02987=83e6fd2d-7e08-437f-a394-8b00cfa87a95
-
 [Desktops]
 Id_1=165212a1-1569-4d70-9c07-79819d5054bd
 Id_2=c195af3d-2596-428e-99ac-e4c180e4f1c7
@@ -25,8 +21,6 @@ BottomLeft=ShowDesktop
 
 [NightColor]
 Active=true
-LatitudeAuto=17.43
-LongitudeAuto=78.33
 NightTemperature=5000
 
 [Plugins]

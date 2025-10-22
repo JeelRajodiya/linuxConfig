@@ -1,4 +1,4 @@
-# Translation of visualizer in LANGUAGE
+# Translation of visualizer in Chinese (Simplified)
 # Copyright (C) 2025
 # This file is distributed under the same license as the visualizer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -9,608 +9,677 @@ msgstr ""
 "Project-Id-Version: visualizer\n"
 "Report-Msgid-Bugs-To: https://github.com/luisbocanegra/kurve\n"
 "POT-Creation-Date: 2025-10-21 00:45+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2025-10-17 11:30+0800\n"
+"Last-Translator: BCTaoTao <165790460+BCTaoTao@users.noreply.github.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ../metadata.json
 msgid "Kurve"
-msgstr ""
+msgstr "Kurve"
 
 #: ../metadata.json
 msgid "Audio visualizer powered by CAVA"
-msgstr ""
+msgstr "基于CAVA的音频可视化器"
 
 #: ../contents/config/config.qml
 msgid "Visualizer"
-msgstr ""
+msgstr "可视化器"
 
 #: ../contents/config/config.qml ../contents/ui/configCava.qml
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Oh no! Something went wrong"
-msgstr ""
+msgstr "糟糕！出错了"
 
-#: ../contents/ui/FullRepresentation.qml ../contents/ui/configCava.qml ../contents/ui/main.qml
+#: ../contents/ui/FullRepresentation.qml ../contents/ui/configCava.qml
+#: ../contents/ui/main.qml
 msgid "Stop CAVA"
-msgstr ""
+msgstr "停止 CAVA"
 
-#: ../contents/ui/FullRepresentation.qml ../contents/ui/configCava.qml ../contents/ui/main.qml
+#: ../contents/ui/FullRepresentation.qml ../contents/ui/configCava.qml
+#: ../contents/ui/main.qml
 msgid "Start CAVA"
-msgstr ""
+msgstr "启动 CAVA"
 
 #: ../contents/ui/FullRepresentation.qml
 msgid "Copy to clipboard"
-msgstr ""
+msgstr "复制到剪贴板"
 
-#: ../contents/ui/components/ColorPickerGradientList.qml ../contents/ui/components/ColorPickerList.qml ../contents/ui/components/FormColors.qml
+#: ../contents/ui/components/ColorPickerGradientList.qml
+#: ../contents/ui/components/ColorPickerList.qml
+#: ../contents/ui/components/FormColors.qml
 msgid "Widget background"
-msgstr ""
+msgstr "小部件背景"
 
 #: ../contents/ui/components/Eq.qml
 msgid "Remove band"
-msgstr ""
+msgstr "移除频段"
 
 #: ../contents/ui/components/Eq.qml
 msgid "Add band"
-msgstr ""
+msgstr "添加频段"
 
 #: ../contents/ui/components/Eq.qml
 msgid "Flat response"
-msgstr ""
+msgstr "平直响应"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Color"
-msgstr ""
+msgstr "颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Animation:"
-msgstr ""
+msgstr "动画："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Interval (ms):"
-msgstr ""
+msgstr "间隔（毫秒）："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Smoothing (ms):"
-msgstr ""
+msgstr "平滑（毫秒）："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Color source:"
-msgstr ""
+msgstr "颜色来源："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Custom"
-msgstr ""
+msgstr "自定义"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "A fixed custom color"
-msgstr ""
+msgstr "固定的自定义颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Color that updates with your System theme"
-msgstr ""
+msgstr "随系统主题自动更新的颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Custom list"
-msgstr ""
+msgstr "自定义颜色列表"
 
 #: ../contents/ui/components/FormColors.qml
-msgid "Define a list of colors that will be applied to all the elements, wraps around if there are more elements than colors"
+msgid ""
+"Define a list of colors that will be applied to all the elements, wraps "
+"around if there are more elements than colors"
 msgstr ""
+"定义一组颜色列表，依次应用于所有元素；若元素数量多于颜色数量，则循环使用"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Random"
-msgstr ""
+msgstr "随机"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Random color for each element"
-msgstr ""
+msgstr "为每个元素分配随机颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Follow"
-msgstr ""
+msgstr "跟随"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Follow the color of a parent element"
-msgstr ""
+msgstr "跟随父级元素的颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Gradient"
-msgstr ""
+msgstr "渐变"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Horizontal or vertical customizable color gradient"
-msgstr ""
+msgstr "可自定义的水平或垂直颜色渐变"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Image"
-msgstr ""
+msgstr "图像"
 
 #: ../contents/ui/components/FormColors.qml
-msgid "High resolution images can slow down the desktop when the panel or widget size changes!"
-msgstr ""
+msgid ""
+"High resolution images can slow down the desktop when the panel or widget "
+"size changes!"
+msgstr "高分辨率图像在面板或小部件尺寸变化时可能导致桌面变慢！"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Hue"
-msgstr ""
+msgstr "色相"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Automatically shifted color for each bar"
-msgstr ""
+msgstr "为每根频谱柱自动偏移色相"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Element:"
-msgstr ""
+msgstr "元素："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Panel background"
-msgstr ""
+msgstr "面板背景"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Tray widget background"
-msgstr ""
+msgstr "托盘小部件背景"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Positioning:"
-msgstr ""
+msgstr "定位方式："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Stretch"
-msgstr ""
+msgstr "拉伸"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Tile"
-msgstr ""
+msgstr "平铺"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Scaled and Cropped"
-msgstr ""
+msgstr "缩放并裁剪"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Image:"
-msgstr ""
+msgstr "图像："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Pick a image file"
-msgstr ""
+msgstr "选择图像文件"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Image files"
-msgstr ""
+msgstr "图像文件"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "All files"
-msgstr ""
+msgstr "所有文件"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Color:"
-msgstr ""
+msgstr "颜色："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Color set:"
-msgstr ""
+msgstr "颜色集："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Colors:"
-msgstr ""
+msgstr "颜色："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Range:"
-msgstr ""
+msgstr "范围："
 
 #: ../contents/ui/components/FormColors.qml ../contents/ui/configVisualizer.qml
 msgid "Orientation:"
-msgstr ""
+msgstr "方向："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Horizontal"
-msgstr ""
+msgstr "水平"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Vertical"
-msgstr ""
+msgstr "垂直"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Gradient:"
-msgstr ""
+msgstr "渐变："
 
 #: ../contents/ui/components/FormColors.qml ../contents/ui/configCava.qml
 msgid "Reverse:"
-msgstr ""
+msgstr "反转："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Display colors the other way around"
-msgstr ""
+msgstr "以相反顺序显示颜色"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Alpha:"
-msgstr ""
+msgstr "透明度："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Contrast Correction"
-msgstr ""
+msgstr "对比度校正"
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Saturation:"
-msgstr ""
+msgstr "饱和度："
 
 #: ../contents/ui/components/FormColors.qml
 msgid "Lightness:"
-msgstr ""
+msgstr "亮度："
 
 #: ../contents/ui/configCava.qml
 msgid "Framerate:"
-msgstr ""
+msgstr "帧率："
 
 #: ../contents/ui/configCava.qml
 msgid "Number of bars:"
-msgstr ""
+msgstr "频谱柱数量："
 
 #: ../contents/ui/configCava.qml
 msgid "Automatically calculated for the current visualizer style."
-msgstr ""
+msgstr "根据当前可视化样式自动计算。"
 
 #: ../contents/ui/configCava.qml
 msgid "Automatic sensitivity:"
-msgstr ""
+msgstr "自动灵敏度："
 
 #: ../contents/ui/configCava.qml
 msgid "Attempt to decrease sensitivity if the bars peak."
-msgstr ""
+msgstr "当频谱柱达到峰值时，尝试降低灵敏度。"
 
 #: ../contents/ui/configCava.qml
 msgid "Sensitivity:"
-msgstr ""
+msgstr "灵敏度："
 
 #: ../contents/ui/configCava.qml
 msgid ""
 "Manual sensitivity in %.\n"
 "If autosens is enabled, this will only be the initial value"
 msgstr ""
+"手动灵敏度（百分比）。\n"
+"若启用自动灵敏度，此值仅作为初始值。"
 
 #: ../contents/ui/configCava.qml
 msgid "Frequency range (Hz):"
-msgstr ""
+msgstr "频率范围（Hz）："
 
 #: ../contents/ui/configCava.qml
 msgid "Min"
-msgstr ""
+msgstr "最小"
 
 #: ../contents/ui/configCava.qml
 msgid "Max"
-msgstr ""
+msgstr "最大"
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"Lower and higher cutoff frequencies for lowest and highest bars, the bandwidth of the visualizer.\n"
-"Note: Cava will automatically increase the higher cutoff if a too low band is specified."
+"Lower and higher cutoff frequencies for lowest and highest bars, the "
+"bandwidth of the visualizer.\n"
+"Note: Cava will automatically increase the higher cutoff if a too low band "
+"is specified."
 msgstr ""
+"最低和最高频谱柱对应的截止频率，即可视化器的带宽。\n"
+"注意：若指定的频带过窄，CAVA会自动提高高频截止值。"
 
 #: ../contents/ui/configCava.qml
 msgid "Sleep timer (seconds):"
-msgstr ""
+msgstr "休眠计时器（秒）："
 
 #: ../contents/ui/configCava.qml
 msgid ""
 "Seconds with no input before cava goes to sleep mode.\n"
 "Cava will not perform FFT and only check for input once per second."
 msgstr ""
+"无音频输入多少秒后进入休眠模式。\n"
+"休眠期间CAVA不执行FFT，仅每秒检查一次输入。"
 
 #: ../contents/ui/configCava.qml
 msgid "Input"
-msgstr ""
+msgstr "输入"
 
 #: ../contents/ui/configCava.qml
 msgid "Method:"
-msgstr ""
+msgstr "方法："
 
 #: ../contents/ui/configCava.qml ../contents/ui/configGeneral.qml
 msgid "Default"
-msgstr ""
+msgstr "默认"
 
 #: ../contents/ui/configCava.qml
 msgid ""
 "Audio capturing method.\n"
-"Defaults to 'oss', 'pipewire', 'sndio', 'jack', 'pulse', 'alsa', 'portaudio' or 'fifo', in that order, dependent on what support cava was built with.\n"
+"Defaults to 'oss', 'pipewire', 'sndio', 'jack', 'pulse', 'alsa', 'portaudio' "
+"or 'fifo', in that order, dependent on what support cava was built with.\n"
 msgstr ""
+"音频捕获方法。\n"
+"默认按以下顺序尝试：\n"
+"'oss'、'pipewire'、'sndio'、'jack'、'pulse'、'alsa'、'portaudio'或'fifo'，\n"
+"具体取决于CAVA编译时所包含的支持。\n"
 
 #: ../contents/ui/configCava.qml
 msgid "Source:"
-msgstr ""
+msgstr "源："
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"For pulseaudio and pipewire 'source' will be the source. Default: 'auto', which uses the monitor source of the default sink (all pulseaudio sinks(outputs) have 'monitor' sources(inputs) associated "
-"with them)."
+"For pulseaudio and pipewire 'source' will be the source. Default: 'auto', "
+"which uses the monitor source of the default sink (all pulseaudio "
+"sinks(outputs) have 'monitor' sources(inputs) associated with them)."
 msgstr ""
+"对于PulseAudio和PipeWire，'source'指音频源。默认为'auto'，即使用默认输出设备"
+"的监听源（所有PulseAudio输出设备均有对应的监听输入源）。"
 
 #: ../contents/ui/configCava.qml
-msgid "For pipewire 'source' will be the object name or object.serial of the device to capture from. Both input and output devices are supported."
+msgid ""
+"For pipewire 'source' will be the object name or object.serial of the device "
+"to capture from. Both input and output devices are supported."
 msgstr ""
+"对于PipeWire，'source'可为设备的对象名称或object.serial，支持输入和输出设备。"
 
 #: ../contents/ui/configCava.qml
 msgid "For alsa 'source' will be the capture device."
-msgstr ""
+msgstr "对于ALSA，'source'为录音设备。"
 
 #: ../contents/ui/configCava.qml
 msgid "For fifo 'source' will be the path to fifo-file."
-msgstr ""
+msgstr "对于FIFO，'source'为FIFO文件路径。"
 
 #: ../contents/ui/configCava.qml
-msgid "For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address."
+msgid ""
+"For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:"
+"EE:FF' will be squeezelite's MAC address."
 msgstr ""
+"对于shmem，'source'为/squeezelite-AA:BB:CC:DD:EE:FF，其中'AA:BB:CC:DD:EE:"
+"FF'为squeezelite的MAC地址。"
 
 #: ../contents/ui/configCava.qml
-msgid "For sndio 'source' will be a raw recording audio descriptor or a monitoring sub-device, e.g. 'rsnd/2' or 'snd/1'. Default: 'default'."
+msgid ""
+"For sndio 'source' will be a raw recording audio descriptor or a monitoring "
+"sub-device, e.g. 'rsnd/2' or 'snd/1'. Default: 'default'."
 msgstr ""
+"对于sndio，'source'为原始录音音频描述符或监听子设备（如'rsnd/2'或'snd/1'）。"
+"默认值：'default'。"
 
 #: ../contents/ui/configCava.qml
-msgid "For oss 'source' will be the path to a audio device, e.g. '/dev/dsp2'. Default: '/dev/dsp', i.e. the default audio device."
+msgid ""
+"For oss 'source' will be the path to a audio device, e.g. '/dev/dsp2'. "
+"Default: '/dev/dsp', i.e. the default audio device."
 msgstr ""
+"对于OSS，'source'为音频设备路径（如'/dev/dsp2'）。默认值：'/dev/dsp'（即默认"
+"音频设备）。"
 
 #: ../contents/ui/configCava.qml
-msgid "For jack 'source' will be the name of the JACK server to connect to, e.g. 'foobar'. Default: 'default'."
+msgid ""
+"For jack 'source' will be the name of the JACK server to connect to, e.g. "
+"'foobar'. Default: 'default'."
 msgstr ""
+"对于JACK，'source'为要连接的JACK服务器名称（如'foobar'）。默认值：'default'。"
 
 #: ../contents/ui/configCava.qml
 msgid "Sample rate:"
-msgstr ""
+msgstr "采样率："
 
 #: ../contents/ui/configCava.qml
 msgid "Only for fifo, pipewire, sndio, oss"
-msgstr ""
+msgstr "仅适用于fifo、pipewire、sndio、oss"
 
 #: ../contents/ui/configCava.qml
 msgid "Sample bits:"
-msgstr ""
+msgstr "采样位深："
 
 #: ../contents/ui/configCava.qml
 msgid "Channels:"
-msgstr ""
+msgstr "声道数："
 
 #: ../contents/ui/configCava.qml
 msgid "Only for pipewire & cava>=0.10.6, sndio, oss, jack"
-msgstr ""
+msgstr "仅适用于pipewire（CAVA ≥ 0.10.6）、sndio、oss、jack"
 
 #: ../contents/ui/configCava.qml
 msgid "Auto connect:"
-msgstr ""
+msgstr "自动连接："
 
 #: ../contents/ui/configCava.qml
 msgid "Only for jack"
-msgstr ""
+msgstr "仅适用于jack"
 
 #: ../contents/ui/configCava.qml
 msgid "Active:"
-msgstr ""
+msgstr "激活："
 
 #: ../contents/ui/configCava.qml
-msgid "Only for pipewire & cava>=0.10.6. Force the node to always process. Useful for monitoring sources when no other application is active."
+msgid ""
+"Only for pipewire & cava>=0.10.6. Force the node to always process. Useful "
+"for monitoring sources when no other application is active."
 msgstr ""
+"仅适用于pipewire（CAVA ≥ 0.10.6）。强制节点始终处理音频，适用于无其他应用活跃"
+"时监听音频源。"
 
 #: ../contents/ui/configCava.qml
 msgid "Remix:"
-msgstr ""
+msgstr "混音："
 
 #: ../contents/ui/configCava.qml
-msgid "Only for pipewire & cava>=0.10.6. Allow to remix audio channels to match cava's channel count. Useful for surround sound."
+msgid ""
+"Only for pipewire & cava>=0.10.6. Allow to remix audio channels to match "
+"cava's channel count. Useful for surround sound."
 msgstr ""
+"仅适用于pipewire（CAVA ≥ 0.10.6）。允许重混音频声道以匹配CAVA的声道数，适用于"
+"环绕声。"
 
 #: ../contents/ui/configCava.qml
 msgid "Virtual:"
-msgstr ""
+msgstr "虚拟："
 
 #: ../contents/ui/configCava.qml
-msgid "Only for pipewire & cava>=0.10.6. Set the node to virtual, to avoid recording notifications from the DE."
+msgid ""
+"Only for pipewire & cava>=0.10.6. Set the node to virtual, to avoid "
+"recording notifications from the DE."
 msgstr ""
+"仅适用于pipewire（CAVA ≥ 0.10.6）。将节点设为虚拟，避免桌面环境弹出录音通知。"
 
 #: ../contents/ui/configCava.qml
 msgid "Output"
-msgstr ""
+msgstr "输出"
 
 #: ../contents/ui/configCava.qml
 msgid "Visual channels:"
-msgstr ""
+msgstr "可视化声道："
 
 #: ../contents/ui/configCava.qml
 msgid ""
 "'mono' outputs left to right lowest to highest frequencies.\n"
 "'stereo' mirrors both channels with low frequencies in center."
 msgstr ""
+"“单声道(mono)”从左到右显示从低到高的频率。\n"
+"“立体声(stereo)”镜像显示双声道，低频位于中央。"
 
 #: ../contents/ui/configCava.qml
 msgid "Mono channel:"
-msgstr ""
+msgstr "单声道选项："
 
 #: ../contents/ui/configCava.qml
 msgid "Display frequencies the other way around"
-msgstr ""
+msgstr "以相反顺序显示频率"
 
 #: ../contents/ui/configCava.qml
 msgid "Smoothing"
-msgstr ""
+msgstr "平滑"
 
 #: ../contents/ui/configCava.qml
 msgid "Noise reduction:"
-msgstr ""
+msgstr "降噪："
 
 #: ../contents/ui/configCava.qml
 msgid ""
-"The raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth.\n"
+"The raw visualization is very noisy, this factor adjusts the integral and "
+"gravity filters to keep the signal smooth.\n"
 "100 will be very slow and smooth, 0 will be fast but noisy."
 msgstr ""
+"原始可视化噪声较大，此参数通过积分与重力滤波器使信号平滑。\n"
+"100表示极慢且平滑，0表示快速但噪声明显。"
 
 #: ../contents/ui/configCava.qml
 msgid "Monstercat:"
-msgstr ""
+msgstr "Monstercat平滑："
 
 #: ../contents/ui/configCava.qml
-msgid "Enable the so-called \"Monstercat smoothing\" with or without \"waves\"."
-msgstr ""
+msgid ""
+"Enable the so-called \"Monstercat smoothing\" with or without \"waves\"."
+msgstr "启用被称为“Monstercat平滑”的效果，可选择是否同时启用“波浪效果”。"
 
 #: ../contents/ui/configCava.qml
 msgid "Waves"
-msgstr ""
+msgstr "波浪效果"
 
 #: ../contents/ui/configCava.qml
 msgid "Equalizer"
-msgstr ""
+msgstr "均衡器"
 
 #: ../contents/ui/configCava.qml
 msgid "Enabled:"
-msgstr ""
+msgstr "启用："
 
 #: ../contents/ui/configCava.qml
-msgid "Adjust frequencies by a multiplication factor, more bands equals more precision."
-msgstr ""
+msgid ""
+"Adjust frequencies by a multiplication factor, more bands equals more "
+"precision."
+msgstr "通过乘法因子调整频率，频段越多，精度越高。"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Auto-hide when idle:"
-msgstr ""
+msgstr "空闲时自动隐藏："
 
 #: ../contents/ui/configGeneral.qml
 msgid "After"
-msgstr ""
+msgstr "在"
 
 #: ../contents/ui/configGeneral.qml
 msgid "seconds"
-msgstr ""
+msgstr "秒后"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Desktop background:"
-msgstr ""
+msgstr "桌面背景："
 
 #: ../contents/ui/configGeneral.qml
 msgid "Transparent"
-msgstr ""
+msgstr "透明"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Transparent with shadow"
-msgstr ""
+msgstr "透明带阴影"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Disable tooltip:"
-msgstr ""
+msgstr "禁用工具提示："
 
 #: ../contents/ui/configGeneral.qml
 msgid "Disable ToolTip that shows the widget name and description."
-msgstr ""
+msgstr "禁用显示小部件名称和描述的工具提示。"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Disable left click:"
-msgstr ""
+msgstr "禁用左键点击："
 
 #: ../contents/ui/configGeneral.qml
 msgid "Applet popup will still be accessible from the right click menu."
-msgstr ""
+msgstr "仍可通过右键菜单访问小部件弹出窗口。"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Troubleshooting"
-msgstr ""
+msgstr "故障排除"
 
 #: ../contents/ui/configGeneral.qml
 msgid "Debug mode:"
-msgstr ""
+msgstr "调试模式："
 
 #: ../contents/ui/configGeneral.qml
-msgid "Print additional messages to the system log. To make it easier to spot sizing issues, this will also force full height to the first visualizer bar and displays a grid over it."
+msgid ""
+"Print additional messages to the system log. To make it easier to spot "
+"sizing issues, this will also force full height to the first visualizer bar "
+"and displays a grid over it."
 msgstr ""
+"向系统日志输出额外信息。\n"
+"为便于发现尺寸问题，此选项还会强制将第一条频谱柱设为最大高度，并在整个区域上"
+"显示网格。"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "height"
-msgstr ""
+msgstr "高度"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "width"
-msgstr ""
+msgstr "宽度"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Style:"
-msgstr ""
+msgstr "样式："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Bars"
-msgstr ""
+msgstr "频谱柱"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Wave"
-msgstr ""
+msgstr "波形"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Fill wave"
-msgstr ""
+msgstr "填充波形"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Top"
-msgstr ""
+msgstr "顶部"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Bottom"
-msgstr ""
+msgstr "底部"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Left"
-msgstr ""
+msgstr "左侧"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Right"
-msgstr ""
+msgstr "右侧"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Fill panel %1:"
-msgstr ""
+msgstr "填充面板%1："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Fixed %1:"
-msgstr ""
+msgstr "固定%1："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Fill panel thickness:"
-msgstr ""
+msgstr "填充面板厚度："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Centered bars:"
-msgstr ""
+msgstr "居中频谱柱："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Rounded bars:"
-msgstr ""
+msgstr "圆角频谱柱："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Line width:"
-msgstr ""
+msgstr "线条宽度："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Bar width:"
-msgstr ""
+msgstr "频谱柱宽度："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Bar gap:"
-msgstr ""
+msgstr "频谱柱间距："
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Wave Color"
-msgstr ""
+msgstr "波形颜色"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Bar Color"
-msgstr ""
+msgstr "频谱柱颜色"
 
 #: ../contents/ui/configVisualizer.qml
 msgid "Wave Fill Color"
-msgstr ""
+msgstr "波形填充颜色"
 
 #: ../contents/ui/main.qml
 msgid "Show support information"
-msgstr ""
+msgstr "显示支持信息"

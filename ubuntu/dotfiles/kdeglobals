@@ -35,46 +35,10 @@ ForegroundPositive=113,247,159
 ForegroundVisited=82,148,226
 
 [Colors:Complementary]
-BackgroundAlternate[$d]
-BackgroundNormal[$d]
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive[$d]
 ForegroundLink=61,174,233
-ForegroundNegative[$d]
-ForegroundNeutral[$d]
-ForegroundNormal[$d]
-ForegroundPositive[$d]
-ForegroundVisited[$d]
-
-[Colors:Header]
-BackgroundAlternate[$d]
-BackgroundNormal[$d]
-DecorationFocus[$d]
-DecorationHover[$d]
-ForegroundActive[$d]
-ForegroundInactive[$d]
-ForegroundLink[$d]
-ForegroundNegative[$d]
-ForegroundNeutral[$d]
-ForegroundNormal[$d]
-ForegroundPositive[$d]
-ForegroundVisited[$d]
-
-[Colors:Header][Inactive]
-BackgroundAlternate[$d]
-BackgroundNormal[$d]
-DecorationFocus[$d]
-DecorationHover[$d]
-ForegroundActive[$d]
-ForegroundInactive[$d]
-ForegroundLink[$d]
-ForegroundNegative[$d]
-ForegroundNeutral[$d]
-ForegroundNormal[$d]
-ForegroundPositive[$d]
-ForegroundVisited[$d]
 
 [Colors:Selection]
 BackgroundAlternate=49,129,174
@@ -141,7 +105,7 @@ Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x94\
 AccentColor=61,174,233
 BrowserApplication=google-chrome.desktop
 ColorScheme=Sweet
-ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
+ColorSchemeHash=a054744e5da530142f039caa182148b170643d2e
 LastUsedCustomAccentColor=61,174,233
 TerminalApplication=kitty
 TerminalService=kitty.desktop
@@ -153,14 +117,13 @@ Theme=Mkos-Big-Sur-Night
 [KDE]
 AnimationDurationFactor=0.35355339059327373
 LookAndFeelPackage=Blue Mac Blur\s
+widgetStyle=Breeze
 
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
 Breadcrumb Navigation=false
 Decoration position=0
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=false
