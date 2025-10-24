@@ -11,6 +11,7 @@ map("i", "kj", "<Esc>", { noremap = false })
 -- Delete whole word with Ctrl+Backspace in insert mode
 map("i", "<C-BS>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward" })
 map("i", "<C-H>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward (alternative)" })
+map("i", "<M-BS>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward (Alt+Backspace)" })
 
 -- editing
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
