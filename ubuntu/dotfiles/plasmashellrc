@@ -5,7 +5,7 @@ Number of Actions=0
 listViewIconSize=256
 
 [PlasmaTransientsConfig]
-PreloadWeight=26
+PreloadWeight=2
 
 [PlasmaTransientsConfig][ConfigDialog]
 DialogHeight=504

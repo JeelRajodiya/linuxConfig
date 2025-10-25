@@ -167,7 +167,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][398][Applets][403][Applets][450][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][398][Applets][403][Applets][451][Configuration]
 PreloadWeight=42
@@ -614,7 +614,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][495][Applets][499][Applets][513][Configuration]
-PreloadWeight=86
+PreloadWeight=91
 
 [Containments][495][Applets][499][Applets][514]
 immutability=1
@@ -640,22 +640,22 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.net
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
-[Containments][495][Applets][534]
+[Containments][495][Applets][537]
 immutability=1
 plugin=org.kde.plasma.plasm6desktopindicator
 
-[Containments][495][Applets][534][Configuration][ConfigDialog]
+[Containments][495][Applets][537][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
 
-[Containments][495][Applets][534][Configuration][General]
-dotSizeCustom=17
+[Containments][495][Applets][537][Configuration][General]
+dotSizeCustom=18
 singleRow=false
-spacingHorizontal=2
-spacingVertical=2
+spacingHorizontal=0
+spacingVertical=0
 
 [Containments][495][General]
-AppletOrder=496;534;498;499
+AppletOrder=496;537;498;499
 
 [Containments397Appletsts][525][Configuration][General]
 dotSizeCustom=14
@@ -676,10 +676,10 @@ spacingHorizontal=2
 spacingVertical=2
 
 [Containments495Appletsts][534][Configuration][General]
-dotSizeCustom=18
+dotSizeCustom=15
 singleRow=false
-spacingHorizontal=2
-spacingVertical=2
+spacingHorizontal=1
+spacingVertical=0
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,fbfefef1-7f7c-4a29-9e16-540b84b02987,3,desktop:/notes,desktop:/languages,desktop:/configs
