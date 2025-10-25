@@ -5,7 +5,7 @@ Number of Actions=0
 listViewIconSize=256
 
 [PlasmaTransientsConfig]
-PreloadWeight=2
+PreloadWeight=0
 
 [PlasmaTransientsConfig][ConfigDialog]
 DialogHeight=504
@@ -57,7 +57,7 @@ panelVisibility=2
 maxLength=966
 minLength=959
 offset=0
-thickness=80
+thickness=44
 
 [PlasmaViews][Panel 2][Horizontal1920]
 maxLength=966
