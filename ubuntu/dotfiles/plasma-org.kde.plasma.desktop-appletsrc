@@ -638,22 +638,23 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.net
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
-[Containments][495][Applets][537]
+[Containments][495][Applets][538]
 immutability=1
 plugin=org.kde.plasma.plasm6desktopindicator
 
-[Containments][495][Applets][537][Configuration][ConfigDialog]
+[Containments][495][Applets][538][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
 
-[Containments][495][Applets][537][Configuration][General]
+[Containments][495][Applets][538][Configuration][General]
+desktopWrapOn=false
 dotSizeCustom=18
 singleRow=false
-spacingHorizontal=0
-spacingVertical=0
+spacingHorizontal=2
+spacingVertical=2
 
 [Containments][495][General]
-AppletOrder=496;537;498;499
+AppletOrder=496;538;498;499
 
 [Containments397Appletsts][525][Configuration][General]
 dotSizeCustom=14
