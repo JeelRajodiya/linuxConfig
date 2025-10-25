@@ -4,6 +4,13 @@ Number of Actions=0
 [KFileDialog Settings]
 listViewIconSize=256
 
+[PlasmaTransientsConfig]
+PreloadWeight=26
+
+[PlasmaTransientsConfig][ConfigDialog]
+DialogHeight=504
+DialogWidth=906
+
 [PlasmaViews][Panel 122]
 floating=1
 panelVisibility=2

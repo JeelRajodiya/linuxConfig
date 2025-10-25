@@ -7,8 +7,8 @@ RightButton;NoModifier=org.kde.contextmenu
 [Containments][397]
 ItemGeometries-1097x617=Applet-47:339.056,291.527,672,208,0;
 ItemGeometries-1536x864=Applet-47:544,528,672,208,0;
-ItemGeometries-1920x1080=Applet-532:528,240,576,96,0;
-ItemGeometriesHorizontal=Applet-532:528,240,576,96,0;
+ItemGeometries-1920x1080=
+ItemGeometriesHorizontal=
 activityId=f2442cd4-1f5c-448e-a7ea-0328c453ae21
 formfactor=0
 immutability=1
@@ -640,23 +640,43 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.net
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
-[Containments][495][Applets][525]
+[Containments][495][Applets][534]
 immutability=1
 plugin=org.kde.plasma.plasm6desktopindicator
 
-[Containments][495][Applets][525][Configuration][ConfigDialog]
-DialogHeight=1044
-DialogWidth=1920
+[Containments][495][Applets][534][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
 
-[Containments][495][Applets][525][Configuration][General]
-dotSizeCustom=24
+[Containments][495][Applets][534][Configuration][General]
+dotSizeCustom=17
 singleRow=false
+spacingHorizontal=2
+spacingVertical=2
 
 [Containments][495][General]
-AppletOrder=496;525;498;499
+AppletOrder=496;534;498;499
+
+[Containments397Appletsts][525][Configuration][General]
+dotSizeCustom=14
+singleRow=false
+spacingHorizontal=0
+spacingVertical=2
+
+[Containments397Appletsts][534][Configuration][General]
+dotSizeCustom=18
+singleRow=false
+spacingHorizontal=2
+spacingVertical=2
 
 [Containments495Appletsts][525][Configuration][General]
 dotSizeCustom=20
+singleRow=false
+spacingHorizontal=2
+spacingVertical=2
+
+[Containments495Appletsts][534][Configuration][General]
+dotSizeCustom=18
 singleRow=false
 spacingHorizontal=2
 spacingVertical=2
