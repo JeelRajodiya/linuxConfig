@@ -7,8 +7,8 @@ RightButton;NoModifier=org.kde.contextmenu
 [Containments][397]
 ItemGeometries-1097x617=Applet-47:339.056,291.527,672,208,0;
 ItemGeometries-1536x864=Applet-47:544,528,672,208,0;
-ItemGeometries-1920x1080=
-ItemGeometriesHorizontal=
+ItemGeometries-1920x1080=Applet-532:528,240,576,96,0;
+ItemGeometriesHorizontal=Applet-532:528,240,576,96,0;
 activityId=f2442cd4-1f5c-448e-a7ea-0328c453ae21
 formfactor=0
 immutability=1
@@ -17,6 +17,14 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][397][Applets][532]
+immutability=1
+plugin=org.dhruv8sh.kara
+
+[Containments][397][Applets][532][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
 [Containments][397][ConfigDialog]
 DialogHeight=762
 DialogWidth=1061
@@ -24,7 +32,7 @@ DialogWidth=1061
 [Containments][397][General]
 arrangement=1
 iconSize=2
-positions={"1920x1080":["1","10","desktop:/configs","0","2","desktop:/languages","0","0"]}
+positions={"1920x1080":["1","10","desktop:/configs","0","0"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
@@ -74,7 +82,7 @@ plugin=org.kde.plasma.panelspacer
 
 [Containments][398][Applets][401][Configuration][General]
 expanding=false
-length=128
+length=168
 
 [Containments][398][Applets][402]
 immutability=1
@@ -100,7 +108,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][398][Applets][403][Applets][405][Configuration]
-PreloadWeight=85
+PreloadWeight=100
 
 [Containments][398][Applets][403][Applets][406]
 immutability=1
@@ -109,6 +117,9 @@ plugin=org.kde.kdeconnect
 [Containments][398][Applets][403][Applets][407]
 immutability=1
 plugin=org.kde.plasma.clipboard
+
+[Containments][398][Applets][403][Applets][407][Configuration]
+PreloadWeight=55
 
 [Containments][398][Applets][403][Applets][408]
 immutability=1
@@ -185,15 +196,6 @@ shownItems=org.kde.plasma.volume,org.kde.plasma.notifications
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][398][Applets][417]
-immutability=1
-plugin=KdeControlStation
-
-[Containments][398][Applets][417][Configuration]
-PreloadWeight=100
-popupHeight=418
-popupWidth=420
-
 [Containments][398][Applets][418]
 immutability=1
 plugin=org.kde.plasma.digitalclock
@@ -216,12 +218,16 @@ DialogWidth=720
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][398][Applets][420]
+[Containments][398][Applets][531]
 immutability=1
-plugin=org.kde.plasma.minimizeall
+plugin=org.kde.plasma.pager
+
+[Containments][398][Applets][531][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
 
 [Containments][398][General]
-AppletOrder=399;400;401;402;403;416;417;418;419;420
+AppletOrder=399;400;401;402;403;416;531;419;418
 
 [Containments][398][Shortcuts]
 global=
@@ -538,31 +544,6 @@ plugin=org.kde.plasma.panelspacer
 expanding=false
 length=10
 
-[Containments][495][Applets][497]
-immutability=1
-plugin=org.dhruv8sh.kara
-
-[Containments][495][Applets][497][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][495][Applets][497][Configuration][appearance]
-altColor=10,161,255
-
-[Containments][495][Applets][497][Configuration][general]
-highlightOpacityFull=false
-highlightType=2
-spacing=5
-type=0
-
-[Containments][495][Applets][497][Configuration][type1]
-t1activeWidth=26
-t1radius=3
-
-[Containments][495][Applets][497][Configuration][type2]
-fixedLen=16
-labelSource=0
-
 [Containments][495][Applets][498]
 immutability=1
 plugin=org.kde.plasma.panelspacer
@@ -633,21 +614,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][495][Applets][499][Applets][513][Configuration]
-PreloadWeight=89
+PreloadWeight=86
 
 [Containments][495][Applets][499][Applets][514]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][495][Applets][499][Applets][514][Configuration]
-PreloadWeight=54
+PreloadWeight=56
 
 [Containments][495][Applets][499][Applets][515]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=70
+PreloadWeight=51
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540
@@ -659,9 +640,27 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.net
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
+[Containments][495][Applets][525]
+immutability=1
+plugin=org.kde.plasma.plasm6desktopindicator
+
+[Containments][495][Applets][525][Configuration][ConfigDialog]
+DialogHeight=1044
+DialogWidth=1920
+
+[Containments][495][Applets][525][Configuration][General]
+dotSizeCustom=24
+singleRow=false
+
 [Containments][495][General]
-AppletOrder=496;497;498;499
+AppletOrder=496;525;498;499
+
+[Containments495Appletsts][525][Configuration][General]
+dotSizeCustom=20
+singleRow=false
+spacingHorizontal=2
+spacingVertical=2
 
 [ScreenMapping]
-itemsOnDisabledScreens=
-screenMapping=desktop:/notes,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/languages,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/languages,0,fbfefef1-7f7c-4a29-9e16-540b84b02987,desktop:/configs,0,fbfefef1-7f7c-4a29-9e16-540b84b02987
+itemsOnDisabledScreens=0,fbfefef1-7f7c-4a29-9e16-540b84b02987,3,desktop:/notes,desktop:/languages,desktop:/configs
+screenMapping=desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21
