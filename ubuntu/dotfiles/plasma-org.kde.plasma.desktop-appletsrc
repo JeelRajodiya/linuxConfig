@@ -145,6 +145,9 @@ plugin=org.kde.plasma.devicenotifier
 immutability=1
 plugin=org.kde.plasma.vault
 
+[Containments][398][Applets][403][Applets][413][Configuration]
+PreloadWeight=55
+
 [Containments][398][Applets][403][Applets][414]
 immutability=1
 plugin=org.kde.kscreen

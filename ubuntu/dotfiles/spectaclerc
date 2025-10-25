@@ -18,10 +18,10 @@ quitAfterSaveCopyExport=true
 
 [ImageSave]
 imageCompressionQuality=15
-lastImageSaveLocation=file:///home/zeel/Pictures/Screenshots/Screenshot_20251025_180404.jpeg
+lastImageSaveLocation=file:///home/zeel/Pictures/Screenshots/Screenshot_20251025_224722.jpeg
 preferredImageFormat=JPEG
 translatedScreenshotsFolder=Screenshots
 
 [VideoSave]
-preferredVideoFormat=4
+preferredVideoFormat=8
 translatedScreencastsFolder=Screencasts

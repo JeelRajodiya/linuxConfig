@@ -188,7 +188,7 @@ alias thunar='setsid thunar'
 alias files='setsid $BROWSER'
 alias obsidian='setsid obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland'
 alias obsi='setsid obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland && exit -f'
-alias fzf='fzf --preview="bat --color=always --style=header,grid --line-range :500 {}"'
+alias fzf='fzf --preview="batcat --theme=base16 -n  --color=always --style=header,grid --line-range :500 {}"'
 # alias ivm='$EDITOR $(fzf -m --preview="bat --color=always --style=header,grid --line-range :500 {}")'
 alias ivm='f() { local file; file=$(tv); [ -n "$file" ] && "$EDITOR" "$file"; }; f'
 
