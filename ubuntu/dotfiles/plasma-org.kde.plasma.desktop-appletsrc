@@ -165,7 +165,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][398][Applets][403][Applets][450][Configuration]
-PreloadWeight=5
+PreloadWeight=0
 
 [Containments][398][Applets][403][Applets][451][Configuration]
 PreloadWeight=42
@@ -216,16 +216,8 @@ DialogWidth=720
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
-[Containments][398][Applets][531]
-immutability=1
-plugin=org.kde.plasma.pager
-
-[Containments][398][Applets][531][Configuration][ConfigDialog]
-DialogHeight=630
-DialogWidth=810
-
 [Containments][398][General]
-AppletOrder=399;400;401;402;403;416;531;419;418
+AppletOrder=399;400;401;402;403;416;419;418
 
 [Containments][398][Shortcuts]
 global=
@@ -548,7 +540,7 @@ plugin=org.kde.plasma.panelspacer
 
 [Containments][495][Applets][498][Configuration][General]
 expanding=false
-length=128
+length=168
 
 [Containments][495][Applets][499]
 activityId=
@@ -626,7 +618,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=51
+PreloadWeight=66
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540
@@ -638,23 +630,16 @@ extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.net
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
-[Containments][495][Applets][538]
+[Containments][495][Applets][531]
 immutability=1
-plugin=org.kde.plasma.plasm6desktopindicator
+plugin=org.kde.plasma.pager
 
-[Containments][495][Applets][538][Configuration][ConfigDialog]
+[Containments][495][Applets][531][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
 
-[Containments][495][Applets][538][Configuration][General]
-desktopWrapOn=false
-dotSizeCustom=18
-singleRow=false
-spacingHorizontal=2
-spacingVertical=2
-
 [Containments][495][General]
-AppletOrder=496;538;498;499
+AppletOrder=496;531;498;499
 
 [Containments397Appletsts][525][Configuration][General]
 dotSizeCustom=14
@@ -673,6 +658,10 @@ dotSizeCustom=20
 singleRow=false
 spacingHorizontal=2
 spacingVertical=2
+
+[Containments495Appletsts][531][Configuration][General]
+showWindowOutlines=false
+wrapPage=true
 
 [Containments495Appletsts][534][Configuration][General]
 dotSizeCustom=15

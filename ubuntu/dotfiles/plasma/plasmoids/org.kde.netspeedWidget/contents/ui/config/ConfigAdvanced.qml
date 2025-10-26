@@ -27,11 +27,6 @@ Kirigami.FormLayout {
     property alias cfg_interfacesWhitelistEnabled: interfacesWhitelistEnabled.checked
     property var cfg_interfacesWhitelist: []
 
-    Loader {
-        id: 'launcher'
-        source: '../Launcher.qml'
-    }
-
     Plasma5Support.DataSource {
         id: dataSource
         engine: 'executable'
@@ -73,18 +68,11 @@ Kirigami.FormLayout {
         CheckBox {
             id: launchApplicationEnabled
             text: i18n('Launch application when clicked:')
-            enabled: launcher.item != null
         }
 
         AppPicker {
             id: launchApplication
-            enabled: launcher.item != null && launchApplicationEnabled.checked
-        }
-
-        Text {
-            text: i18n('If you want to lauch an application,\nyou need to install the package plasma-addons first.')
-            visible: launcher.item == null
-            Layout.columnSpan: 2
+            enabled: launchApplicationEnabled.checked
         }
 
         CheckBox {

@@ -166,11 +166,6 @@ Item {
         connectedSources: launchApplication
     }
 
-    Loader {
-        id: 'launcher'
-        source: 'Launcher.qml'
-    }
-
     Item {
         id: offsetItem
         width: offset
@@ -293,8 +288,8 @@ Item {
         enabled: launchApplicationEnabled
 
         onClicked: {
-            if (launcher.item && appsSource.data[launchApplication]) {
-                launcher.item.launch("file:" + appsSource.data[launchApplication].entryPath)
+            if (launchApplication && appsSource.data[launchApplication]) {
+                Qt.openUrlExternally("file:" + appsSource.data[launchApplication].entryPath)
             }
         }
     }
