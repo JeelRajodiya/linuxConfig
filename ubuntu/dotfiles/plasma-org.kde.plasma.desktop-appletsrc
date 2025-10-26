@@ -216,8 +216,16 @@ DialogWidth=720
 immutability=1
 plugin=org.kde.plasma.marginsseparator
 
+[Containments][398][Applets][539]
+immutability=1
+plugin=org.kde.plasma.pager
+
+[Containments][398][Applets][539][Configuration][ConfigDialog]
+DialogHeight=630
+DialogWidth=810
+
 [Containments][398][General]
-AppletOrder=399;400;401;402;403;416;419;418
+AppletOrder=399;400;401;402;403;416;539;419;418
 
 [Containments][398][Shortcuts]
 global=
