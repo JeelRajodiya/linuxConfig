@@ -626,7 +626,7 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=66
+PreloadWeight=58
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540
@@ -645,6 +645,9 @@ plugin=org.kde.plasma.pager
 [Containments][495][Applets][531][Configuration][ConfigDialog]
 DialogHeight=630
 DialogWidth=810
+
+[Containments][495][Applets][531][Configuration][General]
+showWindowOutlines=false
 
 [Containments][495][General]
 AppletOrder=496;531;498;499
