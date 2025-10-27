@@ -198,6 +198,7 @@ thickness=38
 [PlasmaViews][Panel 438]
 floating=1
 panelLengthMode=1
+panelOpacity=2
 panelVisibility=2
 
 [PlasmaViews][Panel 438][Defaults]

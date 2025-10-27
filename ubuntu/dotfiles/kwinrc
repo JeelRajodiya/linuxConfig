@@ -1,10 +1,10 @@
 [Desktops]
 Id_1=165212a1-1569-4d70-9c07-79819d5054bd
 Id_2=c195af3d-2596-428e-99ac-e4c180e4f1c7
-Id_3=83e6fd2d-7e08-437f-a394-8b00cfa87a95
-Id_4=db6ae5b4-7189-4b1d-9fde-0535e7a5e13c
-Id_5=605dffee-5dd3-4f1b-8de2-912cae128c92
-Id_6=9375d0a1-5a9f-450c-88ba-c42781a4f26a
+Id_3=db6ae5b4-7189-4b1d-9fde-0535e7a5e13c
+Id_4=605dffee-5dd3-4f1b-8de2-912cae128c92
+Id_5=219413df-332e-40fd-844c-6f93cf8ed2ef
+Id_6=00c1a431-d984-4bc9-9252-c3858576f319
 Number=6
 Rows=2
 
@@ -47,6 +47,9 @@ BorderActivate=3
 [Tiling]
 padding=16
 
+[Tiling][00c1a431-d984-4bc9-9252-c3858576f319][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][048749e9-6402-4f4c-9b46-1b9e9d64f81e][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -69,6 +72,9 @@ tiles={"layoutDirection":"floating","tiles":[{"height":0.6583333333333306,"width
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][201b7d5a-5611-4eb2-8fd6-bd72a459f4c1][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][219413df-332e-40fd-844c-6f93cf8ed2ef][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][27991ad9-db17-4aee-bc5b-37a9298db162][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
