@@ -68,7 +68,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][398][Applets][400][Configuration][General]
-launchers=[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:org.kde.dolphin.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:app.zen_browser.zen.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:kitty.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:code.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:google-chrome.desktop
+indicateAudioStreams=false
+launchers=[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:org.kde.dolphin.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:google-chrome.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:kitty.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:code.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-ijpicoikldgchoeaibeajagidlgmbgpo-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Profile_1.desktop,applications:chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
 wheelEnabled=AllTask
 
 [Containments][398][Applets][401]
@@ -444,18 +445,6 @@ totalSensors=["disk/all/usedPercent"]
 [Containments][438][General]
 AppletOrder=439;440;441;442;443;444;445;446;447;448;449
 
-[Containments][473]
-activityId=fbfefef1-7f7c-4a29-9e16-540b84b02987
-formfactor=0
-immutability=1
-lastScreen=0
-location=0
-plugin=org.kde.plasma.folder
-wallpaperplugin=org.kde.image
-
-[Containments][473][General]
-positions={"0x0":[]}
-
 [Containments][495]
 activityId=
 formfactor=2
@@ -620,21 +609,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][495][Applets][499][Applets][513][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][495][Applets][499][Applets][514]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][495][Applets][499][Applets][514][Configuration]
-PreloadWeight=40
+PreloadWeight=47
 
 [Containments][495][Applets][499][Applets][515]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540

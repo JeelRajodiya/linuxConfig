@@ -127,6 +127,7 @@ alias rough='$EDITOR ~/Documents/notes/rough.md'
 alias notes='cd ~/Documents/notes && zed .'
 alias notes-path='cd ~/Documents/notes'
 alias general='$EDITOR ~/Documents/notes/general.md'
+alias bookmarks='$EDITOR ~/Documents/notes/bookmarks.md'
 
 # -----------------------------------------------------
 # MINECRAFT
