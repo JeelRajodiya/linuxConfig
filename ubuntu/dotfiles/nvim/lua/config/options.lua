@@ -29,3 +29,4 @@ o.relativenumber = true
 o.shell = "zsh"
 o.ignorecase = true
 o.smartcase = true
+o.clipboard = "unnamedplus"
