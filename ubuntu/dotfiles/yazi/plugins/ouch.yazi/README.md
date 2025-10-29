@@ -12,7 +12,7 @@
 
 ### Yazi package manager
 ```bash
-ya pkg add ndtoan96/ouch
+ya pack -a ndtoan96/ouch
 ```
 
 ### Git
@@ -43,12 +43,8 @@ prepend_previewers = [
 	{ mime = "application/x-bzip2",         run = "ouch" },
 	{ mime = "application/x-7z-compressed", run = "ouch" },
 	{ mime = "application/x-rar",           run = "ouch" },
-	{ mime = "application/vnd.rar",         run = "ouch" },
-	{ mime = "application/x-xz",            run = "ouch" },
+        { mime = "application/x-xz",            run = "ouch" },
 	{ mime = "application/xz",              run = "ouch" },
-	{ mime = "application/x-zstd",          run = "ouch" },
-	{ mime = "application/zstd",            run = "ouch" },
-	{ mime = "application/java-archive",    run = "ouch" },
 ]
 ```
 
@@ -60,7 +56,7 @@ If you want to change the icon or the style of text, you can modify the `peek` f
 For compession, add this to your `keymap.toml`:
 
 ```toml
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on = ["C"]
 run = "plugin ouch"
 desc = "Compress with ouch"
@@ -77,7 +73,7 @@ To decompress with `ouch`, configure the opener in `yazi.toml`.
 ```toml
 [opener]
 extract = [
-	{ run = 'ouch d -y %*', desc = "Extract here with ouch", for = "windows" },
+	{ run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
 	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
 ]
 ```

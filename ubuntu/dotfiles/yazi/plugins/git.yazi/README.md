@@ -1,5 +1,8 @@
 # git.yazi
 
+> [!NOTE]
+> Yazi v25.2.26 or later is required for this plugin to work.
+
 Show the status of Git file changes as linemode in the file list.
 
 https://github.com/user-attachments/assets/34976be9-a871-4ffe-9d5a-c4cdd0bf4576
@@ -7,7 +10,7 @@ https://github.com/user-attachments/assets/34976be9-a871-4ffe-9d5a-c4cdd0bf4576
 ## Installation
 
 ```sh
-ya pkg add yazi-rs/plugins:git
+ya pack -a yazi-rs/plugins:git
 ```
 
 ## Setup
@@ -33,9 +36,6 @@ run  = "git"
 ```
 
 ## Advanced
-
-> [!NOTE]  
-> The following configuration must be put before `require("git"):setup()`
 
 You can customize the [Style](https://yazi-rs.github.io/docs/plugins/layout#style) of the status sign with:
 

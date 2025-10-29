@@ -4,9 +4,9 @@ Plugin for [Yazi](https://github.com/sxyazi/yazi) to manage git repos with [lazy
 Make sure [lazygit](https://github.com/jesseduffield/lazygit) is installed and in your `PATH`.
 ## Installation
 
-### Using `ya pkg`
+### Using `ya pack`
 ```
- ya pkg add Lil-Dank/lazygit
+ya pack -a Lil-Dank/lazygit
 ```
 
 ### Manual
@@ -21,7 +21,7 @@ git clone https://github.com/Lil-Dank/lazygit.yazi.git %AppData%\yazi\config\plu
 ## Configuration
 add this to your **keymap.toml** file
 ```toml
-[[mgr.prepend_keymap]]
+[[manager.prepend_keymap]]
 on   = [ "g", "i" ]
 run  = "plugin lazygit"
 desc = "run lazygit"

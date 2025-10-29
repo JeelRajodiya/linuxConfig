@@ -1,4 +1,4 @@
---- @since 25.4.8
+--- @since 25.2.7
 
 -- For development
 --[[ local function notify(message) ]]
@@ -7,9 +7,7 @@
 
 local save = ya.sync(function(st, _cwd, output)
     st.output = output
-    -- Support for versions later than v25.5.31 (not yet a full release as of writing this comment)
-    local render = ui.render or ya.render
-    render()
+    ya.render()
 end)
 
 -- Helper function for accessing the `config_file` state variable
@@ -91,13 +89,19 @@ return {
             if st.cwd ~= cwd then
                 st.cwd = cwd
 
-                -- `ya.emit` as of 25.5.28
-                local emit = ya.emit or ya.manager_emit
-
-                emit("plugin", {
-                    st._id,
-                    ya.quote(tostring(cwd), true),
-                })
+                if ya.confirm then
+                    -- >= yazi 25.2.7
+                    ya.manager_emit("plugin", {
+                        st._id,
+                        ya.quote(tostring(cwd), true),
+                    })
+                else
+                    -- < yazi 25.2.7
+                    ya.manager_emit("plugin", {
+                        st._id,
+                        args = ya.quote(tostring(cwd), true),
+                    })
+                end
             end
         end
 
@@ -106,8 +110,12 @@ return {
         ps.sub("tab", callback)
     end,
 
-    entry = function(_, job)
-        local args = job.args
+    entry = function(_, job_or_args)
+        -- yazi 2024-11-29 changed the way arguments are passed to the plugin
+        -- entry point. They were moved inside {args = {...}}. If the user is using
+        -- a version before this change, they can use the old implementation.
+        -- https://github.com/sxyazi/yazi/pull/1966
+        local args = job_or_args.args or job_or_args
         local command = Command("starship")
             :arg("prompt")
             :stdin(Command.INHERIT)

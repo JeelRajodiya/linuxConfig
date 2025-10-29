@@ -6,13 +6,13 @@ Starship prompt plugin for [Yazi](https://github.com/sxyazi/yazi)
 
 ## Requirements
 
-- [Yazi](https://github.com/sxyazi/yazi) (v25.4.8+)
+- [Yazi](https://github.com/sxyazi/yazi)
 - [starship](https://github.com/starship/starship)
 
 ## Installation
 
 ```bash
-ya pkg add Rolv-Apneseth/starship
+ya pack -a Rolv-Apneseth/starship
 ```
 
 ### Manual
