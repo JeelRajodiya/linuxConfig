@@ -2,17 +2,15 @@ local M = {}
 
 function M:peek(job)
 	local child = Command("rich")
-		:args({
-			"-j",
-			"--left",
-			"--line-numbers",
-			"--force-terminal",
-			"--panel=rounded",
-			"--guides",
-			"--max-width",
-			tostring(job.area.w),
-			tostring(job.file.url),
-		})
+		:arg("-j")
+		:arg("--left")
+		:arg("--line-numbers")
+		:arg("--force-terminal")
+		:arg("--panel=rounded")
+		:arg("--guides")
+		:arg("--max-width")
+		:arg(tostring(job.area.w))
+		:arg(tostring(job.file.url))
 		:stdout(Command.PIPED)
 		:stderr(Command.PIPED)
 		:spawn()

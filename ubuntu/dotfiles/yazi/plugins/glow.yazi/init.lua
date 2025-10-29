@@ -2,13 +2,11 @@ local M = {}
 
 function M:peek()
 	local child = Command("glow")
-		:args({
-			"--style",
-			"dark",
-			"--width",
-			tostring(self.area.w),
-			tostring(self.file.url),
-		})
+		:arg("--style")
+		:arg("dark")
+		:arg("--width")
+		:arg(tostring(self.area.w))
+		:arg(tostring(self.file.url))
 		:env("CLICOLOR_FORCE", "1")
 		:stdout(Command.PIPED)
 		:stderr(Command.PIPED)

@@ -2,11 +2,9 @@ local M = {}
 
 function M:peek(job)
   local child = Command('mdcat')
-    :args({
-      '--columns',
-      tostring(job.area.w),
-      tostring(job.file.url),
-    })
+    :arg('--columns')
+    :arg(tostring(job.area.w))
+    :arg(tostring(job.file.url))
     :stdout(Command.PIPED)
     :stderr(Command.PIPED)
     :spawn()
