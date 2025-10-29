@@ -198,7 +198,7 @@ local function fetch(_, job)
 		:arg("-unormal")
 		:arg("--no-renames")
 		:arg("--ignored=matching")
-		:args(paths)
+		:arg(paths)
 		:stdout(Command.PIPED)
 		:output()
 	if not output then
