@@ -2,39 +2,59 @@
 
 Simple lualine-like status line for yazi.
 
-Read more about features and configuration [here](#features).
+![angly](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/angly.png)
+![preview-fullscreen](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/preview-fullscreen.png)
 
-> ⚠️ **Note**:
-> If you experience any issues after updating, please refer to the latest release notes. This repository is continuously synced with the upstream Yazi source code, which is actively maintained and frequently updated.
-
-![preview](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/preview.png)
+All supported features are listed [here](#features). More presets are available [here](#presets).
 
 ## Requirements
 
-- yazi version >= [25.4.8](https://github.com/sxyazi/yazi/releases/tag/v25.4.8)
+- yazi version >= [917e1f5](https://github.com/sxyazi/yazi/commit/917e1f54a10445f2e25147c4b81a3c77d8233632)
 - Font with symbol support. For example [Nerd Fonts](https://www.nerdfonts.com/).
+
+## Compatibility
+
+To keep the plugin up to date, there are two branches: `main` and `nightly`.
+The `main` branch follows major yazi releases, while `nightly` is linked to specific yazi commits or changes.
+
+This setup allows shipping stable versions on time, while giving early access to "cutting-edge" changes. See matrix below.
+
+<details close>
+<summary>Compatibility matrix</summary>
+
+|                                  yaziline                                  | yazi                                                                                      |
+| :------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------- |
+| [v2.5.2](https://github.com/llanosrocas/yaziline.yazi/releases/tag/v2.5.2) | [917e1f5](https://github.com/sxyazi/yazi/commit/917e1f54a10445f2e25147c4b81a3c77d8233632) |
+| [v2.5.1](https://github.com/llanosrocas/yaziline.yazi/releases/tag/v2.5.1) | [917e1f5](https://github.com/sxyazi/yazi/commit/917e1f54a10445f2e25147c4b81a3c77d8233632) |
+| [v2.5.0](https://github.com/llanosrocas/yaziline.yazi/releases/tag/v2.5.0) | [v25.5.28](https://github.com/sxyazi/yazi/releases/tag/v25.5.28)                          |
+| [v2.4.0](https://github.com/llanosrocas/yaziline.yazi/releases/tag/v2.4.0) | [v25.4.8](https://github.com/sxyazi/yazi/releases/tag/v25.4.8)                            |
+
+</details>
 
 ## Installation
 
+1. Using yazi package manager
+
 ```sh
-ya pack -a llanosrocas/yaziline
+ya pkg add llanosrocas/yaziline
 ```
 
-Or manually copy `init.lua` to the `~/.config/yazi/plugins/yaziline.yazi/init.lua`
+_Or manually copy `main.lua` to the `~/.config/yazi/plugins/yaziline.yazi/main.lua`_
 
-## Usage
-
-Add this to your `~/.config/yazi/init.lua`:
+2. Add this line to your `~/.config/yazi/init.lua`:
 
 ```lua
 require("yaziline"):setup()
 ```
 
-Optionally, configure line:
+## Configuration
+
+This is default config, if you want to see presets go to [this section](#presets).
 
 ```lua
 require("yaziline"):setup({
-  color = "#98c379", -- main theme color
+  color = "#98c379",
+  secondary_color = "#5A6078",
   default_files_color = "darkgray", -- color of the file counter when it's inactive
   selected_files_color = "white",
   yanked_files_color = "green",
@@ -53,79 +73,44 @@ require("yaziline"):setup({
 
   filename_max_length = 24, -- truncate when filename > 24
   filename_truncate_length = 6, -- leave 6 chars on both sides
-  filename_truncate_separator = "..." -- the separator of the truncated filename
+  filename_truncate_separator = "..."
 })
+```
+
+By default yaziline uses color values from your `theme.toml`:
+
+- mode and position font color: th.which.mask.bg
+- default_files_color: which.separator_style.fg
+- selected_files_color: mgr.count_selected.bg
+- yanked_files_color: mgr.count_copied.bg
+- cut_files_color: mgr.count_cut.bg
+
+```
+ MODE  size  long_file...name.md  S 0 Y 0
+|  |   |   |  |           |         | |   |
+|  |   |   |  |           |         | |   └─── yank_symbol
+|  |   |   |  |           |         | └─────── select_symbol
+|  |   |   |  |           |         └───────── separator_close_thin
+|  |   |   |  |           └─────────────────── filename_truncate_separator
+|  |   |   |  └─────────────────────────────── separator_close
+|  |   |   └────────────────────────────────── secondary_color
+|  |   └────────────────────────────────────── separator_close
+|  └────────────────────────────────────────── color
+└───────────────────────────────────────────── separator_head
 ```
 
 ## Features
 
-### Preconfigured separators
-
-Choose your style:
+### Presets
 
 - `angly`
-  ![angly](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/angly.png)
+  ![angly](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/angly.png)
 - `curvy`
-  ![curvy](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/curvy.png)
+  ![curvy](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/curvy.png)
 - `liney`
-  ![liney](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/liney.png)
+  ![liney](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/liney.png)
 - `empty`
-  ![empty](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/empty.png)
-
-### Separator customization
-
-You can provide your own symbols for separators combined with preconfigured separators. For example:
-
-```lua
-require("yaziline"):setup({
-  -- Optinal config
-  separator_style = "angly", -- preconfigured style
-  separator_open = "", -- instead of 
-  separator_close = "", -- instead of 
-  separator_open_thin = "", -- change to anything
-  separator_close_thin = "", -- change to anything
-  separator_head = "", -- to match the style
-  separator_tail = "" -- to match the style
-})
-```
-
-![empty](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/separator-combination.png)
-
-_You can find more symbols [here](https://www.nerdfonts.com/cheat-sheet)_
-
-### File actions icons
-
-You can provide your own symbols for `select` and `yank`. For example:
-
-```lua
-require("yaziline"):setup({
-  -- Optinal config
-  select_symbol = "", -- "S" by default
-  yank_symbol = "󰆐" -- "Y" by default
-})
-```
-
-![empty](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/file-actions.png)
-
-_You can find more symbols [here](https://www.nerdfonts.com/cheat-sheet)_
-
-### Colors and font weight
-
-By default yaziline uses color values from your `theme.toml` (or flavor) but you can set custom colors in the `init.lua`:
-
-```lua
-require("yaziline"):setup({
-  color = "#98c379",
-  default_files_color = "darkgray",
-  selected_files_color = "white",
-  yanked_files_color = "green",
-  cut_files_color = "red",
-})
-```
-
-For example, here is how my line looks like:
-
-![preview-2](https://github.com/llanosrocas/yaziline.yazi/blob/master/.github/images/preview-2.png)
+  ![empty](https://github.com/llanosrocas/yaziline.yazi/blob/main/.github/images/empty.png)
 
 ### Selected and Yanked Counter
 
@@ -137,9 +122,9 @@ Displays the truncated filename on the left, which is useful for smaller windows
 
 ```lua
 require("yaziline"):setup({
-  filename_max_length = 24, -- truncate when filename > 24
-  filename_truncate_length = 6, -- leave 6 chars on both sides
-  filename_truncate_separator = "..." -- the separator of the truncated filename
+  filename_max_length = 24,
+  filename_truncate_length = 6,
+  filename_truncate_separator = "..."
 })
 ```
 

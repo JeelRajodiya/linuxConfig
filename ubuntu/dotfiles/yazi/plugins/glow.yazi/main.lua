@@ -5,11 +5,13 @@ function M:peek(job)
 	local preview_width = 55
 
 	local child = Command("glow")
-		:arg("--style")
-		:arg("dark")
-		:arg("--width")
-		:arg(tostring(preview_width)) -- Use fixed width instead of job.area.w
-		:arg(tostring(job.file.url))
+		:args({
+			"--style",
+			"dark",
+			"--width",
+			tostring(preview_width),  -- Use fixed width instead of job.area.w
+			tostring(job.file.url),
+		})
 		:env("CLICOLOR_FORCE", "1")
 		:stdout(Command.PIPED)
 		:stderr(Command.PIPED)
