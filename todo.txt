@@ -1,13 +1,7 @@
-- auto download of packages and softwares
-- applying the system settings which I currently have
-- auto download the widgets I use
-- applying the desktop settings which I currently have
 - setup auto download of wallpapers 
 - gdrive and onedrive auto mount 
 - setup auto download of fonts I use
-- download the icon pack, create symbolic links with the chrome apps
+- organize the folder structure
 
-
-- download better blur 
 
 
