@@ -73,3 +73,6 @@ export PATH="$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin"
 # Hive Path
 export HIVE_HOME="$HOME/apache-hive-2.1.0-bin"
 export PATH="$PATH:$HIVE_HOME/bin"
+
+# ripgrep config path 
+export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"

@@ -8,6 +8,7 @@ declare -A SYMLINKS=(
     [.profile]="$HOME"
     [.tmux]="$HOME"
     [.zshrc]="$HOME"
+    [.ripgreprc]="$HOME/.config"
     [kitty]="$HOME/.config"
     [nvim]="$HOME/.config"
     [starship]="$HOME/.config"
@@ -28,6 +29,7 @@ declare -A SYMLINKS=(
     [kglobalshortcutsrc]="$HOME/.config"
     [kdeglobals]="$HOME/.config"
     [kxkbrc]="$HOME/.config"
+
 
 )
 
