@@ -19,6 +19,10 @@ NoiseStrength=14
 [Effect-diminactive]
 Strength=70
 
+[Effect-overview]
+BorderActivate=9
+GridBorderActivate=7
+
 [Effect-slide]
 HorizontalGap=10
 VerticalGap=10
@@ -60,6 +64,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][070812e6-98e9-402c-bd86-8366ee8bd526][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][11ff1404-e281-44c8-a380-b4beebfb1172][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][139971b9-a1d5-4074-9ef3-241d12c12d74][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -75,6 +82,9 @@ tiles={"layoutDirection":"floating","tiles":[{"height":0.7898148148148147,"width
 [Tiling][17e1ecfd-156c-47d6-a825-9828f5e034ca][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Tiling][1b077a14-d304-4141-bf8f-4d4b1923d6dd][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][201b7d5a-5611-4eb2-8fd6-bd72a459f4c1][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
@@ -82,6 +92,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][27991ad9-db17-4aee-bc5b-37a9298db162][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][2a39fa38-5866-4bdb-9de2-8f48b5af76f1][cf251a7e-5e89-43d8-a522-8b03f08c02fa]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
 [Tiling][3b69a7df-b9aa-47aa-9b12-45226144c98d][cf251a7e-5e89-43d8-a522-8b03f08c02fa]

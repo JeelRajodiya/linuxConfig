@@ -21,7 +21,7 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][397][ConfigDialog]
-DialogHeight=762
+DialogHeight=885
 DialogWidth=1061
 
 [Containments][397][General]
@@ -31,7 +31,7 @@ positions={"1920x1080":["1","10","desktop:/configs","0","0"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
-Image=file:///home/zeel/Pictures/wallpapers/wallpaper/src/train5.png
+Image=file:///home/zeel/Pictures/wallpapers/wallpaper/src/train4.png
 SlidePaths=/usr/share/wallpapers/
 
 [Containments][397][Wallpaper][org.kde.potd][General]
@@ -609,21 +609,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][495][Applets][499][Applets][513][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][495][Applets][499][Applets][514]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][495][Applets][499][Applets][514][Configuration]
-PreloadWeight=44
+PreloadWeight=59
 
 [Containments][495][Applets][499][Applets][515]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=62
+PreloadWeight=59
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540
