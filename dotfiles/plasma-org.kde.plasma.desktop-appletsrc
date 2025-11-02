@@ -27,7 +27,7 @@ DialogWidth=1061
 [Containments][397][General]
 arrangement=1
 iconSize=2
-positions={"1920x1080":["1","10","desktop:/configs","0","0"]}
+positions={"1920x1080":["2","10","desktop:/cursor.desktop","0","2","desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop","0","1","desktop:/dev.zed.Zed.desktop","1","2","desktop:/chrome-mogfhadnmglffdijfhmldbphkpnhnoem-Default.desktop","0","5","desktop:/configs","0","0","desktop:/chrome-okhfeehhillipaleckndoboggdkcebmo-Default.desktop","0","4","desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop","0","3"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
@@ -138,7 +138,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][398][Applets][403][Applets][412][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][398][Applets][403][Applets][413]
 immutability=1
@@ -169,7 +169,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][398][Applets][403][Applets][450][Configuration]
-PreloadWeight=7
+PreloadWeight=39
 
 [Containments][398][Applets][403][Applets][451][Configuration]
 PreloadWeight=42
@@ -609,21 +609,21 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][495][Applets][499][Applets][513][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 
 [Containments][495][Applets][499][Applets][514]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][495][Applets][499][Applets][514][Configuration]
-PreloadWeight=59
+PreloadWeight=48
 
 [Containments][495][Applets][499][Applets][515]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][495][Applets][499][Applets][515][Configuration]
-PreloadWeight=59
+PreloadWeight=61
 
 [Containments][495][Applets][499][ConfigDialog]
 DialogHeight=540
@@ -632,6 +632,7 @@ DialogWidth=720
 [Containments][495][Applets][499][General]
 disabledStatusNotifiers=KRDP Server_krdpserver,Discover Notifier_org.kde.DiscoverNotifier,vlc,KMix
 extraItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
+hiddenItems=chrome_status_icon_1
 knownItems=org.kde.plasma.pass,org.kde.plasma.notifications,org.kde.kdeconnect,org.kde.plasma.battery,org.kde.plasma.bluetooth,org.kde.plasma.clipboard,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.kupapplet,org.kde.plasma.brightness,org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.vault,org.kde.kscreen,org.kde.plasma.volume,org.kde.plasma.mediacontroller
 shownItems=org.kde.plasma.bluetooth,org.kde.plasma.brightness,org.kde.plasma.networkmanagement,org.kde.plasma.battery
 
@@ -679,4 +680,4 @@ spacingVertical=0
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,fbfefef1-7f7c-4a29-9e16-540b84b02987,1,desktop:/configs
-screenMapping=desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21
+screenMapping=desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/cursor.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-mogfhadnmglffdijfhmldbphkpnhnoem-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-okhfeehhillipaleckndoboggdkcebmo-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/dev.zed.Zed.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21
