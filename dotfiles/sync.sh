@@ -6,7 +6,6 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 declare -A SYMLINKS=(
     [.bashrc]="$HOME"
     [.profile]="$HOME"
-    [.tmux]="$HOME"
     [.zshrc]="$HOME"
     [.ripgreprc]="$HOME/.config"
     [kitty]="$HOME/.config"
