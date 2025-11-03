@@ -1,7 +1,6 @@
 - setup auto download of wallpapers 
 - gdrive and onedrive auto mount 
 - setup auto download of fonts I use
-- organize the folder structure
 
 
 
