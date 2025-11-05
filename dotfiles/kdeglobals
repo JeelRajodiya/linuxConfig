@@ -118,7 +118,7 @@ widgetStyle=Breeze
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
 Show Full Path=false
 Show Inline Previews=true
