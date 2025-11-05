@@ -44,3 +44,19 @@ map("v", ">", ">gv", { desc = "Indent right" })
 -- Add go tags:
 map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Add json struct tags" })
 map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct tags" })
+
+-- Fix Home/End keys
+map("n", "<Home>", "0", opts)
+map("n", "<End>", "$", opts)
+map("i", "<Home>", "<C-o>0", opts)
+map("i", "<End>", "<C-o>$", opts)
+map("c", "<Home>", "<C-b>", opts)
+map("c", "<End>", "<C-e>", opts)
+
+-- Keymaps for <Find> and <Select> which might be sent by the terminal
+map("i", "<Find>", "<C-o>0", opts)
+map("i", "<Select>", "<C-o>$", opts)
+map("n", "<Find>", "0", opts)
+map("n", "<Select>", "$", opts)
+map("c", "<Find>", "<C-b>", opts)
+map("c", "<Select>", "<C-e>", opts)
