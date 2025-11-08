@@ -10,32 +10,33 @@ This project contains personal configuration files and scripts for setting up a 
   - `install.sh`: Main installation script.
   - `install_plasma_plugins.sh`: Script to install plugins for the Plasma desktop environment.
 
-- **Configuration Directories**:
+- **Dotfiles (`dotfiles/`)**: A collection of dotfiles for various applications and shells, including configurations for:
 
-  - `config_fonts/`: Configuration for system fonts.
-  - `config_gnome/`: Settings specific to the GNOME desktop environment.
-  - `config_kde/`: Settings specific to the KDE Plasma desktop environment.
-  - `dotfiles/`: A collection of dotfiles for various applications and shells, including configurations for:
-    - KDE Plasma (`kwinrc`, `plasmashellrc`, etc.)
-    - Kitty terminal (`kitty.conf`)
-    - Neovim (`nvim/`)
-    - Starship prompt (`starship.toml`)
-    - Fastfetch
-    - Yazi file manager
-    - Shells (`.bashrc`, `.zshrc`)
+  - KDE Plasma (`kdeglobals`, `kwinrc`, `plasmashellrc`, etc.)
+  - Fastfetch
+  - fd (find alternative)
+  - Kitty terminal (`kitty.conf`)
+  - Neovim (`nvim/`)
+  - Plasma (`plasma/`)
+  - Starship prompt (`starship.toml`)
+  - Television (`television/`)
+  - Tmux (`tmux/`)
+  - Yazi file manager
 
-- **Scripts**:
+- **Setup Scripts (`setupScripts/`)**: Scripts for system setup and customization, such as:
 
-  - `scripts/`: Miscellaneous helper scripts, including:
-    - Scripts for managing battery limits.
-  - `setupScripts/`: Scripts for system setup and customization, such as:
-    - Configuring GRUB (`configGrub/`)
-    - Customizing themes (`customizeTheme/`)
-    - Setting up fingerprint authentication (`fingerprint/`)
-    - Configuring the Plasma desktop environment (`plasma/`)
-    - Setting up Docker (`set-docker.sh`)
+  - `keys.sh`: For setting up GPG and SSH keys.
+  - `set-docker.sh`: For setting up Docker.
+  - `config_fonts/`: For configuring system fonts.
+  - `configGrub/`: For configuring GRUB.
+  - `fingerprint/`: For setting up fingerprint authentication.
+  - `plasma/`: For configuring the Plasma desktop environment.
+  - `serviceScripts/`: For setting up systemd services.
+
+- **Scripts (`dotfiles/scripts`)**:
+
+  - `auto_qalc.sh`: Script for automatic calculations using `qalc`.
+  - `cycle-power-mode.sh`: Script for cycling through power profiles.
 
 - **Package Management**:
-
-  - `packages/`: Scripts and desktop files for specific applications.
   - `manually_installed_packages.txt`: A list of packages that need to be installed manually.
