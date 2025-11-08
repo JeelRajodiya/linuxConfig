@@ -2,7 +2,7 @@
 # 🧠 TMUX CHEAT SHEET
 #####################
 
-Prefix: Ctrl-A
+Prefix: Ctrl-Space
 
 🪟 Window Management
   ^C        New window (current dir)
@@ -39,7 +39,7 @@ Prefix: Ctrl-A
   l / ^L    Refresh client
 
 🔍 Copy / Selection
-  [Mouse]   Enter copy mode
+  [Mouse], `[`   Enter copy mode
   v         Start selection (copy-mode)
   K         Clear screen (sends 'clear')
 
