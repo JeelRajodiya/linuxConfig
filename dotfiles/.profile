@@ -51,6 +51,7 @@ alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias ml4w='~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage'
 alias copy='xclip -selection clipboard'
 alias bat='batcat --theme=base16'
+alias fd='fdfind --hidden'
 alias update_all='sudo apt update && sudo apt full-upgrade'
 
 alias source_z='source ~/.zshrc'
