@@ -76,3 +76,8 @@ export PATH="$PATH:$HIVE_HOME/bin"
 
 # ripgrep config path 
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
+
+# zoxide initialization, use zoxide as cd alias, and the --hook prompt will make zoxide record the directory
+# every time a command is run in that directory. Meaning, the more I run commands in a directory, the higher the
+# rank of that directory in zoxide's database.
+eval "$(zoxide init zsh --cmd cd --hook prompt)"

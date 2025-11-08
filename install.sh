@@ -83,6 +83,11 @@ export PATH=$PATH:/usr/local/go/bin
 curl -fsSL https://alexpasmantier.github.io/television/install.sh | bash
 
 # ----------------------------------------------------
+# Install zoxide
+# ----------------------------------------------------
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# ----------------------------------------------------
 # Install yazi and dependencies
 # ----------------------------------------------------
 apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
