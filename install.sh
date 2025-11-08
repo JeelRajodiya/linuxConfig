@@ -96,6 +96,15 @@ sudo cp ./packages/yazi-x86_64-unknown-linux-gnu/yazi /usr/local/bin/
 sudo cp ./packages/yazi-x86_64-unknown-linux-gnu/ya /usr/local/bin/
 
 # ----------------------------------------------------
+# Install Kitty
+# ----------------------------------------------------
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+mkdir -p ~/.local/bin
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+# ----------------------------------------------------
+
+# ----------------------------------------------------
 # Install Nerd Fonts
 # ----------------------------------------------------
 echo "Please install Nerd Fonts manually."
