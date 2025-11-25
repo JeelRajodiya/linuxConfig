@@ -74,7 +74,7 @@ export PATH="$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin"
 export HIVE_HOME="$HOME/apache-hive-2.1.0-bin"
 export PATH="$PATH:$HIVE_HOME/bin"
 
-# ripgrep config path 
+# ripgrep config path
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 
 # zoxide initialization, use zoxide as cd alias, and the --hook prompt will make zoxide record the directory
@@ -86,3 +86,4 @@ eval "$(zoxide init zsh --cmd cd --hook prompt)"
 # zsh specific aliases and functions
 
 alias please='sudo $(fc -ln -1)'
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
