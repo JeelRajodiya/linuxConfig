@@ -27,7 +27,7 @@ DialogWidth=1912
 [Containments][397][General]
 arrangement=1
 iconSize=2
-positions={"1920x1080":["2","10","desktop:/antigravity.desktop","1","3","desktop:/configs","0","0","desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop","0","1","desktop:/cursor.desktop","0","2","desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop","0","3","desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop","1","0","desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop","1","1","desktop:/dev.zed.Zed.desktop","1","2"]}
+positions={"1920x1080":["2","10","desktop:/antigravity.desktop","1","3","desktop:/configs","0","0","desktop:/cursor.desktop","0","2","desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop","0","1","desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop","0","3","desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop","1","0","desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop","1","1","desktop:/dev.zed.Zed.desktop","1","2"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
@@ -198,7 +198,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][398][Applets][403][Applets][542][Configuration]
-PreloadWeight=75
+PreloadWeight=95
 
 [Containments][398][Applets][403][Applets][543]
 immutability=1
@@ -339,7 +339,7 @@ plugin=org.kde.plasma.systemmonitor.cpu
 
 [Containments][438][Applets][440][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=65
+PreloadWeight=70
 popupHeight=400
 popupWidth=560
 
