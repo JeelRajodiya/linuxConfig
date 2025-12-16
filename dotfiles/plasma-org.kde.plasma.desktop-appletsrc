@@ -27,7 +27,7 @@ DialogWidth=1912
 [Containments][397][General]
 arrangement=1
 iconSize=2
-positions={"1920x1080":["2","10","desktop:/antigravity.desktop","1","3","desktop:/configs","0","0","desktop:/cursor.desktop","0","2","desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop","0","1","desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop","0","3","desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop","1","0","desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop","1","1","desktop:/dev.zed.Zed.desktop","1","2"]}
+positions={"1920x1080":["2","10","desktop:/chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop","0","5","desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop","1","1","desktop:/antigravity.desktop","1","3","desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop","0","1","desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop","0","3","desktop:/dev.zed.Zed.desktop","1","2","desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop","0","4","desktop:/configs","0","0","desktop:/cursor.desktop","0","2"]}
 sortMode=-1
 
 [Containments][397][Wallpaper][org.kde.image][General]
@@ -69,7 +69,7 @@ DialogWidth=720
 
 [Containments][398][Applets][400][Configuration][General]
 indicateAudioStreams=false
-launchers=[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:org.kde.dolphin.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:google-chrome.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:kitty.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:code.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-ijpicoikldgchoeaibeajagidlgmbgpo-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Profile_1.desktop,applications:chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop
+launchers=[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:org.kde.dolphin.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:google-chrome.desktop,applications:brave-browser.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:kitty.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-cinhimbnkkaeohfgghhklpknlkffjgod-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:code.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-gdfaincndogidkdcdkhapmbffkckdkhn-Default.desktop,[f2442cd4-1f5c-448e-a7ea-0328c453ae21]\napplications:chrome-ijpicoikldgchoeaibeajagidlgmbgpo-Default.desktop,applications:chrome-hnpfjngllnobngcgfapefoaidbinmjnm-Default.desktop,applications:chrome-fmgjjmmmlfnkbppncabfkddbjimcfncm-Profile_2.desktop
 wheelEnabled=AllTask
 
 [Containments][398][Applets][401]
@@ -99,6 +99,9 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.pass
 
+[Containments][398][Applets][403][Applets][404][Configuration]
+PreloadWeight=55
+
 [Containments][398][Applets][403][Applets][405]
 immutability=1
 plugin=org.kde.plasma.notifications
@@ -109,6 +112,9 @@ PreloadWeight=100
 [Containments][398][Applets][403][Applets][406]
 immutability=1
 plugin=org.kde.kdeconnect
+
+[Containments][398][Applets][403][Applets][406][Configuration]
+PreloadWeight=55
 
 [Containments][398][Applets][403][Applets][407]
 immutability=1
@@ -138,14 +144,14 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][398][Applets][403][Applets][412][Configuration]
-PreloadWeight=75
+PreloadWeight=100
 
 [Containments][398][Applets][403][Applets][413]
 immutability=1
 plugin=org.kde.plasma.vault
 
 [Containments][398][Applets][403][Applets][413][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][398][Applets][403][Applets][414]
 immutability=1
@@ -169,7 +175,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][398][Applets][403][Applets][450][Configuration]
-PreloadWeight=10
+PreloadWeight=5
 
 [Containments][398][Applets][403][Applets][451][Configuration]
 PreloadWeight=42
@@ -188,7 +194,7 @@ immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][398][Applets][403][Applets][541][Configuration]
-PreloadWeight=90
+PreloadWeight=100
 
 [Containments][398][Applets][403][Applets][541][Configuration][General]
 showPercentage=true
@@ -198,21 +204,21 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][398][Applets][403][Applets][542][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][398][Applets][403][Applets][543]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][398][Applets][403][Applets][543][Configuration]
-PreloadWeight=15
+PreloadWeight=2
 
 [Containments][398][Applets][403][Applets][544]
 immutability=1
 plugin=org.kde.plasma.brightness
 
 [Containments][398][Applets][403][Applets][544][Configuration]
-PreloadWeight=55
+PreloadWeight=100
 
 [Containments][398][Applets][403][ConfigDialog]
 DialogHeight=540
@@ -280,7 +286,7 @@ plugin=org.kde.plasma.systemmonitor
 
 [Containments][438][Applets][439][Configuration]
 CurrentPreset=org.kde.plasma.systemmonitor
-PreloadWeight=85
+PreloadWeight=90
 popupHeight=400
 popupWidth=560
 
@@ -528,4 +534,4 @@ spacingVertical=0
 
 [ScreenMapping]
 itemsOnDisabledScreens=0,fbfefef1-7f7c-4a29-9e16-540b84b02987,1,desktop:/configs
-screenMapping=desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/antigravity.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/dev.zed.Zed.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/cursor.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21
+screenMapping=desktop:/cursor.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-dnfpoenibinnbbckgbhendmlljoobcfg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-loaodefffdioiiebjfdpfmfoghbcjhbl-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-eilembjdkfgodjkcjnpgpaenohkicgjd-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/dev.zed.Zed.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-cadlkienfkclaiaibeoongdcgmdikeeg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/antigravity.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/configs,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21,desktop:/chrome-ajamoobebmdhjjmdelngengkpklcimmg-Default.desktop,0,f2442cd4-1f5c-448e-a7ea-0328c453ae21

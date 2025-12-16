@@ -87,3 +87,6 @@ eval "$(zoxide init zsh --cmd cd --hook prompt)"
 
 alias please='sudo $(fc -ln -1)'
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+
+# bun completions
+[ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"

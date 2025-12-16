@@ -18,13 +18,22 @@ _k_friendly_name=YouTube Music
 [com.google.Chrome]
 5023E282F336BB242CDE9D09F845FD85-enter-picker-mode=none,none,Create a custom filter
 5023E282F336BB242CDE9D09F845FD85-enter-zapper-mode=none,none,Remove an element
+53F347EE29F151F1F49FD612A5030647-next-song=none,none,Next Song
+53F347EE29F151F1F49FD612A5030647-previous-song=none,none,Previous Song
+53F347EE29F151F1F49FD612A5030647-toggle-playback=none,none,Toggle Playback
+5B6EE805D213D855210EF7204BCDF8A8-toggle=none,none,Toggle On/Off
 AF6B8A43C271A32E715206E2F3F7A172-next-song=none,none,Next Song
 AF6B8A43C271A32E715206E2F3F7A172-previous-song=none,none,Previous Song
 AF6B8A43C271A32E715206E2F3F7A172-toggle-playback=none,none,Toggle Playback
+C6AB7BF7CA6B2ECA3B435F646E56B546-enter-picker-mode=none,none,Create a custom filter
+C6AB7BF7CA6B2ECA3B435F646E56B546-enter-zapper-mode=none,none,Remove an element
 C98F01BC855FB14F06C41DA299E9F4B7-toggle=none,none,Toggle On/Off
 CDF88136D6CD4EFF02C2D974DAFAF775-addSite=none,none,Toggle current site
 CDF88136D6CD4EFF02C2D974DAFAF775-switchEngine=none,none,Theme generation mode
 CDF88136D6CD4EFF02C2D974DAFAF775-toggle=none,none,Toggle extension
+FD195A7FFF996ECED5DAD683D9D97A4D-addSite=none,none,Toggle current site
+FD195A7FFF996ECED5DAD683D9D97A4D-switchEngine=none,none,Theme generation mode
+FD195A7FFF996ECED5DAD683D9D97A4D-toggle=none,none,Toggle extension
 _k_friendly_name=Google Chrome
 
 [google-chrome]
@@ -121,6 +130,7 @@ MoveZoomUp=none,none,Move Zoomed Area Upwards
 Overview=Meta+W,Meta+W,Toggle Overview
 Setup Window Shortcut=none,,Setup Window Shortcut
 Show Desktop=Meta+D,Meta+D,Peek at Desktop
+Suspend Compositing=Alt+Shift+F12,Alt+Shift+F12,Suspend Compositing
 Switch One Desktop Down=Meta+Ctrl+Down,Meta+Ctrl+Down,Switch One Desktop Down
 Switch One Desktop Up=Meta+Ctrl+Up,Meta+Ctrl+Up,Switch One Desktop Up
 Switch One Desktop to the Left=Meta+Ctrl+Left,Meta+Ctrl+Left,Switch One Desktop to the Left
@@ -270,6 +280,18 @@ playmedia=none,,Play media playback
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
+
+[org.chromium.Chromium]
+184DF86E9F7321AD7AA2BE2FE25AC0DB-next-song=none,none,Next Song
+184DF86E9F7321AD7AA2BE2FE25AC0DB-previous-song=none,none,Previous Song
+184DF86E9F7321AD7AA2BE2FE25AC0DB-toggle-playback=none,none,Toggle Playback
+1CEB5C8FDDB3BD7A2508990E46886E8B-toggle=none,none,Toggle On/Off
+D4141661D96441DF3F7613322717EAB6-addSite=none,none,Toggle current site
+D4141661D96441DF3F7613322717EAB6-switchEngine=none,none,Theme generation mode
+D4141661D96441DF3F7613322717EAB6-toggle=none,none,Toggle extension
+FD446CD86899FE110B0BE8D571948FCB-enter-picker-mode=none,none,Create a custom filter
+FD446CD86899FE110B0BE8D571948FCB-enter-zapper-mode=none,none,Remove an element
+_k_friendly_name=org.chromium.Chromium
 
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
