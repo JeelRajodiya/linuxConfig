@@ -1,0 +1,12 @@
+[Unit]
+Description=KDE Plasma Theme Switcher (Day/Night)
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/theme-switcher.sh
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
+
+[Install]
+WantedBy=default.target

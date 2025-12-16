@@ -1,0 +1,16 @@
+[Unit]
+Description=Run Theme Switcher Every Hour
+Requires=theme-switcher.service
+
+[Timer]
+# Run on boot after 1 minute
+OnBootSec=1min
+# Then run every hour
+OnUnitActiveSec=1h
+# Also run at specific times to catch transitions
+OnCalendar=*-*-* 06:00:00
+OnCalendar=*-*-* 18:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
