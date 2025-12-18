@@ -123,8 +123,8 @@ if [ -d "$USER_SERVICE_DIR" ] && [ "$(ls -A "$USER_SERVICE_DIR" 2>/dev/null)" ];
                 echo "→ Enabling and starting $unit_name..."
                 systemctl --user enable --now "$unit_name"
             else
-                echo "→ Enabling $unit_name (timer will trigger it)..."
-                systemctl --user enable "$unit_name"
+                echo "→ Skipping enable for $unit_name (timer will trigger it)..."
+                # Do not enable the service; let the timer start it
             fi
         fi
     done

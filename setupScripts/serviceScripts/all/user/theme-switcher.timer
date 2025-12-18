@@ -3,8 +3,8 @@ Description=Run Theme Switcher Every Hour
 Requires=theme-switcher.service
 
 [Timer]
-# Run on boot after 1 minute
-OnBootSec=1min
+# Run on login after 1 minute
+OnStartupSec=1min
 # Then run every hour
 OnUnitActiveSec=1h
 # Also run at specific times to catch transitions
