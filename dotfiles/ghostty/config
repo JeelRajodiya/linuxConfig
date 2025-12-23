@@ -4,3 +4,31 @@ keybind = global:ctrl+enter=new_window
 theme = One Half Dark
 cursor-style = block
 shell-integration-features = no-cursor
+
+# Horizontal padding (left and right)
+
+window-padding-x = 10
+
+# Vertical padding (top and bottom)
+
+window-padding-y = 10
+
+# Optional: Balance padding ensures the content area remains
+
+# perfectly centered even if font sizes change.
+
+window-padding-balance = true
+
+# Sets transparency level (0.0 is invisible, 1.0 is solid).
+
+# 0.8 to 0.9 is usually a good readable "glass" look.
+
+background-opacity = 0.85
+
+# Optional: Adds a blur effect (frosted glass) behind the text.
+
+# Useful to keep text readable against busy wallpapers.
+
+# Note: This relies on your Linux compositor (KWin on KDE) supporting blur.
+
+background-blur-radius = 20
