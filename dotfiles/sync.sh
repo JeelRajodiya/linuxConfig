@@ -1,42 +1,19 @@
 #!/bin/bash
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
-# Map of items to destinations
-declare -A SYMLINKS=(
-    [.bashrc]="$HOME"
-    [.profile]="$HOME"
-    [.zshrc]="$HOME"
-    [.ripgreprc]="$HOME/.config"
-    [kitty]="$HOME/.config"
-    [nvim]="$HOME/.config"
-    [starship]="$HOME/.config"
-    [television]="$HOME/.config"
-    [tmux]="$HOME/.config"
-    [yazi]="$HOME/.config"
-    [work]="$HOME/.config"
-    [scripts]="$HOME/.config"
-    [fastfetch]="$HOME/.config"
-    # apply plasma settings
-    [plasma-org.kde.plasma.desktop-appletsrc]="$HOME/.config"
-    [plasmashellrc]="$HOME/.config"
-    [powerdevilrc]="$HOME/.config"
-    [plasmaparc]="$HOME/.config"
-    [kwinrc]="$HOME/.config"
-    [plasma]="$HOME/.local/share"
-    [spectaclerc]="$HOME/.config"
-    [kglobalshortcutsrc]="$HOME/.config"
-    [kdeglobals]="$HOME/.config"
-    [kxkbrc]="$HOME/.config"
-
-
-)
+OS="$(uname)"
 
 link_item() {
     local item="$1"
-    local dest="${SYMLINKS[$item]}"
+    local dest="$2"
     local target="$dest/$item"
     local source="$DOTFILES_DIR/$item"
+
+    # Check if source exists before linking
+    if [ ! -e "$source" ]; then
+        echo "Warning: Source $source does not exist. Skipping."
+        return
+    fi
 
     [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
     mkdir -p "$dest"
@@ -44,8 +21,34 @@ link_item() {
     echo "Linked $source -> $target"
 }
 
-for item in "${!SYMLINKS[@]}"; do
-    link_item "$item"
-done
+# Common configs
+link_item ".bashrc" "$HOME"
+link_item ".profile" "$HOME"
+link_item ".zshrc" "$HOME"
+link_item ".ripgreprc" "$HOME/.config"
+link_item "kitty" "$HOME/.config"
+link_item "nvim" "$HOME/.config"
+link_item "starship" "$HOME/.config"
+link_item "television" "$HOME/.config"
+link_item "tmux" "$HOME/.config"
+link_item "yazi" "$HOME/.config"
+link_item "work" "$HOME/.config"
+link_item "scripts" "$HOME/.config"
+link_item "fastfetch" "$HOME/.config"
+link_item "ghostty" "$HOME/.config"
+
+# Linux/KDE specific configs
+if [ "$OS" = "Linux" ]; then
+    link_item "plasma-org.kde.plasma.desktop-appletsrc" "$HOME/.config"
+    link_item "plasmashellrc" "$HOME/.config"
+    link_item "powerdevilrc" "$HOME/.config"
+    link_item "plasmaparc" "$HOME/.config"
+    link_item "kwinrc" "$HOME/.config"
+    link_item "plasma" "$HOME/.local/share"
+    link_item "spectaclerc" "$HOME/.config"
+    link_item "kglobalshortcutsrc" "$HOME/.config"
+    link_item "kdeglobals" "$HOME/.config"
+    link_item "kxkbrc" "$HOME/.config"
+fi
 
 echo "All symlinks created."
