@@ -60,7 +60,6 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # Java Path
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 
 # Hadoop Path
@@ -88,8 +87,6 @@ eval "$(zoxide init zsh --cmd cd --hook prompt)"
 # zsh specific aliases and functions
 
 alias please='sudo $(fc -ln -1)'
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-
 # bun completions
 [ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
 # add vscode to path
