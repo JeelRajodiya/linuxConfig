@@ -91,3 +91,5 @@ alias please='sudo $(fc -ln -1)'
 [ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
 # add vscode to path
 export PATH="/usr/local/bin:$PATH"
+# Added by Antigravity
+export PATH="/Users/zeelrajodiya/.antigravity/antigravity/bin:$PATH"
