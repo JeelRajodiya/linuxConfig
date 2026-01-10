@@ -93,3 +93,5 @@ alias please='sudo $(fc -ln -1)'
 export PATH="/usr/local/bin:$PATH"
 # Added by Antigravity
 export PATH="/Users/zeelrajodiya/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+alias idea='open -na "IntelliJ IDEA.app" --args "$@"'

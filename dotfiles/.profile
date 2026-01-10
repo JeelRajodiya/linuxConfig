@@ -124,11 +124,11 @@ alias confn='$EDITOR ~/.config/nvim'
 # EDIT NOTES
 # -----------------------------------------------------
 
-alias rough='$EDITOR ~/Documents/notes/rough.md'
-alias notes='cd ~/Documents/notes && zed .'
-alias notes-path='cd ~/Documents/notes'
-alias general='$EDITOR ~/Documents/notes/general.md'
-alias bookmarks='$EDITOR ~/Documents/notes/bookmarks.md'
+alias rough='$EDITOR ~/OneDrive/OneDrive\ Documents/notes/rough.md'
+alias notes='cd ~/OneDrive/OneDrive\ Documents/notes && zed .'
+alias notes-path='cd ~/OneDrive/OneDrive\ Documents/notes'
+alias general='$EDITOR ~/OneDrive/OneDrive\ Documents/general.md'
+alias bookmarks='$EDITOR ~/OneDrive/OneDrive\ Documentsbookmarks.md'
 
 # -----------------------------------------------------
 # MINECRAFT
