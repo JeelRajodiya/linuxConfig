@@ -1,0 +1,8 @@
+[include]
+	path = ~/.gitconfig-local
+
+[includeIf "gitdir:~/Projects/e6data/"]
+	path = ~/.gitconfig-work
+
+[includeIf "hasconfig:remote.*.url:git@github.com-personal:*/*"]
+	path = ~/.gitconfig-personal

@@ -16,7 +16,7 @@ link_item() {
     fi
 
     [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
-    mkdir -p "$dest"
+    mkdir -p "$(dirname "$target")"
     ln -s "$source" "$target"
     echo "Linked $source -> $target"
 }
@@ -25,6 +25,8 @@ link_item() {
 link_item ".bashrc" "$HOME"
 link_item ".profile" "$HOME"
 link_item ".zshrc" "$HOME"
+link_item ".gitconfig" "$HOME"
+link_item ".ssh/config" "$HOME"
 link_item ".ripgreprc" "$HOME/.config"
 link_item "kitty" "$HOME/.config"
 link_item "nvim" "$HOME/.config"
