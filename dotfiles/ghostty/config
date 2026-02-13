@@ -32,3 +32,4 @@ background-opacity = 0.85
 # Note: This relies on your Linux compositor (KWin on KDE) supporting blur.
 
 background-blur-radius = 20
+shell-integration-features = ssh-terminfo,ssh-env
