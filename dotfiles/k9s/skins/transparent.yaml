@@ -1,0 +1,44 @@
+# Complete transparent skin for k9s v0.50+
+# Sets ALL background color fields to 'default' (terminal native background)
+k9s:
+  body:
+    bgColor: default
+  prompt:
+    bgColor: default
+  help:
+    bgColor: default
+  info:
+    sectionColor: default
+  dialog:
+    bgColor: default
+    labelFgColor: default
+    fieldFgColor: default
+  frame:
+    crumbs:
+      bgColor: default
+    title:
+      bgColor: default
+      counterColor: default
+    menu:
+      fgColor: default
+  views:
+    charts:
+      bgColor: default
+      dialBgColor: default
+      chartBgColor: default
+    table:
+      bgColor: default
+      header:
+        fgColor: default
+        bgColor: default
+    xray:
+      bgColor: default
+    logs:
+      bgColor: default
+      indicator:
+        bgColor: default
+        toggleOnColor: default
+        toggleOffColor: default
+    yaml:
+      colonColor: default
+      valueColor: default

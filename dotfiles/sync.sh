@@ -38,6 +38,12 @@ link_item "work" "$HOME/.config"
 link_item "scripts" "$HOME/.config"
 link_item "fastfetch" "$HOME/.config"
 link_item "ghostty" "$HOME/.config"
+# k9s: only sync skins (k9s writes runtime files to its config dir)
+if [ "$OS" = "Darwin" ]; then
+    link_item "k9s/skins" "$HOME/Library/Application Support"
+else
+    link_item "k9s/skins" "$HOME/.config"
+fi
 
 # Linux/KDE specific configs
 if [ "$OS" = "Linux" ]; then
