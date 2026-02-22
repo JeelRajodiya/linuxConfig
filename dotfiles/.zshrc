@@ -78,6 +78,11 @@ export PATH="$PATH:$HIVE_HOME/bin"
 # ripgrep config path
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 
+# GitHub token for Claude Code (pulled from gh CLI auth)
+if command -v gh &> /dev/null; then
+    export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token 2>/dev/null)"
+fi
+
 # zoxide initialization, use zoxide as cd alias, and the --hook prompt will make zoxide record the directory
 # every time a command is run in that directory. Meaning, the more I run commands in a directory, the higher the
 # rank of that directory in zoxide's database.

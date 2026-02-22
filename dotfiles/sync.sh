@@ -38,6 +38,13 @@ link_item "work" "$HOME/.config"
 link_item "scripts" "$HOME/.config"
 link_item "fastfetch" "$HOME/.config"
 link_item "ghostty" "$HOME/.config"
+
+# Claude Code configs (individual files, not the whole dir — it has runtime data)
+link_item ".claude/CLAUDE.md" "$HOME"
+link_item ".claude/settings.json" "$HOME"
+link_item ".claude/statusline.sh" "$HOME"
+link_item ".claude/commands" "$HOME"
+
 # k9s: only sync skins (k9s writes runtime files to its config dir)
 if [ "$OS" = "Darwin" ]; then
     link_item "k9s/skins" "$HOME/Library/Application Support"
