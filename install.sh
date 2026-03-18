@@ -72,6 +72,14 @@ elif [ "$OS" = "Darwin" ]; then
 fi
 
 # ----------------------------------------------------
+# Install TPM (Tmux Plugin Manager)
+# ----------------------------------------------------
+if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
+    echo "Installing TPM (Tmux Plugin Manager)..."
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
+fi
+
+# ----------------------------------------------------
 # starship
 # ----------------------------------------------------
 if [ "$OS" = "Linux" ]; then

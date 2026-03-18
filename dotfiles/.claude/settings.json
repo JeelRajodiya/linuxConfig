@@ -6,7 +6,6 @@
     "commit": "",
     "pr": ""
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
@@ -22,7 +21,7 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "jdtls-lsp@claude-plugins-official": true,
     "firecrawl@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": true,
-    "github@claude-plugins-official": true
-  }
+    "explanatory-output-style@claude-plugins-official": true
+  },
+  "effortLevel": "high"
 }
