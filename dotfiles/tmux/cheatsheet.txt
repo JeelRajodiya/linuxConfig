@@ -16,13 +16,12 @@ Window Management
   R           Reload config
 
 Pane Splitting (current dir)
-  v / |       Vertical split
-  _           Horizontal split
+  v           Vertical split
+  s           Horizontal split
 
 Session / Utility
   ^D          Detach
   ^X          Lock server
-  ^L          Refresh client
   S           Choose session
   K           Clear screen
   *           Sync panes (type in all)
@@ -35,7 +34,6 @@ Copy Mode (vi-style, enter with [)
 
 ═══ PANE NAVIGATION (no prefix) ══════════
 
-vim-tmux-navigator:
   Ctrl-h      Left pane
   Ctrl-j      Down pane
   Ctrl-k      Up pane
