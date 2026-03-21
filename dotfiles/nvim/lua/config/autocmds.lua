@@ -10,3 +10,9 @@
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
     command = "FormatWriteLock",
 })
+
+-- Auto-save when focus is lost or buffer is left
+vim.api.nvim_create_autocmd({ "FocusLost", "BufLeave" }, {
+    pattern = "*",
+    command = "silent! wa",
+})
