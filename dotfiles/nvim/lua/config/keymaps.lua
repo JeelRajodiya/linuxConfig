@@ -37,6 +37,11 @@ map("v", "<C-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "M
 map("n", "<M-]>", "<cmd>tabnext<CR>", { desc = "Next tab" })
 map("n", "<M-[>", "<cmd>tabprevious<CR>", { desc = "Previous tab" })
 
+-- Change without yanking (send to black hole register)
+map("n", "c", '"_c', opts)
+map("n", "C", '"_C', opts)
+map("v", "c", '"_c', opts)
+
 -- indenting
 map("v", "<", "<gv", { desc = "Indent left" })
 map("v", ">", ">gv", { desc = "Indent right" })
