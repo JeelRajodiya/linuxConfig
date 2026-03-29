@@ -1,12 +1,9 @@
 # Git Conventions
 
 ## Commits
-- Always prefix commit messages with `<Zeel>`
-- Example: `<Zeel> fix null pointer in query parser`
 - Never include claude as coauthor in the commit message
 
 ## Pull Requests
-- Always prefix PR titles with `<Zeel>`
 - Keep PR descriptions short — a 2-3 sentence, points or paragraph summary of what changed and why. keep it effective and bold important words in the description.
 - In the pr decription, if you want to create a title, don't use # for titile, instead just use a bold text in title case.
 - Do NOT include:
