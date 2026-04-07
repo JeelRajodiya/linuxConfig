@@ -51,6 +51,11 @@ if [ "$OS" = "Linux" ]; then
         gnome-calculator \
         xournalpp \
         cheese
+
+    # On Debian/Ubuntu, bat and fd are installed as batcat and fdfind
+    # Create symlinks so they can be referenced as bat and fd everywhere
+    [ -f /usr/bin/batcat ] && sudo ln -sf /usr/bin/batcat /usr/local/bin/bat
+    [ -f /usr/bin/fdfind ] && sudo ln -sf /usr/bin/fdfind /usr/local/bin/fd
 elif [ "$OS" = "Darwin" ]; then
     brew install \
         curl \
