@@ -108,7 +108,6 @@ ghcs() {
     gh copilot suggest "$1"
 }
 
-
 # -----------------------------------------------------
 # EDIT CONFIG FILES
 # -----------------------------------------------------
@@ -118,7 +117,6 @@ alias confp='$EDITOR ~/.profile'
 alias confb='$EDITOR ~/.bashrc'
 alias confz='$EDITOR ~/.zshrc'
 alias confn='$EDITOR ~/.config/nvim'
-
 
 # -----------------------------------------------------
 # EDIT NOTES
@@ -272,4 +270,23 @@ fi
 alias hadoop_start='~/University/BigData/start_hadoop.sh'
 hdfs-tree() {
     hdfs dfs -ls -R "$1" | awk '{print $8}' | sed 's/[^/]*\//|   /g;s/|   \([^|]\)/+--- \1/'
+}
+# -----------------------------------------------------
+# Run commands from history
+# hrun storage <- this will grep from the last comamnd that contains the word storage and run it.
+# it has another optional argument hrun storate [index from tail, default is first index]
+# # -----------------------------------------------------
+hrun() {
+    local pattern="$1"
+    local n="${2:-1}"
+    eval "$(history | rg "$pattern" | rg -v 'hrun|hpeek' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//')"
+}
+# -----------------------------------------------------
+# peak commands from history
+# # -----------------------------------------------------
+
+hpeek() {
+    local pattern="$1"
+    local n="${2:-1}"
+    history | rg "$pattern" | rg -v 'hrun|hpeek' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//'
 }
