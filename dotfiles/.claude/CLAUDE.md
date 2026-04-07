@@ -1,3 +1,6 @@
+# Tool usages
+- instead of `grep` prefer using `rg` (ripgrep) for searching through codebases, as it is faster and more efficient.
+
 # Git Conventions
 
 ## Commits
