@@ -100,6 +100,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/zeelrajodiya/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
+alias rover='open -na "RustRover.app" --args "$@"'
 # I want to add the scripts folder from the pwd of this dotfile
 export PATH="$PATH:${${(%):-%x}:A:h}/scripts"
 export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
