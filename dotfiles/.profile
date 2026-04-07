@@ -51,7 +51,7 @@ alias cleanup='~/dotfiles/scripts/cleanup.sh'
 alias ml4w='~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage'
 alias copy='xclip -selection clipboard'
 alias bat='bat --theme=base16'
-alias fd='fdfind --hidden'
+alias fd='fd --hidden'
 alias update_all='sudo apt update && sudo apt full-upgrade'
 
 alias source_z='source ~/.zshrc'
@@ -280,7 +280,7 @@ hdfs-tree() {
 hrun() {
     local pattern="$1"
     local n="${2:-1}"
-    eval "$(history | rg "$pattern" | rg -v 'hrun|hpeek' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//')"
+    eval "$(history | rg "$pattern" | rg -v 'hrun|hpeek|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//')"
 }
 # -----------------------------------------------------
 # peak commands from history
@@ -289,5 +289,5 @@ hrun() {
 hpeek() {
     local pattern="$1"
     local n="${2:-1}"
-    history | rg "$pattern" | rg -v 'hrun|hpeek' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//'
+    history | rg "$pattern" | rg -v 'hrun|hpeek|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//'
 }
