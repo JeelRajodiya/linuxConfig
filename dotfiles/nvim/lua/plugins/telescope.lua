@@ -34,7 +34,6 @@ local function vimgrep_args()
     "--column",
     "--smart-case",
     "--hidden",
-    "--no-ignore",
     "--max-filesize=1M",
   }
   for _, g in ipairs(glob_args()) do
@@ -45,7 +44,7 @@ end
 
 -- Build find_files command
 local function find_cmd()
-  local args = { "rg", "--files", "--hidden", "--no-ignore", "--max-filesize=1M" }
+  local args = { "rg", "--files", "--hidden", "--max-filesize=1M" }
   for _, g in ipairs(glob_args()) do
     table.insert(args, g)
   end
