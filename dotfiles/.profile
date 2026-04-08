@@ -54,9 +54,11 @@ alias bat='bat --theme=base16'
 alias fd='fd --hidden'
 alias update_all='sudo apt update && sudo apt full-upgrade'
 
-alias source_z='source ~/.zshrc'
+alias sz='source ~/.zshrc'
 alias source_venv='source venv/bin/activate'
 alias prime-run='env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
+alias h='history'
+alias hg='history | rg'
 
 # -----------------------------------------------------
 # System Controls
@@ -280,7 +282,7 @@ hdfs-tree() {
 hrun() {
     local pattern="$1"
     local n="${2:-1}"
-    eval "$(history | rg "$pattern" | rg -v 'hrun|hpeek|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//')"
+    eval "$(history | rg "$pattern" | rg -v 'hrun|hpeek|hg|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//')"
 }
 # -----------------------------------------------------
 # peak commands from history
@@ -289,5 +291,5 @@ hrun() {
 hpeek() {
     local pattern="$1"
     local n="${2:-1}"
-    history | rg "$pattern" | rg -v 'hrun|hpeek|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//'
+    history | rg "$pattern" | rg -v 'hrun|hpeek|hg|^[ 0-9]*cd ' | tail -"$n" | head -1 | sed 's/^ *[0-9]* *//'
 }
