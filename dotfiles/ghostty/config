@@ -7,11 +7,11 @@ shell-integration-features = no-cursor
 
 # Horizontal padding (left and right)
 
-window-padding-x = 10
+window-padding-x = 5
 
 # Vertical padding (top and bottom)
 
-window-padding-y = 10
+window-padding-y = 5
 
 # Optional: Balance padding ensures the content area remains
 
@@ -33,3 +33,4 @@ background-opacity = 0.85
 
 background-blur-radius = 20
 shell-integration-features = ssh-terminfo,ssh-env
+macos-option-as-alt = right
