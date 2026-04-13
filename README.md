@@ -1,7 +1,5 @@
-My linux configuration files and dotfiles repository. Suited for kde neon with plasma desktop environment.
+Personal configuration files and dotfiles repository. The `macos` branch contains macOS-specific configs, while `main` has the original Linux (KDE Neon / Plasma) setup.
 Forked from [Codesmith28/archConfig](https://github.com/Codesmith28/archConfig) at [`cdca75b9f0bed1f009c752ff1c5fddbfe69cfb9b`](https://github.com/JeelRajodiya/linuxConfig/commits/main/?after=073f2a9e8ff1bab5237b70e13576650be662d56b+104)
-
-This project contains personal configuration files and scripts for setting up a Linux environment.
 
 ### Contents
 
@@ -12,16 +10,18 @@ This project contains personal configuration files and scripts for setting up a 
 
 - **Dotfiles (`dotfiles/`)**: A collection of dotfiles for various applications and shells, including configurations for:
 
-  - KDE Plasma (`kdeglobals`, `kwinrc`, `plasmashellrc`, etc.)
   - Fastfetch
-  - fd (find alternative)
-  - Kitty terminal (`kitty.conf`)
+  - Ghostty terminal (`ghostty/`)
+  - K9s (`k9s/`)
+  - KDE Plasma (`kdeglobals`, `kwinrc`, `plasmashellrc`, etc.)
+  - Kitty terminal (`kitty/`)
+  - Lazygit (`lazygit/`)
   - Neovim (`nvim/`)
   - Plasma (`plasma/`)
-  - Starship prompt (`starship.toml`)
+  - Starship prompt (`starship/`)
   - Television (`television/`)
   - Tmux (`tmux/`)
-  - Yazi file manager
+  - Yazi file manager (`yazi/`)
 
 - **Setup Scripts (`setupScripts/`)**: Scripts for system setup and customization, such as:
 
@@ -37,6 +37,7 @@ This project contains personal configuration files and scripts for setting up a 
 
   - `auto_qalc.sh`: Script for automatic calculations using `qalc`.
   - `cycle-power-mode.sh`: Script for cycling through power profiles.
+  - `save-clipboard-to-aws.sh`: Script for saving clipboard content to AWS.
 
 - **Package Management**:
   - `manually_installed_packages.txt`: A list of packages that need to be installed manually.
