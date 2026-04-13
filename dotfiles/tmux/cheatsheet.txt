@@ -16,8 +16,8 @@ Window Management
   R           Reload config
 
 Pane Splitting (current dir)
-  |           Vertical split
-  -           Horizontal split
+  v           Vertical split
+  s           Horizontal split
 
 Session / Utility
   ^D          Detach
