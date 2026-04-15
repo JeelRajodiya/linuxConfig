@@ -1,5 +1,0 @@
-- setup auto download of wallpapers 
-- gdrive and onedrive auto mount 
-
-
-

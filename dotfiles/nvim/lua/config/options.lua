@@ -31,6 +31,7 @@ o.shell = "zsh"
 o.ignorecase = true
 o.smartcase = true
 o.clipboard = "unnamedplus"
+o.laststatus = 3
 
 o.guicursor = "n-v-c:block-blinkwait700-blinkon400-blinkoff250,i:ver25-blinkwait700-blinkon400-blinkoff250,r:hor20-blinkwait700-blinkon400-blinkoff250"
 

@@ -21,6 +21,7 @@ map("n", "<C-c>", 'mzggVG"+y`z', opts)
 
 -- enable horizontal scrolling with mouse
 vim.opt.mouse = "a"
+vim.keymap.set("n", "<LeftDrag>", "<Nop>", { silent = true })
 map("n", "<S-ScrollWheelUp>", "10zh", { noremap = true, silent = true })
 map("n", "<S-ScrollWheelDown>", "10zl", { noremap = true, silent = true })
 
