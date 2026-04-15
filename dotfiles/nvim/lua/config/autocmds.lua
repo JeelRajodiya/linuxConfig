@@ -17,16 +17,28 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
     vim.defer_fn(function()
       -- The fill area (empty space in the tabline)
       vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
-      -- Strip bg from all BufferLine groups while keeping fg/bold/italic
+      -- Strip bg from BufferLine, Glance, and Noice groups while keeping fg/bold/italic
       local all = vim.api.nvim_get_hl(0, {})
       for name, hl in pairs(all) do
-        if name:match("^BufferLine") then
+        if name:match("^BufferLine") or name:match("^Glance") or name:match("^Noice") then
           hl.bg = nil
           hl.ctermbg = nil
           pcall(vim.api.nvim_set_hl, 0, name, hl)
         end
       end
+
+      -- Transparent floating windows and borders
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "FloatTitle", { bg = "NONE" })
     end, 200)
+  end,
+})
+
+-- Show diagnostic float automatically when cursor rests on an error
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focusable = true, scope = "cursor" })
   end,
 })
 

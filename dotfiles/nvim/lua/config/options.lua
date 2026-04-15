@@ -33,3 +33,19 @@ o.smartcase = true
 o.clipboard = "unnamedplus"
 
 o.guicursor = "n-v-c:block-blinkwait700-blinkon400-blinkoff250,i:ver25-blinkwait700-blinkon400-blinkoff250,r:hor20-blinkwait700-blinkon400-blinkoff250"
+
+-- Disable inline virtual text (applied via autocmd to override LazyVim defaults)
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+      float = {
+        border = "rounded",
+        source = true,
+      },
+      signs = true,
+      underline = true,
+    })
+  end,
+  once = true,
+})

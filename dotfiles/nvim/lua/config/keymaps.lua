@@ -65,3 +65,17 @@ map("n", "<Find>", "0", opts)
 map("n", "<Select>", "$", opts)
 map("c", "<Find>", "<C-b>", opts)
 map("c", "<Select>", "<C-e>", opts)
+
+-- Open diagnostic float and focus it so you can select/copy the text
+vim.keymap.set("n", "<leader>ce", function()
+  vim.diagnostic.open_float(nil, { focusable = true, scope = "line" })
+  -- Jump into the float
+  local wins = vim.api.nvim_list_wins()
+  for _, win in ipairs(wins) do
+    local config = vim.api.nvim_win_get_config(win)
+    if config.relative ~= "" then
+      vim.api.nvim_set_current_win(win)
+      return
+    end
+  end
+end, { desc = "Focus diagnostic float (copyable)" })
