@@ -30,7 +30,7 @@ map("n", "<leader>lh", "<cmd>Telescope harpoon marks<CR>", { desc = "Toggle mark
 map("n", "<leader>fm", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "Toggle mark menu" })
 
 -- Move lines
-map("v", "<C-j>", ":m '>+1<CR>gv=gv", { noremap = ue, silent = true, desc = "Move line down" })
+map("v", "<C-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move line down" })
 map("v", "<C-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move line up" })
 
 -- change tab not buffer:

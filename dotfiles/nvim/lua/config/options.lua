@@ -23,9 +23,6 @@ o.scrolloff = 8
 o.cursorline = true
 o.cursorlineopt = "number"
 
--- other utilities
-vim.g.copilot_assume_mapped = true
-
 o.number = true
 o.relativenumber = true
 

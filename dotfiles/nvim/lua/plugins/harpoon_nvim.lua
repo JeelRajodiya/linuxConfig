@@ -27,15 +27,6 @@ return {
                 tabline_prefix = "   ",
                 tabline_suffix = "   ",
             },
-            projects = {
-                ["/home/alex/Projects/"] = {
-                    term = {
-                        cmds = {
-                            "nvim .",
-                        },
-                    },
-                },
-            },
         }
     end,
 }
