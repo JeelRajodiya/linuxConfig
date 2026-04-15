@@ -17,6 +17,7 @@ o.fileencoding = "utf-8"
 
 -- disable word wrap:
 o.wrap = false
+o.virtualedit = "all"
 o.sidescroll = 10
 o.sidescrolloff = 10
 o.scrolloff = 8
