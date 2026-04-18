@@ -28,5 +28,8 @@ return {
                 tabline_suffix = "   ",
             },
         }
+        pcall(function()
+            require("telescope").load_extension("harpoon")
+        end)
     end,
 }
