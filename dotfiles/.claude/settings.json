@@ -6,6 +6,9 @@
     "commit": "",
     "pr": ""
   },
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
@@ -33,8 +36,5 @@
     }
   },
   "effortLevel": "high",
-  "skipAutoPermissionPrompt": true,
-  "permissions": {
-    "defaultMode": "auto"
-  }
+  "skipAutoPermissionPrompt": true
 }

@@ -15,6 +15,40 @@
 # Load shared profile (env vars + cross-shell aliases)
 [[ -f ~/.profile ]] && source ~/.profile
 
+# =====================================================
+# PATH
+# =====================================================
+
+# bash-specific PATH additions
+export PATH="/usr/lib/ccache/bin/:$PATH"
+
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# =====================================================
+# Prompt
+# =====================================================
+
+# -----------------------------------------------------
+# START STARSHIP
+# -----------------------------------------------------
+eval "$(starship init bash)"
+
+# =====================================================
+# Tool integrations
+# =====================================================
+
+# NVM (NVM_DIR set in .profile)
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Cargo
+. "$HOME/.cargo/env"
+
+# =====================================================
+# ALIASES
+# =====================================================
+
 # -----------------------------------------------------
 # Bash-only aliases (not in .profile)
 # -----------------------------------------------------
@@ -58,18 +92,14 @@ alias vm='~/private/launchvm.sh'
 alias res1='xrandr --output DisplayPort-0 --mode 2560x1440 --rate 120'
 alias res2='xrandr --output DisplayPort-0 --mode 1920x1080 --rate 120'
 
-# bash-specific PATH additions
-export PATH="/usr/lib/ccache/bin/:$PATH"
-
 # -----------------------------------------------------
 # DEVELOPMENT
 # -----------------------------------------------------
 alias dotsync="~/dotfiles-versions/dotfiles/.dev/sync.sh dotfiles"
 
-# -----------------------------------------------------
-# START STARSHIP
-# -----------------------------------------------------
-eval "$(starship init bash)"
+# =====================================================
+# Greeting
+# =====================================================
 
 # -----------------------------------------------------
 # PFETCH if on wm
@@ -85,14 +115,6 @@ else
         echo "Start Hyprland with command Hyprland"
     fi
 fi
-
-# NVM (NVM_DIR set in .profile)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
-. "$HOME/.cargo/env"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
