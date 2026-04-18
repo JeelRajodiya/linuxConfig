@@ -32,8 +32,23 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
+# Completer chain: try the command's registered completer first, then fall
+# through to filename completion. Without _files at the end, commands whose
+# completer returns no candidates (e.g. `aws s3 cp src ./`, `git add ./`)
+# leave you with nothing — zsh won't offer local paths unless we ask it to.
+zstyle ':completion:*' completer _complete _files
+
 # Include hidden files in completion (scoped to compsys; does not affect glob expansions)
 _comp_options+=(globdots)
+
+# Eagerly source Homebrew completion helpers that use `complete -C` (e.g. aws).
+# Their _foo wrappers try to self-bootstrap on first <tab> but fire too late
+# and fall through to filename completion.
+autoload -U bashcompinit && bashcompinit
+for _completer in /opt/homebrew/share/zsh/site-functions/*_completer.sh; do
+    [ -f "$_completer" ] && source "$_completer"
+done
+unset _completer
 
 # =====================================================
 # Prompt
