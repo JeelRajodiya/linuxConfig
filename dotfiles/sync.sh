@@ -38,6 +38,7 @@ link_item "work" "$HOME/.config"
 link_item "scripts" "$HOME/.config"
 link_item "fastfetch" "$HOME/.config"
 link_item "ghostty" "$HOME/.config"
+link_item "btop" "$HOME/.config"
 
 # Claude Code configs (individual files, not the whole dir — it has runtime data)
 link_item ".claude/CLAUDE.md" "$HOME"
