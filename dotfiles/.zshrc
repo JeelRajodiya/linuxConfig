@@ -24,8 +24,8 @@ export PATH="$PNPM_HOME:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 
-# NVM and Node.js
-export NVM_DIR="$HOME/.nvm"
+# nvm and node.js
+export nvm_dir="$home/.nvm"
 # Lazy load NVM
 nvm() {
     unset -f nvm
@@ -62,18 +62,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Java Path
 export PATH=$PATH:$JAVA_HOME/bin
 
-# Hadoop Path
-export HADOOP_HOME="$HOME/hadoop-2.7.3"
-export HADOOP_CONF_DIR="$HADOOP_HOME/etc/hadoop"
-export HADOOP_MAPRED_HOME="$HADOOP_HOME"
-export HADOOP_COMMON_HOME="$HADOOP_HOME"
-export HADOOP_HDFS_HOME="$HADOOP_HOME"
-export YARN_HOME="$HADOOP_HOME"
-export PATH="$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin"
-
-# Hive Path
-export HIVE_HOME="$HOME/apache-hive-2.1.0-bin"
-export PATH="$PATH:$HIVE_HOME/bin"
 
 # ripgrep config path
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
@@ -97,7 +85,6 @@ alias please='sudo $(fc -ln -1)'
 # add vscode to path
 export PATH="/usr/local/bin:$PATH"
 # Added by Antigravity
-export PATH="/Users/zeelrajodiya/.antigravity/antigravity/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias rover='open -na "RustRover.app" --args "$@"'

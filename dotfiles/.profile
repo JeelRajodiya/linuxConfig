@@ -61,39 +61,6 @@ alias h='history'
 alias hg='history | rg'
 
 # -----------------------------------------------------
-# System Controls
-# -----------------------------------------------------
-
-bu() {
-    if [[ -z $1 ]]; then
-        echo "Please specify a percentage to increase, e.g., bu 10"
-    else
-        brightnessctl set "$1"%+
-    fi
-}
-bd() {
-    if [[ -z $1 ]]; then
-        echo "Please specify a percentage to decrease, e.g., bd 10"
-    else
-        brightnessctl set "$1"%-
-    fi
-}
-vu() {
-    if [[ -z $1 ]]; then
-        echo "Please specify a percentage to increase, e.g., vu 10"
-    else
-        pactl set-sink-volume @DEFAULT_SINK@ +"$1"%
-    fi
-}
-vd() {
-    if [[ -z $1 ]]; then
-        echo "Please specify a percentage to decrease, e.g., vd 10"
-    else
-        pactl set-sink-volume @DEFAULT_SINK@ -"$1"%
-    fi
-}
-
-# -----------------------------------------------------
 # GIT
 # -----------------------------------------------------
 
@@ -132,12 +99,6 @@ alias general='$EDITOR ~/OneDrive/OneDrive\ Documents/general.md'
 alias bookmarks='$EDITOR ~/OneDrive/OneDrive\ Documentsbookmarks.md'
 
 # -----------------------------------------------------
-# MINECRAFT
-# -----------------------------------------------------
-
-alias MC='java -jar ~/.minecraft/TLauncher*.jar'
-
-# -----------------------------------------------------
 # SYSTEM
 # -----------------------------------------------------
 
@@ -174,13 +135,6 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 export DOCKER_HOST=unix:///var/run/docker.sock
 
-# -----------------------------------------------------
-# Files and code
-# -----------------------------------------------------
-
-vsc() {
-    code "$1" && exit
-}
 # Set blinking underline cursor (only when not in Neovim)
 if [ "$TERM" = "xterm-256color" ] && [ -z "$VIM" ]; then
     echo -ne '\e[3 q'
@@ -195,20 +149,6 @@ alias fzf='fzf --preview="bat --theme=base16 -n  --color=always --style=header,g
 # alias ivm='$EDITOR $(fzf -m --preview="bat --color=always --style=header,grid --line-range :500 {}")'
 alias ivm='f() { local file; file=$(tv); [ -n "$file" ] && "$EDITOR" "$file"; }; f'
 
-runcpp() {
-    # filename=$(echo $1 | cut -f 1 -d '.')
-    # clang++ "$1" -o $filename && ./$filename
-    clang++ "$1" -o run && "./run"
-    rm run
-}
-runcc() {
-    clang "$1" -o run && "./run"
-    rm run
-}
-
-alias cpp='cd ~/Projects/cp/ && code . && exit'
-alias lazy='~/Downloads/lazyAi_v1.1.0_unix/lazyAi'
-alias calc='~/.config/scripts/auto_qalc.sh'
 
 # -----------------------------------------------------
 # Yazi file manager exit on quit:
@@ -223,33 +163,7 @@ function y() {
     rm -f -- "$tmp"
 }
 
-spf() {
-    os=$(uname -s)
 
-    # Linux
-    if [[ "$os" == "Linux" ]]; then
-        export SPF_LAST_DIR="${XDG_STATE_HOME:-$HOME/.local/state}/superfile/lastdir"
-    fi
-
-    # macOS
-    if [[ "$os" == "Darwin" ]]; then
-        export SPF_LAST_DIR="$HOME/Library/Application Support/superfile/lastdir"
-    fi
-
-    command spf "$@"
-
-    [ ! -f "$SPF_LAST_DIR" ] || {
-        . "$SPF_LAST_DIR"
-        rm -f -- "$SPF_LAST_DIR" >/dev/null
-    }
-}
-
-alias dafq='thefuck'
-
-rog() {
-    sudo rogauracore "$@"
-    sudo systemctl restart upower.service
-}
 
 #   -----------------------------------------------------
 #   GEMINI api Key
@@ -266,14 +180,6 @@ fi
 
 [ "$TERM" = "xterm-kitty" ] && export TERM=xterm-256color
 
-# -----------------------------------------------------
-# BIG DATA ALIASES
-# -----------------------------------------------------
-
-alias hadoop_start='~/University/BigData/start_hadoop.sh'
-hdfs-tree() {
-    hdfs dfs -ls -R "$1" | awk '{print $8}' | sed 's/[^/]*\//|   /g;s/|   \([^|]\)/+--- \1/'
-}
 # -----------------------------------------------------
 # Run commands from history
 # hrun storage <- this will grep from the last comamnd that contains the word storage and run it.
