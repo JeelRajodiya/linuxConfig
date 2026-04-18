@@ -2,7 +2,6 @@
 # Oh My Zsh configuration
 # =====================================================
 export ZSH="$HOME/.oh-my-zsh"
-# plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting)
 plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting)
 
 # Prefer zsh's bundled completions (e.g. native _git) over Homebrew
@@ -30,7 +29,7 @@ setopt sharehistory
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons $realpath'
 
 # Completer chain: try the command's registered completer first, then fall
 # through to filename completion. Without _files at the end, commands whose
@@ -89,25 +88,18 @@ eval "$(zoxide init zsh --cmd cd --hook prompt)"
 nvm() {
     unset -f nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
-    nvm $@
+    nvm "$@"
 }
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Set default Node.js version in PATH
-DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
-[ -n "$DEFAULT_NODE_VER_PATH" ] && export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
 
 # -----------------------------------------------------
 # Bun completions (zsh-specific file)
 # -----------------------------------------------------
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-# bun completions (linux path)
-[ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
 
 # -----------------------------------------------------
 # Pyenv init (shell-specific evals)
 # -----------------------------------------------------
-eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 if pyenv commands | grep -q virtualenv-init; then
     eval "$(pyenv virtualenv-init -)"
@@ -128,5 +120,6 @@ export PATH="$PATH:${${(%):-%x}:A:h}/scripts"
 # zsh-specific aliases and functions
 # =====================================================
 alias please='sudo $(fc -ln -1)'
+alias sz='source ~/.zshrc'
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias rover='open -na "RustRover.app" --args "$@"'

@@ -9,11 +9,13 @@
 # ~/.bashrc
 # -----------------------------------------------------
 
+# Load shared profile first so env vars (PATH, NVM_DIR, etc.) are present
+# even in non-interactive bash (`bash -c …`). The profile has its own
+# interactive guard for aliases/prompt.
+[[ -f ~/.profile ]] && source ~/.profile
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# Load shared profile (env vars + cross-shell aliases)
-[[ -f ~/.profile ]] && source ~/.profile
 
 # =====================================================
 # PATH
@@ -21,9 +23,6 @@
 
 # bash-specific PATH additions
 export PATH="/usr/lib/ccache/bin/:$PATH"
-
-# Cargo
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # =====================================================
 # Prompt
@@ -38,12 +37,13 @@ eval "$(starship init bash)"
 # Tool integrations
 # =====================================================
 
-# NVM (NVM_DIR set in .profile)
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# NVM lazy load (NVM_DIR set in .profile) — mirrors the zsh setup.
+nvm() {
+    unset -f nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+    nvm "$@"
+}
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Cargo
-. "$HOME/.cargo/env"
 
 # =====================================================
 # ALIASES
@@ -52,7 +52,6 @@ eval "$(starship init bash)"
 # -----------------------------------------------------
 # Bash-only aliases (not in .profile)
 # -----------------------------------------------------
-alias vim='$EDITOR'
 alias rw='~/dotfiles/waybar/reload.sh'
 
 # -----------------------------------------------------
