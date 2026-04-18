@@ -4,6 +4,48 @@
 # (_) .__/|_|  \___/|_| |_|_|\___|
 #   |_|
 
+# -----------------------------------------------------
+# PATH and environment variables (portable across shells)
+# -----------------------------------------------------
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Go
+export PATH="$PATH:$(go env GOPATH 2>/dev/null)/bin"
+
+# SDKMAN
+export SDKMAN_DIR="$HOME/.sdkman"
+
+# Java
+export PATH="$PATH:$JAVA_HOME/bin"
+
+# ripgrep config path
+export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
+
+# General PATH additions
+export PATH="/usr/local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
+
+# GitHub token for Claude Code (pulled from gh CLI auth)
+if command -v gh >/dev/null 2>&1; then
+    export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token 2>/dev/null)"
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 PS1='[\u@\h \W]\$ '

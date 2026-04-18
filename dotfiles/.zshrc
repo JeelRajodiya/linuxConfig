@@ -18,15 +18,7 @@ eval "$(starship init zsh)"
 # ctrl + t -> smart autocompletion
 eval "$(tv init zsh)"
 
-# PNPM
-export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-
-# nvm and node.js
-export nvm_dir="$home/.nvm"
-# Lazy load NVM
+# NVM lazy load (NVM_DIR set in .profile)
 nvm() {
     unset -f nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
@@ -38,38 +30,18 @@ nvm() {
 DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAULT_NODE_VER#v}*" | sort -rV | head -n 1)"
 [ -n "$DEFAULT_NODE_VER_PATH" ] && export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
 
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# Bun completions (zsh-specific file)
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# Pipx
-# Pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# Pyenv init (shell-specific evals)
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 if pyenv commands | grep -q virtualenv-init; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# Go Path
-export PATH="$PATH:$(go env GOPATH)/bin"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
+# SDKMAN (must be after other PATH modifications)
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-# Java Path
-export PATH=$PATH:$JAVA_HOME/bin
-
-
-# ripgrep config path
-export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
-
-# GitHub token for Claude Code (pulled from gh CLI auth)
-if command -v gh &> /dev/null; then
-    export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token 2>/dev/null)"
-fi
 
 # zoxide initialization, use zoxide as cd alias, and the --hook prompt will make zoxide record the directory
 # every time a command is run in that directory. Meaning, the more I run commands in a directory, the higher the
@@ -80,14 +52,9 @@ eval "$(zoxide init zsh --cmd cd --hook prompt)"
 # zsh specific aliases and functions
 
 alias please='sudo $(fc -ln -1)'
-# bun completions
+# bun completions (linux path)
 [ -s "/home/zeel/.bun/_bun" ] && source "/home/zeel/.bun/_bun"
-# add vscode to path
-export PATH="/usr/local/bin:$PATH"
-# Added by Antigravity
-export PATH="/opt/homebrew/bin:$PATH"
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias rover='open -na "RustRover.app" --args "$@"'
-# I want to add the scripts folder from the pwd of this dotfile
+# scripts folder relative to this dotfile (zsh-specific parameter expansion)
 export PATH="$PATH:${${(%):-%x}:A:h}/scripts"
-export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
