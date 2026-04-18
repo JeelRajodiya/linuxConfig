@@ -171,6 +171,20 @@ elif [ "$OS" = "Darwin" ]; then
 fi
 
 # ----------------------------------------------------
+# Install atuin (shell history, replaces ctrl+r)
+# ----------------------------------------------------
+if [ "$OS" = "Linux" ]; then
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+elif [ "$OS" = "Darwin" ]; then
+    brew install atuin
+fi
+
+# Import existing shell history into atuin's SQLite DB (idempotent — skips if already imported)
+if command -v atuin &> /dev/null; then
+    atuin import auto || true
+fi
+
+# ----------------------------------------------------
 # Install zoxide
 # ----------------------------------------------------
 if [ "$OS" = "Linux" ]; then

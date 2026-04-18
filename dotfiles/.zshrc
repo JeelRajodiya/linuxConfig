@@ -4,6 +4,12 @@
 export ZSH="$HOME/.oh-my-zsh"
 # plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting)
 plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting)
+
+# Prefer zsh's bundled completions (e.g. native _git) over Homebrew
+# formulas' bash-wrapper shims, which silently fail without bash-completion.
+# Must be before oh-my-zsh.sh (which calls compinit).
+[ -d /opt/homebrew/share/zsh/functions ] && fpath=(/opt/homebrew/share/zsh/functions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
@@ -45,10 +51,15 @@ eval "$(starship init zsh)"
 
 # -----------------------------------------------------
 # Television support:
-# ctrl + r -> shell history
 # ctrl + t -> smart autocompletion
 # -----------------------------------------------------
 eval "$(tv init zsh)"
+
+# -----------------------------------------------------
+# Atuin (shell history) — loaded AFTER tv so it wins the ctrl+r binding.
+# ctrl + r -> searchable history (SQLite-backed: timestamps, exit codes, cwd)
+# -----------------------------------------------------
+eval "$(atuin init zsh)"
 
 # -----------------------------------------------------
 # Zoxide: use `cd` as a ranked jumper
