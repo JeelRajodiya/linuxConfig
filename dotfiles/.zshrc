@@ -1,7 +1,7 @@
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
 # plugins=(git ssh-agent zsh-autosuggestions zsh-syntax-highlighting)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git fzf-tab zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -12,6 +12,15 @@ eval "$(starship init zsh)"
 
 # FZF support
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Completion styling (used by fzf-tab when present, otherwise native compsys)
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# Include hidden files in completion (scoped to compsys; does not affect glob expansions)
+_comp_options+=(globdots)
 
 # Television support:
 # ctrl + r -> shell history
@@ -58,3 +67,7 @@ alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias rover='open -na "RustRover.app" --args "$@"'
 # scripts folder relative to this dotfile (zsh-specific parameter expansion)
 export PATH="$PATH:${${(%):-%x}:A:h}/scripts"
+
+
+
+ setopt sharehistory 

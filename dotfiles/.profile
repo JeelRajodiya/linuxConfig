@@ -36,6 +36,11 @@ export PATH="$PATH:$JAVA_HOME/bin"
 # ripgrep config path
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 
+# fzf: exhaustive search — hidden files, gitignored paths, and .git contents included
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore --follow'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --no-ignore --follow'
+
 # General PATH additions
 export PATH="/usr/local/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
