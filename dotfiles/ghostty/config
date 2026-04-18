@@ -24,7 +24,7 @@ window-padding-balance = true
 
 # 0.8 to 0.9 is usually a good readable "glass" look.
 
-background-opacity = 0.85
+background-opacity = 0.95
 
 # Optional: Adds a blur effect (frosted glass) behind the text.
 

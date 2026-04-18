@@ -5,4 +5,4 @@
 	path = ~/.gitconfig-work
 
 [includeIf "hasconfig:remote.*.url:git@github.com-personal:*/*"]
-	path = ~/.gitconfig-personal
+	path = ~/.gitconfig-personal                                                
