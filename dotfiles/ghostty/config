@@ -1,5 +1,6 @@
 # This binds Control + Enter to toggle or open a new Ghostty window globally
 
+font-family = JetBrainsMono Nerd Font Mono
 keybind = global:ctrl+enter=new_window
 theme = One Half Dark
 cursor-style = block
