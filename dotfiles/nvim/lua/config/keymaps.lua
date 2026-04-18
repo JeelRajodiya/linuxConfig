@@ -14,12 +14,13 @@ map("i", "<C-H>", "<C-w>", { noremap = true, silent = true, desc = "Delete word 
 map("i", "<M-BS>", "<C-w>", { noremap = true, silent = true, desc = "Delete word backward (Alt+Backspace)" })
 
 -- editing
+map("n", "U", "<C-r>", { desc = "Redo" })
 map("n", "<C-a>", "ggVG", { desc = "Select all" })
 
 -- Ctrl+C: Copy all to system clipboard, keep cursor position
 map("n", "<C-c>", 'mzggVG"+y`z', opts)
 
--- enable horizontal scrolling with mouse
+-- Mouse settings
 vim.opt.mouse = "a"
 vim.keymap.set("n", "<LeftDrag>", "<Nop>", { silent = true })
 map("n", "<S-ScrollWheelUp>", "10zh", { noremap = true, silent = true })
@@ -80,3 +81,6 @@ vim.keymap.set("n", "<leader>ce", function()
     end
   end
 end, { desc = "Focus diagnostic float (copyable)" })
+
+-- Find and replace (Ctrl+H like VSCode)
+map("n", "<C-h>", ":%s//g<Left><Left>", { noremap = true, desc = "Find and replace" })

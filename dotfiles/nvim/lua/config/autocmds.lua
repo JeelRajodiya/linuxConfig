@@ -27,10 +27,37 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter" }, {
         end
       end
 
-      -- Transparent floating windows and borders
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+      -- Floating windows: semi-transparent dark bg so they stand out
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e1e" })
       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
       vim.api.nvim_set_hl(0, "FloatTitle", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#1e1e1e" })
+
+      -- Transparent lualine/statusline
+      for name, hl in pairs(vim.api.nvim_get_hl(0, {})) do
+        if name:match("^lualine") or name:match("^StatusLine") then
+          hl.bg = nil
+          hl.ctermbg = nil
+          -- Fix mode indicator text: use yellow for insert/visual mode labels
+          if name:match("lualine_a_insert") then
+            hl.fg = tonumber("e5c07b", 16)
+            hl.bold = true
+          elseif name:match("lualine_a_visual") then
+            hl.fg = tonumber("c678dd", 16)
+            hl.bold = true
+          elseif name:match("lualine_a_command") then
+            hl.fg = tonumber("98c379", 16)
+            hl.bold = true
+          elseif name:match("lualine_a_normal") then
+            hl.fg = tonumber("61afef", 16)
+            hl.bold = true
+          elseif name:match("lualine_a_replace") then
+            hl.fg = tonumber("e06c75", 16)
+            hl.bold = true
+          end
+          pcall(vim.api.nvim_set_hl, 0, name, hl)
+        end
+      end
     end, 200)
   end,
 })
