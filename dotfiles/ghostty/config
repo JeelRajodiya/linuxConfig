@@ -4,7 +4,11 @@ font-family = JetBrainsMono Nerd Font Mono
 keybind = global:ctrl+enter=new_window
 theme = One Half Dark
 cursor-style = block
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-terminfo,ssh-env
+
+# Neovide-style cursor trail (smear/warp effect on cursor movement)
+custom-shader = shaders/cursor_warp.glsl
+custom-shader-animation = always
 
 # Horizontal padding (left and right)
 
@@ -33,5 +37,4 @@ background-opacity = 0.95
 # Note: This relies on your Linux compositor (KWin on KDE) supporting blur.
 
 background-blur-radius = 20
-shell-integration-features = ssh-terminfo,ssh-env
 macos-option-as-alt = right
