@@ -76,13 +76,6 @@ eval "$(tv init zsh)"
 eval "$(atuin init zsh)"
 
 # -----------------------------------------------------
-# Zoxide: use `cd` as a ranked jumper
-# --hook prompt records the CWD on every prompt, so the more often
-# commands are run in a directory, the higher its zoxide rank.
-# -----------------------------------------------------
-eval "$(zoxide init zsh --cmd cd --hook prompt)"
-
-# -----------------------------------------------------
 # NVM lazy load (NVM_DIR set in .profile)
 # -----------------------------------------------------
 nvm() {
@@ -123,3 +116,11 @@ alias please='sudo $(fc -ln -1)'
 alias sz='source ~/.zshrc'
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias rover='open -na "RustRover.app" --args "$@"'
+
+# =====================================================
+# Zoxide (MUST be last — wraps `cd` and the prompt hook,
+# so it has to load after pyenv/nvm/sdkman, which install
+# their own chpwd hooks. zoxide's doctor warns if anything
+# re-wraps these after its init.)
+# =====================================================
+eval "$(zoxide init zsh --cmd cd --hook prompt)"
