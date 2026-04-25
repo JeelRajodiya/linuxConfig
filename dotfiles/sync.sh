@@ -46,6 +46,7 @@ link_item ".claude/CLAUDE.md" "$HOME"
 link_item ".claude/settings.json" "$HOME"
 link_item ".claude/statusline.sh" "$HOME"
 link_item ".claude/commands" "$HOME"
+link_item ".claude/skills" "$HOME"
 
 # lazygit: config path differs per OS
 if [ "$OS" = "Darwin" ]; then
