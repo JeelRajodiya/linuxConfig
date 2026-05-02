@@ -196,13 +196,16 @@ fi
 # ----------------------------------------------------
 # Install yazi and dependencies
 # ----------------------------------------------------
+# glow is required by the glow.yazi previewer plugin (configured in
+# ~/.config/yazi/yazi.toml) to render markdown files in the preview pane.
+# Without the glow binary on $PATH, yazi's markdown preview silently fails.
 if [ "$OS" = "Linux" ]; then
-    sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick
+    sudo apt install ffmpeg 7zip jq poppler-utils fd-find ripgrep fzf zoxide imagemagick glow
     unzip ./packages/yazi-x86_64-unknown-linux-gnu.zip -d ./packages/yazi-x86_64-unknown-linux-gnu
     sudo cp ./packages/yazi-x86_64-unknown-linux-gnu/yazi /usr/local/bin/
     sudo cp ./packages/yazi-x86_64-unknown-linux-gnu/ya /usr/local/bin/
 elif [ "$OS" = "Darwin" ]; then
-    brew install yazi ffmpeg sevenzip jq poppler imagemagick zoxide
+    brew install yazi ffmpeg sevenzip jq poppler imagemagick zoxide glow
 fi
 
 # ----------------------------------------------------
