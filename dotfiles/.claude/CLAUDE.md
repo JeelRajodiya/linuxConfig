@@ -20,10 +20,9 @@
 
 # General
 
-## Response Style section
+## Response
 
-When the user asks a simple conceptual or 'how do I' question, answer directly first without launching codebase exploration, Agent tools, or Grep/Read sweeps. Only investigate the codebase if the question is specifically about this project's code.
-Add under
+Answer directly and concisely. Answer what is asked only.
 
 ## Code Investigation section
 
@@ -32,3 +31,7 @@ When asked to trace call chains, dependencies, or code flow, respond with litera
 ## Accuracy section
 
 Never fabricate type names, terms, API names, or placeholders. If a name is unknown or invented, explicitly flag it as a placeholder.
+
+## Code comments
+
+When you write comments in the code, never include markdown formatting, such as bold or italics. Use plain text for comments to ensure they are clear and easily readable in the code context.
