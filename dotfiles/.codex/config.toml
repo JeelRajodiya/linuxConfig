@@ -1,0 +1,160 @@
+service_tier = "fast"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+plan_mode_reasoning_effort = "high"
+approvals_reviewer = "auto_review"
+notify = [
+    "/Users/zeelrajodiya/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+    "turn-ended",
+]
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-native-executor/e6-planner-interface"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-native-executor"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-planner"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/linuxConfig"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-planner-interface"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-native-executor/e6-workspace-services-thrift"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/repos/datafusion"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-engine-cli"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-regression-test"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-query-optimizer"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-calcite"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/repos/wiz-music"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6-native-executor/e6-datafusion"]
+trust_level = "trusted"
+
+[projects."/Users/zeelrajodiya/Projects/e6data/e6data-query-engine"]
+trust_level = "trusted"
+
+[tui]
+status_line = [
+    "model-with-reasoning",
+    "project-name",
+    "git-branch",
+    "run-state",
+    "context-remaining",
+    "five-hour-limit",
+    "weekly-limit",
+]
+status_line_use_colors = true
+theme = "ansi"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+[mcp_servers.atlassian]
+url = "https://mcp.atlassian.com/v1/mcp"
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/zeelrajodiya/.codex"
+CODEX_HOME = "/Users/zeelrajodiya/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "843b151e6459c4593a4a9c5bf817cc51e28fc29afe6b75990deceb2f914995ac"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.616.31447"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[features]
+terminal_resize_reflow = true
+memories = true
+js_repl = false
+
+[marketplaces.openai-bundled]
+last_updated = "2026-06-19T06:28:42Z"
+source_type = "local"
+source = "/Users/zeelrajodiya/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.claude-plugins-official]
+last_updated = "2026-07-15T05:52:12Z"
+last_revision = "972e286f4dbc8e0f53f23d870a1e12192faffafc"
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-06-19T06:29:29Z"
+source_type = "local"
+source = "/Users/zeelrajodiya/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."code-simplifier@claude-plugins-official"]
+enabled = true
+
+[plugins."commit-commands@claude-plugins-official"]
+enabled = true
+
+[plugins."context7@claude-plugins-official"]
+enabled = true
+
+[plugins."firecrawl@claude-plugins-official"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1"
+
+[desktop]
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = false
+
+[desktop.open-in-target-preferences]
+global = "zed"

@@ -48,6 +48,9 @@ link_item ".claude/statusline.sh" "$HOME"
 link_item ".claude/commands" "$HOME"
 link_item ".claude/skills" "$HOME"
 
+# Codex configs (only config.toml — rest of ~/.codex is runtime data: sessions, auth, sqlite)
+link_item ".codex/config.toml" "$HOME"
+
 # lazygit: config path differs per OS
 if [ "$OS" = "Darwin" ]; then
     link_item "lazygit/config.yml" "$HOME/Library/Application Support"

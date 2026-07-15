@@ -6,6 +6,7 @@
     "commit": "",
     "pr": ""
   },
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
@@ -31,9 +32,14 @@
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "tui": "default",
   "theme": "dark-ansi",
   "editorMode": "vim",
   "verbose": true,
+  "autoScrollEnabled": true,
+  "remoteControlAtStartup": false,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true
 }

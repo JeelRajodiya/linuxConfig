@@ -124,3 +124,10 @@ alias rover='open -na "RustRover.app" --args "$@"'
 # re-wraps these after its init.)
 # =====================================================
 eval "$(zoxide init zsh --cmd cd --hook prompt)"
+
+# Restore oh-my-zsh's dirstack aliases (1..9) — zoxide's `cd` wrapper
+# swallows `cd -N`, so call the builtin directly.
+for i in {1..9}; do alias "$i"="builtin cd -$i"; done
+unset i
+
+export PATH="/Library/TeX/texbin:$PATH"

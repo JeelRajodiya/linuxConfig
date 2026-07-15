@@ -27,11 +27,3 @@ Answer directly and concisely. Answer what is asked only.
 ## Code Investigation section
 
 When asked to trace call chains, dependencies, or code flow, respond with literal file:line references in order. Do not substitute a high-level conceptual summary unless explicitly asked.
-
-## Accuracy section
-
-Never fabricate type names, terms, API names, or placeholders. If a name is unknown or invented, explicitly flag it as a placeholder.
-
-## Code comments
-
-When you write comments in the code, never include markdown formatting, such as bold or italics. Use plain text for comments to ensure they are clear and easily readable in the code context.
