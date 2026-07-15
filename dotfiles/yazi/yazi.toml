@@ -1,7 +1,3 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.inint
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
-
 [mgr]
 ratio          = [ 1, 2, 3 ]
 sort_by        = "natural"
@@ -31,7 +27,7 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 [open]
 rules = [
     { mime = "application/pdf", use = "open-pdf" },  # Rule for PDFs
-    { name = "*/", use = [ "edit", "open", "reveal" ] },  # Existing rule
+    { url = "*/", use = [ "edit", "open", "reveal" ] },  # Existing rule
     { mime = "*", use = [ "edit", "open", "reveal" ] },  # Existing fallback rule
 ]
 
@@ -49,36 +45,36 @@ image_bound      = [ 0, 0 ]
 suppress_preload = false
 
 [[plugin.prepend_previewers]]
-name = "*/"
+url = "*/"
 run = "eza-preview"
 
 [[plugin.prepend_previewers]]
-name = "*.md"
+url = "*.md"
 run = "glow"
 
 # [[plugin.prepend_previewers]]
-# name = "*.md"
+# url = "*.md"
 # run = "rich-preview"
 
 [[plugin.prepend_previewers]]
-name = "*.csv"
+url = "*.csv"
 run = "rich-preview"
 
 [[plugin.prepend_previewers]]
-name = "*.rst"
+url = "*.rst"
 run = "rich-preview"
 
 [[plugin.prepend_previewers]]
-name = "*.ipynb"
+url = "*.ipynb"
 run = "rich-preview"
 
 [[plugin.prepend_previewers]]
-name = "*.json"
+url = "*.json"
 run = "rich-preview"
 
 # Example for language-specific previews
 # [[plugin.prepend_previewers]]
-# name = "*.py"
+# url = "*.py"
 # run = "rich-preview"
 
 [input]
@@ -147,10 +143,12 @@ enabled = false
 
 [[plugin.prepend_fetchers]]
 id   = "git"
-name = "*"
+url  = "*"
 run  = "git"
+group = "sync"
 
 [[plugin.prepend_fetchers]]
 id   = "git"
-name = "*/"
+url  = "*/"
 run  = "git"
+group = "sync"
