@@ -45,10 +45,6 @@ image_bound      = [ 0, 0 ]
 suppress_preload = false
 
 [[plugin.prepend_previewers]]
-url = "*/"
-run = "eza-preview"
-
-[[plugin.prepend_previewers]]
 url = "*.md"
 run = "glow"
 
