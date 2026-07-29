@@ -41,6 +41,10 @@ link_item "ghostty" "$HOME/.config"
 link_item "btop" "$HOME/.config"
 link_item "atuin" "$HOME/.config"
 
+# Zed configs (individual files, not the whole dir — it has runtime data: prompts, conversations)
+link_item "zed/settings.json" "$HOME/.config"
+link_item "zed/keymap.json" "$HOME/.config"
+
 # Claude Code configs (individual files, not the whole dir — it has runtime data)
 link_item ".claude/CLAUDE.md" "$HOME"
 link_item ".claude/settings.json" "$HOME"

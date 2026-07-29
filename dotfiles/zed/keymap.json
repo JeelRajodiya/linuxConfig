@@ -1,0 +1,17 @@
+[
+  {
+    "bindings": {
+      "f5": "debugger::Start",
+    },
+  },
+  {
+    "bindings": {
+      "cmd-shift-g": "git_panel::Toggle",
+    },
+  },
+  {
+    "bindings": {
+      "cmd-shift-e": "project_panel::Toggle"
+    }
+  }
+]
