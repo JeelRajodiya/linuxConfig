@@ -5,6 +5,7 @@ keybind = global:ctrl+enter=new_window
 theme = One Half Dark
 cursor-style = block
 shell-integration-features = no-cursor,ssh-terminfo,ssh-env
+mouse-scroll-multiplier = precision:0.5,discrete:1
 
 # Neovide-style cursor trail (smear/warp effect on cursor movement)
 custom-shader = shaders/cursor_warp.glsl
