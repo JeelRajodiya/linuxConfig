@@ -294,7 +294,7 @@ function y() {
 # -----------------------------------------------------
 # e6data engine
 # -----------------------------------------------------
-alias run-e6='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
+alias e6data='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
 
 if [[ -n "$ZSH_VERSION" ]]; then
 
@@ -321,5 +321,5 @@ if [[ -n "$ZSH_VERSION" ]]; then
         fi
     }
 
-    compdef _run_e6 run-e6
+    compdef _run_e6 e6data
 fi
