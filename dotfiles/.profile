@@ -290,3 +290,36 @@ function y() {
     fi
     rm -f -- "$tmp"
 }
+
+# -----------------------------------------------------
+# e6data engine
+# -----------------------------------------------------
+alias run-e6='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
+
+if [[ -n "$ZSH_VERSION" ]]; then
+
+    _run_e6() {
+        local env_root='/Users/zeelrajodiya/Projects/e6data/scripts/envs'
+        local env
+        local -a environments
+
+        while IFS= read -r env; do
+            environments+=("$env")
+        done < <(find "$env_root" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null | sort)
+
+        _arguments -s \
+            '--help[show usage information]' \
+            '--fresh[restart the existing engine session]' \
+            '--skip-auth[skip AWS credential refresh]' \
+            '--pull-monorepo[pull the monorepo and update submodules]' \
+            '--build-shared[run make shared in the monorepo]' \
+            '--help[show usage and available flags]' \
+            '1:environment:->environment'
+
+        if [[ "$state" == environment ]]; then
+            compadd -- "${environments[@]}"
+        fi
+    }
+
+    compdef _run_e6 run-e6
+fi
