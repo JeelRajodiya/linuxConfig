@@ -9,6 +9,7 @@ selection="$(
 			--no-sort \
 			--ansi \
 			--layout reverse \
+			--bind 'one:accept' \
 			--border-label ' sesh ' \
 			--prompt '⚡  '
 )"
