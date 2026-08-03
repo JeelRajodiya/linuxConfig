@@ -308,12 +308,12 @@ if [[ -n "$ZSH_VERSION" ]]; then
         done < <(find "$env_root" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null | sort)
 
         _arguments -s \
-            '--help[show usage information]' \
-            '--fresh[restart the existing engine session]' \
-            '--skip-auth[skip AWS credential refresh]' \
+            '--fresh[kill and recreate the existing engine session]' \
+            '--pause[stop engine services without changing the session layout]' \
+            '--auth[refresh AWS credentials before continuing]' \
             '--pull-monorepo[pull the monorepo and update submodules]' \
             '--build-shared[run make shared in the monorepo]' \
-            '--help[show usage and available flags]' \
+            '--help[show this help]' \
             '1:environment:->environment'
 
         if [[ "$state" == environment ]]; then
