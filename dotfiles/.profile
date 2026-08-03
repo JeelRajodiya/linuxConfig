@@ -294,4 +294,4 @@ function y() {
 # -----------------------------------------------------
 # e6data engine
 # -----------------------------------------------------
-alias edata='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
+alias e6data='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
