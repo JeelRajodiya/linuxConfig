@@ -295,31 +295,3 @@ function y() {
 # e6data engine
 # -----------------------------------------------------
 alias e6data='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
-
-if [[ -n "$ZSH_VERSION" ]]; then
-
-    _run_e6() {
-        local env_root='/Users/zeelrajodiya/Projects/e6data/scripts/envs'
-        local env
-        local -a environments
-
-        while IFS= read -r env; do
-            environments+=("$env")
-        done < <(find "$env_root" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null | sort)
-
-        _arguments -s \
-            '--fresh[kill and recreate the existing engine session]' \
-            '--pause[stop engine services without changing the session layout]' \
-            '--auth[refresh AWS credentials before continuing]' \
-            '--pull-monorepo[pull the monorepo and update submodules]' \
-            '--build-shared[run make shared in the monorepo]' \
-            '--help[show this help]' \
-            '1:environment:->environment'
-
-        if [[ "$state" == environment ]]; then
-            compadd -- "${environments[@]}"
-        fi
-    }
-
-    compdef _run_e6 e6data
-fi
