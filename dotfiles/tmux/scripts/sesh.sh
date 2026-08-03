@@ -2,10 +2,22 @@
 
 set -o pipefail
 
+sessions="$(sesh list -t --icons)"
+session_count="$(printf '%s\n' "$sessions" | awk 'NF { count++ } END { print count + 0 }')"
+client_height="$(tmux display-message -p '#{client_height}')"
+
+min_height=10
+max_height=$((client_height * 40 / 100))
+((max_height < min_height)) && max_height=$min_height
+
+popup_height=$((session_count + 5))
+((popup_height < min_height)) && popup_height=$min_height
+((popup_height > max_height)) && popup_height=$max_height
+
 selection="$(
-	sesh list -t --icons |
+	printf '%s\n' "$sessions" |
 		awk '{ print NR ". " $0 }' |
-		fzf --tmux top,20%,10 \
+		fzf --tmux "top,20%,${popup_height}" \
 			--no-sort \
 			--ansi \
 			--layout reverse \
