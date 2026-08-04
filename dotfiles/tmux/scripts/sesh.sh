@@ -19,7 +19,7 @@ items="$(
 	while IFS= read -r session; do
 		[[ -n "$session" ]] || continue
 		index=$((index + 1))
-		printf '%s\t%d. \033[38;5;220m\033[0m %s\n' "$session" "$index" "$session"
+		printf '%s\t%d. \033[38;5;220m󰛕\033[0m %s\n' "$session" "$index" "$session"
 	done <<< "$sessions"
 )"
 
