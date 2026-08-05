@@ -1,6 +1,9 @@
 [include]
 	path = ~/.gitconfig-local
 
+[init]
+	defaultBranch = main
+
 [includeIf "gitdir:~/Projects/e6data/"]
 	path = ~/.gitconfig-work
 
