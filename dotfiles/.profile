@@ -73,7 +73,7 @@ if command -v gh >/dev/null 2>&1; then
     _gh_cache="$HOME/.cache/gh_token"
     if [ ! -f "$_gh_cache" ] || [ -n "$(find "$_gh_cache" -mmin +1440 2>/dev/null)" ]; then
         mkdir -p "$(dirname "$_gh_cache")"
-        gh auth token 2>/dev/null > "$_gh_cache"
+        gh auth token 2>/dev/null >"$_gh_cache"
         chmod 600 "$_gh_cache"
     fi
     [ -s "$_gh_cache" ] && export GITHUB_PERSONAL_ACCESS_TOKEN="$(cat "$_gh_cache")"
@@ -111,10 +111,11 @@ export DOCKER_HOST=unix:///var/run/docker.sock
 if [ -f "$HOME/.env" ]; then
     while IFS='=' read -r _k _v; do
         [ "$_k" = "GEMINI_API_KEY" ] || continue
-        _v=${_v#\"}; _v=${_v%\"}
+        _v=${_v#\"}
+        _v=${_v%\"}
         export GEMINI_API_KEY="$_v"
         break
-    done < "$HOME/.env"
+    done <"$HOME/.env"
     unset _k _v
 fi
 
@@ -294,4 +295,4 @@ function y() {
 # -----------------------------------------------------
 # e6data engine
 # -----------------------------------------------------
-alias e6data='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
+alias engine='/Users/zeelrajodiya/Projects/e6data/scripts/run.sh'
