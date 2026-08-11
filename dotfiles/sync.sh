@@ -21,6 +21,32 @@ link_item() {
     echo "Linked $source -> $target"
 }
 
+link_agent_skills() {
+    local source_dir="$DOTFILES_DIR/.agents/skills"
+    local codex_target_dir="$HOME/.agents/skills"
+    local claude_target="$HOME/.claude/skills"
+
+    [ -d "$source_dir" ] || return
+    mkdir -p "$codex_target_dir" "$(dirname "$claude_target")"
+
+    [ -e "$claude_target" ] || [ -L "$claude_target" ] && rm -rf "$claude_target"
+    ln -s "$source_dir" "$claude_target"
+    echo "Linked $source_dir -> $claude_target"
+
+    for source in "$source_dir"/*; do
+        [ -d "$source" ] || continue
+
+        local skill_name
+        local target
+        skill_name="$(basename "$source")"
+        target="$codex_target_dir/$skill_name"
+
+        [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
+        ln -s "$source" "$target"
+        echo "Linked $source -> $target"
+    done
+}
+
 # Common configs
 link_item ".bashrc" "$HOME"
 link_item ".profile" "$HOME"
@@ -45,12 +71,15 @@ link_item "atuin" "$HOME/.config"
 link_item "zed/settings.json" "$HOME/.config"
 link_item "zed/keymap.json" "$HOME/.config"
 
+# Shared agent skills live in .agents/skills. Claude links directly to that
+# directory; Codex gets per-skill links so externally installed skills remain.
+link_agent_skills
+
 # Claude Code configs (individual files, not the whole dir — it has runtime data)
 link_item ".claude/CLAUDE.md" "$HOME"
 link_item ".claude/settings.json" "$HOME"
 link_item ".claude/statusline.sh" "$HOME"
 link_item ".claude/commands" "$HOME"
-link_item ".claude/skills" "$HOME"
 
 # Codex configs (only config.toml — rest of ~/.codex is runtime data: sessions, auth, sqlite)
 link_item ".codex/config.toml" "$HOME"

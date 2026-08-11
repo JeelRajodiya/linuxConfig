@@ -1,3 +1,8 @@
+---
+name: show-chain
+description: Trace code flow for a question by locating entry points and producing a numbered file:line call chain, dumped into a markdown investigation file. Use when asked how code flows, what calls what, or to investigate a code path.
+---
+
 # Code Investigator
 
 Given a question about code flow:
