@@ -1,5 +1,4 @@
--- Disabled because this plugin is incompatible with Yazi 26.5.6.
--- require("full-border"):setup()
+require("full-border"):setup()
 require("starship"):setup()
 
 require("eza-preview"):setup({
@@ -48,7 +47,7 @@ require("yamb"):setup({
 
 require("git"):setup()
 
--- Disabled because this plugin is incompatible with Yazi 26.5.6.
+-- Disabled because this revision breaks rendering on Yazi 26.5.6.
 --[[ require("yaziline"):setup({
     -- color = "#98c379", -- main theme color
     default_files_color = "darkgray", -- color of the file counter when it's inactive
