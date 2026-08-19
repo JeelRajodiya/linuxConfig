@@ -35,8 +35,8 @@ hash = "a1fa2b3e1826c3a34804ea8c548e9f80"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "b12a9ab"
-hash = "e0ada736ea676c2bbb3ec705a49526ef"
+rev = "0be29a9"
+hash = "fbb53c3c04f816d737f9f4b1d29f3310"
 
 [[plugin.deps]]
 use = "llanosrocas/yaziline"
