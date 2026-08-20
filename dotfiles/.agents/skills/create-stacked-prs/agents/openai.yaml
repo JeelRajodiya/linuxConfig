@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Stacked PRs"
+  short_description: "Plan and publish focused stacked pull requests"
+  default_prompt: "Use $create-stacked-prs to split my changes into a focused stack and create the pull requests."
