@@ -47,6 +47,19 @@ link_agent_skills() {
     done
 }
 
+link_agent_instructions() {
+    local source="$DOTFILES_DIR/AGENTS.md"
+
+    [ -e "$source" ] || return
+
+    for target in "$HOME/.codex/AGENTS.md" "$HOME/.claude/CLAUDE.md"; do
+        [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
+        mkdir -p "$(dirname "$target")"
+        ln -s "$source" "$target"
+        echo "Linked $source -> $target"
+    done
+}
+
 # Common configs
 link_item ".bashrc" "$HOME"
 link_item ".profile" "$HOME"
@@ -75,13 +88,15 @@ link_item "zed/keymap.json" "$HOME/.config"
 # directory; Codex gets per-skill links so externally installed skills remain.
 link_agent_skills
 
+# Codex and Claude share one global instruction file.
+link_agent_instructions
+
 # Claude Code configs (individual files, not the whole dir — it has runtime data)
-link_item ".claude/CLAUDE.md" "$HOME"
 link_item ".claude/settings.json" "$HOME"
 link_item ".claude/statusline.sh" "$HOME"
 link_item ".claude/commands" "$HOME"
 
-# Codex configs (only config.toml — rest of ~/.codex is runtime data: sessions, auth, sqlite)
+# Codex configs (the rest of ~/.codex is runtime data: sessions, auth, sqlite)
 link_item ".codex/config.toml" "$HOME"
 
 # lazygit: config path differs per OS

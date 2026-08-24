@@ -8,7 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)"
   },
@@ -37,8 +37,8 @@
       "default_config_options": {
         "fast-mode": true,
         "mode": "agent",
-        "model": "gpt-5.3-codex-spark",
-        "reasoning_effort": "high"
+        "model": "gpt-5.6-terra",
+        "reasoning_effort": "medium"
       },
       "type": "registry"
     },
@@ -53,7 +53,7 @@
       "prompt_format": "infer"
     },
     "mode": "subtle",
-    "provider": "zed",
+    "provider": "copilot",
   },
   "vim_mode": true,
   "terminal": {
@@ -95,7 +95,7 @@
   "show_whitespaces": "all",
   "show_edit_predictions": true,
   "hard_tabs": false,
-  "tab_size": 2,
+  "tab_size": 4,
   "languages": {
     "Rust": {
       "show_edit_predictions": false,
@@ -132,8 +132,8 @@
   },
 
   "theme": {
-    "mode": "light",
+    "mode": "system",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "One Dark"
   },
 }

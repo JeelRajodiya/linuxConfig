@@ -32,7 +32,7 @@
       }
     }
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "tui": "default",
   "theme": "dark-ansi",
   "editorMode": "vim",
