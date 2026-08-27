@@ -134,3 +134,6 @@ for i in {1..9}; do alias "$i"="builtin cd -$i"; done
 unset i
 
 export PATH="/Library/TeX/texbin:$PATH"
+
+# opencode
+export PATH=/Users/zeelrajodiya/.opencode/bin:$PATH

@@ -52,7 +52,7 @@ link_agent_instructions() {
 
     [ -e "$source" ] || return
 
-    for target in "$HOME/.codex/AGENTS.md" "$HOME/.claude/CLAUDE.md"; do
+    for target in "$HOME/.codex/AGENTS.md" "$HOME/.claude/CLAUDE.md" "$HOME/.config/opencode/AGENTS.md"; do
         [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
         mkdir -p "$(dirname "$target")"
         ln -s "$source" "$target"
@@ -80,6 +80,10 @@ link_item "ghostty" "$HOME/.config"
 link_item "btop" "$HOME/.config"
 link_item "atuin" "$HOME/.config"
 
+# OpenCode's config directory also contains runtime-managed files, so only
+# link the portable TUI config.
+link_item "opencode/tui.json" "$HOME/.config"
+
 # Zed configs (individual files, not the whole dir — it has runtime data: prompts, conversations)
 link_item "zed/settings.json" "$HOME/.config"
 link_item "zed/keymap.json" "$HOME/.config"
@@ -88,7 +92,7 @@ link_item "zed/keymap.json" "$HOME/.config"
 # directory; Codex gets per-skill links so externally installed skills remain.
 link_agent_skills
 
-# Codex and Claude share one global instruction file.
+# Codex, Claude, and OpenCode share one global instruction file.
 link_agent_instructions
 
 # Claude Code configs (individual files, not the whole dir — it has runtime data)
