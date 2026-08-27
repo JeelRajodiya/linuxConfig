@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write PR Description"
+  short_description: "Draft evidence-driven, example-rich PR bodies"
+  default_prompt: "Use $write-pr-description to draft a source-grounded pull request description for my change."
