@@ -136,4 +136,5 @@ unset i
 export PATH="/Library/TeX/texbin:$PATH"
 
 # opencode
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 export PATH=/Users/zeelrajodiya/.opencode/bin:$PATH

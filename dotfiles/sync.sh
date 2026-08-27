@@ -81,7 +81,8 @@ link_item "btop" "$HOME/.config"
 link_item "atuin" "$HOME/.config"
 
 # OpenCode's config directory also contains runtime-managed files, so only
-# link the portable TUI config.
+# link portable configuration files.
+link_item "opencode/opencode.jsonc" "$HOME/.config"
 link_item "opencode/tui.json" "$HOME/.config"
 link_item "opencode/agents/understand.md" "$HOME/.config"
 
