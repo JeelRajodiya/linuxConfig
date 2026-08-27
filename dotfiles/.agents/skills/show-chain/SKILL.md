@@ -7,7 +7,9 @@ description: Trace code flow for a question by locating entry points and produci
 
 Given a question about code flow:
 
-1. Use Grep/Glob to locate entry points
+First check in pwd if we already have chain analysis of existing/relevant code in a .md file. if we don't need to create a new investigation, then use that file to answer the question. If we do need to create a new investigation, then follow these steps:
+
+1. Use Grep/Ripgrep/Glob to locate entry points
 2. Trace the call chain with literal file:line references in order
 3. Do NOT summarize conceptually unless asked
 4. Output: a numbered list of file:line -> what happens
