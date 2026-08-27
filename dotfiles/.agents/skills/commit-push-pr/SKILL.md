@@ -13,4 +13,4 @@ Before committing, inspect the staged diff for credential-like values. Stop and 
 
 Create one focused commit using the repository's commit conventions. Push the branch to `origin` with an upstream tracking ref, then create a GitHub pull request with `gh pr create`.
 
-Use the repository's PR conventions for the title and body. Determine the correct base branch from repository metadata when it is not already clear. Report the PR URL and any commands that could not be completed because of authentication, remote configuration, or a GitHub error.
+Use the standard commit convention for the title and for body use /write-pr-description skill. Determine the correct base branch from repository metadata when it is not already clear. Report the PR URL and any commands that could not be completed because of authentication, remote configuration, or a GitHub error.
