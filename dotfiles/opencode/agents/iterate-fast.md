@@ -1,7 +1,7 @@
 ---
 description: Makes small targeted code changes quickly
 mode: all
-model: openai/gpt-5.4-mini-fast
+model: openai/gpt-5.6-luna-fast
 variant: medium
 ---
 

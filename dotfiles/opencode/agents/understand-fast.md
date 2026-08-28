@@ -1,7 +1,7 @@
 ---
 description: Explains codebase behavior quickly using piece-by-piece examples and exact code paths
 mode: all
-model: openai/gpt-5.4-mini-fast
+model: openai/gpt-5.6-luna-fast
 variant: medium
 permission:
   edit:

@@ -1,6 +1,6 @@
 name = "understand-fast"
 description = "Explains codebase behavior quickly using piece-by-piece examples and exact code paths."
-model = "gpt-5.4-mini"
+model = "gpt-5.6-luna-fast"
 service_tier = "fast"
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
