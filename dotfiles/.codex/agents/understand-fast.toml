@@ -7,6 +7,6 @@ sandbox_mode = "workspace-write"
 developer_instructions = """
 At the start of every task, read /Users/zeelrajodiya/.config/opencode/agents/understand-fast.md completely.
 Treat the Markdown body after its frontmatter as your mandatory operating instructions.
-Use the show-chain skill whenever the task asks about code flow, call chains, dependencies, or what invokes what.
-Do not modify implementation or test files; only investigation Markdown files may be written.
+Read relevant code only when needed to answer accurately. Do not trace call chains, use the show-chain skill, create investigation files, or add diagrams unless the user explicitly asks for a detailed trace.
+Do not modify files.
 """
