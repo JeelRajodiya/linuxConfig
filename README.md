@@ -1,6 +1,28 @@
 Personal configuration files and dotfiles repository. The `macos` branch contains macOS-specific configs, while `main` has the original Linux (KDE Neon / Plasma) setup.
 Forked from [Codesmith28/archConfig](https://github.com/Codesmith28/archConfig) at [`cdca75b9f0bed1f009c752ff1c5fddbfe69cfb9b`](https://github.com/JeelRajodiya/linuxConfig/commits/main/?after=073f2a9e8ff1bab5237b70e13576650be662d56b+104)
 
+## Setup
+
+> **Warning:** `dotfiles/sync.sh` replaces existing configuration files with symlinks to this repository. Back up anything you want to keep first.
+
+```bash
+git clone https://github.com/JeelRajodiya/linuxConfig.git ~/linuxConfig
+cd ~/linuxConfig
+
+# Install packages and command-line tools (Linux or macOS)
+bash install.sh
+
+# Link the dotfiles into $HOME and ~/.config
+bash dotfiles/sync.sh
+```
+
+On Linux, optionally install the Plasma plugins and configure fonts:
+
+```bash
+bash install_plasma_plugins.sh
+bash setupScripts/config_fonts/set.sh
+```
+
 ### Contents
 
 - **Installation Scripts**:
