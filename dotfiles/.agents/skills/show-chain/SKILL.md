@@ -7,7 +7,7 @@ description: Trace code flow for a question by locating entry points and produci
 
 Given a question about code flow:
 
-First check (using rg with hidden flag on) in pwd if we already have chain analysis of existing/relevant code in a .md file inside the ./.codebase-research folder. if we don't need to create a new investigation, then use that file to answer the question. If we do need to create a new investigation, then follow these steps:
+First check (by only using rg with hidden flag on) in pwd if we already have chain analysis of existing/relevant code in a .md file inside the ./.codebase-research folder. if we don't need to create a new investigation, then use that file to answer the question. If we do need to create a new investigation, then follow these steps:
 
 1. Use Grep/Ripgrep/Glob to locate entry points
 2. Trace the call chain with literal file:line references in order
