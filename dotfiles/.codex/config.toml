@@ -1,5 +1,5 @@
 service_tier = "fast"
-model = "gpt-5.4-mini"
+model = "gpt-5.6-sol"
 model_context_window = 600000
 model_auto_compact_token_limit = 500000
 model_reasoning_effort = "medium"
@@ -126,8 +126,8 @@ source_type = "local"
 source = "/Users/zeelrajodiya/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.claude-plugins-official]
-last_updated = "2026-08-25T11:47:27Z"
-last_revision = "b819188d2eea14e0400556ca29dbd1179a7c595b"
+last_updated = "2026-08-28T07:20:16Z"
+last_revision = "0620a687ddd518871772eefd78573baff2dcb8cb"
 source_type = "git"
 source = "https://github.com/anthropics/claude-plugins-official.git"
 
@@ -191,3 +191,6 @@ followUpQueueMode = "queue"
 
 [desktop.open-in-target-preferences]
 global = "zed"
+
+[notice.model_migrations]
+"gpt-5.4-mini" = "gpt-5.6-luna"
