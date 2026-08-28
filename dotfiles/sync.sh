@@ -85,6 +85,9 @@ link_item "atuin" "$HOME/.config"
 link_item "opencode/opencode.jsonc" "$HOME/.config"
 link_item "opencode/tui.json" "$HOME/.config"
 link_item "opencode/agents/understand.md" "$HOME/.config"
+link_item "opencode/agents/understand-fast.md" "$HOME/.config"
+link_item "opencode/agents/iterate.md" "$HOME/.config"
+link_item "opencode/agents/iterate-fast.md" "$HOME/.config"
 
 # Zed configs (individual files, not the whole dir — it has runtime data: prompts, conversations)
 link_item "zed/settings.json" "$HOME/.config"
@@ -105,6 +108,9 @@ link_item ".claude/commands" "$HOME"
 # Codex configs (the rest of ~/.codex is runtime data: sessions, auth, sqlite)
 link_item ".codex/config.toml" "$HOME"
 link_item ".codex/agents/understand.toml" "$HOME"
+link_item ".codex/agents/understand-fast.toml" "$HOME"
+link_item ".codex/agents/iterate.toml" "$HOME"
+link_item ".codex/agents/iterate-fast.toml" "$HOME"
 
 # lazygit: config path differs per OS
 if [ "$OS" = "Darwin" ]; then

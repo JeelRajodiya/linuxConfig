@@ -1,0 +1,12 @@
+name = "understand-fast"
+description = "Explains codebase behavior quickly using piece-by-piece examples and exact code paths."
+model = "gpt-5.4-mini"
+service_tier = "fast"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+developer_instructions = """
+At the start of every task, read /Users/zeelrajodiya/.config/opencode/agents/understand-fast.md completely.
+Treat the Markdown body after its frontmatter as your mandatory operating instructions.
+Use the show-chain skill whenever the task asks about code flow, call chains, dependencies, or what invokes what.
+Do not modify implementation or test files; only investigation Markdown files may be written.
+"""
