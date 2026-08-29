@@ -15,8 +15,7 @@ export default function openAICodexFast(pi: ExtensionAPI) {
 			model.api !== "openai-codex-responses" ||
 			!FAST_MODELS.has(model.id) ||
 			!isRecord(event.payload) ||
-			event.payload.model !== model.id ||
-			"service_tier" in event.payload
+			event.payload.model !== model.id
 		) {
 			return;
 		}
