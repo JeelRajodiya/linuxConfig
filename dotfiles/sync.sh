@@ -24,10 +24,11 @@ link_item() {
 link_agent_skills() {
     local source_dir="$DOTFILES_DIR/.agents/skills"
     local codex_target_dir="$HOME/.agents/skills"
+    local pi_target_dir="$HOME/.pi/agent/skills"
     local claude_target="$HOME/.claude/skills"
 
     [ -d "$source_dir" ] || return
-    mkdir -p "$codex_target_dir" "$(dirname "$claude_target")"
+    mkdir -p "$codex_target_dir" "$pi_target_dir" "$(dirname "$claude_target")"
 
     [ -e "$claude_target" ] || [ -L "$claude_target" ] && rm -rf "$claude_target"
     ln -s "$source_dir" "$claude_target"
@@ -39,11 +40,12 @@ link_agent_skills() {
         local skill_name
         local target
         skill_name="$(basename "$source")"
-        target="$codex_target_dir/$skill_name"
 
-        [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
-        ln -s "$source" "$target"
-        echo "Linked $source -> $target"
+        for target in "$codex_target_dir/$skill_name" "$pi_target_dir/$skill_name"; do
+            [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
+            ln -s "$source" "$target"
+            echo "Linked $source -> $target"
+        done
     done
 }
 
@@ -52,7 +54,7 @@ link_agent_instructions() {
 
     [ -e "$source" ] || return
 
-    for target in "$HOME/.codex/AGENTS.md" "$HOME/.claude/CLAUDE.md" "$HOME/.config/opencode/AGENTS.md"; do
+    for target in "$HOME/.codex/AGENTS.md" "$HOME/.claude/CLAUDE.md" "$HOME/.config/opencode/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"; do
         [ -e "$target" ] || [ -L "$target" ] && rm -rf "$target"
         mkdir -p "$(dirname "$target")"
         ln -s "$source" "$target"
@@ -95,7 +97,7 @@ link_item "zed/settings.json" "$HOME/.config"
 link_item "zed/keymap.json" "$HOME/.config"
 
 # Shared agent skills live in .agents/skills. Claude links directly to that
-# directory; Codex gets per-skill links so externally installed skills remain.
+# directory; Codex and Pi get per-skill links so externally installed skills remain.
 link_agent_skills
 
 # Codex, Claude, and OpenCode share one global instruction file.
@@ -113,6 +115,13 @@ link_item ".codex/agents/understand-fast.toml" "$HOME"
 link_item ".codex/agents/understand-thorough.toml" "$HOME"
 link_item ".codex/agents/iterate.toml" "$HOME"
 link_item ".codex/agents/iterate-fast.toml" "$HOME"
+
+# Pi configs (the rest of ~/.pi/agent is runtime data: auth and sessions)
+link_item ".pi/agent/settings.json" "$HOME"
+link_item ".pi/agent/models.json" "$HOME"
+link_item ".pi/agent/extensions/workflows.ts" "$HOME"
+link_item ".pi/agent/extensions/openai-codex-fast.ts" "$HOME"
+link_item ".pi/agent/extensions/codex-usage.ts" "$HOME"
 
 # lazygit: config path differs per OS
 if [ "$OS" = "Darwin" ]; then

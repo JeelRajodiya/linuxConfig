@@ -1,0 +1,33 @@
+{
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+  "modelThinkingLevels": {
+    "openai-codex/gpt-5.6-terra": "medium",
+    "openai-codex/gpt-5.6-luna": "medium",
+    "openai-codex/gpt-5.6-sol": "medium"
+  },
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.84.4",
+  "tuiMode": "regular",
+  "enableInstallTelemetry": false,
+  "quietStartup": false,
+  "collapseChangelog": true,
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "transport": "auto",
+  "followUpMode": "one-at-a-time",
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 100000,
+    "keepRecentTokens": 20000
+  },
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-subagents",
+    "npm:@dietrichgebert/ponytail",
+    "npm:pi-zentui"
+  ],
+  "enableSkillCommands": false
+}
