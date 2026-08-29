@@ -37,7 +37,7 @@
       "default_config_options": {
         "fast-mode": true,
         "mode": "agent",
-        "model": "gpt-5.6-terra",
+        "model": "gpt-5.6-luna",
         "reasoning_effort": "medium"
       },
       "type": "registry"
@@ -72,10 +72,10 @@
       "enable_thinking": false
     },
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini",
-      "enable_thinking": false,
-      "effort": "high"
+      "provider": "zed.dev",
+      "model": "gemini-3.5-flash",
+      "enable_thinking": true,
+      "effort": "MEDIUM"
     },
     "sidebar_side": "right",
     "dock": "right",
@@ -98,7 +98,7 @@
   "tab_size": 4,
   "languages": {
     "Rust": {
-      "show_edit_predictions": false,
+      "show_edit_predictions": true,
       "tab_size": 2,
     },
   },
