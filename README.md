@@ -5,8 +5,8 @@ Personal Linux and macOS configuration, originally forked from [Codesmith28/arch
 GNU Stow links the repository into `$HOME` without replacing conflicting files.
 
 ```bash
-git clone https://github.com/JeelRajodiya/linuxConfig.git ~/linuxConfig
-cd ~/linuxConfig
+git clone https://github.com/JeelRajodiya/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 
 bash bin/bootstrap.sh
 bash bin/sync.sh
