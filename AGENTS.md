@@ -1,1 +1,1 @@
-dotfiles/AGENTS.md
+dotfiles/agents/.agents/AGENTS.md
