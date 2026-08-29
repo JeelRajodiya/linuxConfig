@@ -21,7 +21,10 @@ export default function codexUsage(pi: ExtensionAPI) {
 				});
 				const used = (await response.json()).rate_limit?.primary_window?.used_percent;
 				if (!response.ok || !Number.isFinite(used)) throw new Error("usage unavailable");
-				ctx.ui.setStatus("codex-usage", ctx.ui.theme.fg("accent", `${used}% used`));
+				ctx.ui.setStatus(
+					"codex-usage",
+					ctx.ui.theme.fg("accent", `${Math.max(0, 100 - used)}% left`),
+				);
 			} catch {
 				ctx.ui.setStatus("codex-usage", ctx.ui.theme.fg("dim", "usage unavailable"));
 			}
