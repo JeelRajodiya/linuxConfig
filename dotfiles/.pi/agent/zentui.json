@@ -1,0 +1,20 @@
+{
+  "components": {
+    "footer": {
+      "style": "starship",
+      "styles": {
+        "starship": {
+          "segments": {
+            "tokens": false
+          },
+          "extensionStatuses": {
+            "defaultPlacement": "left",
+            "placements": {
+              "codex-usage": "right"
+            }
+          }
+        }
+      }
+    }
+  }
+}

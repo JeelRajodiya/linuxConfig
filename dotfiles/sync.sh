@@ -118,7 +118,10 @@ link_item ".codex/agents/iterate-fast.toml" "$HOME"
 
 # Pi configs (the rest of ~/.pi/agent is runtime data: auth and sessions)
 link_item ".pi/agent/settings.json" "$HOME"
+link_item ".pi/agent/keybindings.json" "$HOME"
 link_item ".pi/agent/models.json" "$HOME"
+link_item ".pi/agent/zentui.json" "$HOME"
+link_item ".pi/agent/packages/pi-zentui" "$HOME"
 link_item ".pi/agent/extensions/workflows.ts" "$HOME"
 link_item ".pi/agent/extensions/openai-codex-fast.ts" "$HOME"
 link_item ".pi/agent/extensions/codex-usage.ts" "$HOME"

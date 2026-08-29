@@ -4,9 +4,16 @@
   "defaultModel": "gpt-5.6-terra",
   "modelThinkingLevels": {
     "openai-codex/gpt-5.6-terra": "medium",
+    "openai-codex/gpt-5.6-sol": "medium",
     "openai-codex/gpt-5.6-luna": "medium",
-    "openai-codex/gpt-5.6-sol": "medium"
+    "openai-codex/gpt-5.3-codex-spark": "medium"
   },
+  "enabledModels": [
+    "openai-codex/gpt-5.6-terra",
+    "openai-codex/gpt-5.6-sol",
+    "openai-codex/gpt-5.6-luna",
+    "openai-codex/gpt-5.3-codex-spark"
+  ],
   "hideThinkingBlock": true,
   "lastChangelogVersion": "0.84.4",
   "tuiMode": "regular",
@@ -27,7 +34,7 @@
     "npm:pi-web-access",
     "npm:pi-subagents",
     "npm:@dietrichgebert/ponytail",
-    "npm:pi-zentui"
+    "./packages/pi-zentui"
   ],
   "enableSkillCommands": false
 }
