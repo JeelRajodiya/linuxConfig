@@ -113,5 +113,10 @@ fi
 # Import existing shell history when Atuin is available.
 command -v atuin >/dev/null && atuin import auto || true
 
+# Install Tmux Plugin Manager; TPM installs plugins declared in tmux.conf.
+if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
+fi
+
 echo "Installation finished."
 echo "Install Nerd Fonts manually, then run bin/sync.sh."
