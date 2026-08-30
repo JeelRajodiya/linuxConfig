@@ -36,5 +36,5 @@
     "npm:@dietrichgebert/ponytail",
     "./packages/pi-zentui"
   ],
-  "enableSkillCommands": false
+  "enableSkillCommands": true
 }
