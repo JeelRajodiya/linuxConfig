@@ -11,6 +11,9 @@
             "defaultPlacement": "left",
             "placements": {
               "codex-usage": "right"
+            },
+            "colorModes": {
+              "active-workflow": "original"
             }
           }
         }

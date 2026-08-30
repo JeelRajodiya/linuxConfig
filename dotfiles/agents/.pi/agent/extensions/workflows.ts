@@ -122,7 +122,7 @@ export default function workflowExtension(pi: ExtensionAPI) {
 		pi.setActiveTools(workflow.tools.filter((tool) => availableTools.has(tool)));
 		activeWorkflowName = name;
 		pi.appendEntry("workflow-state", { name });
-		ctx.ui.setStatus("workflow", ctx.ui.theme.fg("accent", name));
+		ctx.ui.setStatus("active-workflow", ctx.ui.theme.fg("accent", name));
 		ctx.ui.notify(`Workflow ${name} activated`, "info");
 		return true;
 	}
@@ -200,7 +200,7 @@ export default function workflowExtension(pi: ExtensionAPI) {
 		if (state) {
 			await activate(state.data.name, ctx);
 		} else {
-			ctx.ui.setStatus("workflow", undefined);
+			ctx.ui.setStatus("active-workflow", undefined);
 		}
 	});
 }
