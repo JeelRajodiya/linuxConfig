@@ -33,7 +33,10 @@
   "packages": [
     "npm:pi-web-access",
     "npm:pi-subagents",
-    "npm:@dietrichgebert/ponytail",
+    {
+      "source": "npm:@dietrichgebert/ponytail",
+      "extensions": []
+    },
     "./packages/pi-zentui"
   ],
   "enableSkillCommands": true
