@@ -38,7 +38,7 @@ export default function (pi: ExtensionAPI) {
                 .join("\n");
             let text = context.isError
                 ? theme.fg("error", output)
-                : theme.fg("success", `Done in${elapsed}`);
+                : theme.fg("success", `Finished in${elapsed}`);
 
             if (!context.isError && expanded && output) {
                 text += `\n${theme.fg("toolOutput", output)}`;
