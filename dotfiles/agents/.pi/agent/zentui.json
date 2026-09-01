@@ -5,15 +5,18 @@
       "styles": {
         "starship": {
           "segments": {
-            "tokens": false
+            "tokens": false,
+            "cost": false
           },
           "extensionStatuses": {
             "defaultPlacement": "left",
             "placements": {
-              "codex-usage": "right"
+              "codex-usage": "right",
+              "monthly-cost": "right"
             },
             "colorModes": {
-              "active-workflow": "original"
+              "active-workflow": "original",
+              "monthly-cost": "original"
             }
           }
         }
