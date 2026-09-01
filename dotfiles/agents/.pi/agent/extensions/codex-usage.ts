@@ -19,11 +19,20 @@ export default function codexUsage(pi: ExtensionAPI) {
 						"ChatGPT-Account-Id": auth.accountId,
 					},
 				});
-				const used = (await response.json()).rate_limit?.primary_window?.used_percent;
-				if (!response.ok || !Number.isFinite(used)) throw new Error("usage unavailable");
+				const window = (await response.json()).rate_limit?.primary_window;
+				const used = window?.used_percent;
+				const reset = window?.reset_after_seconds;
+				if (!response.ok || !Number.isFinite(used) || !Number.isFinite(reset)) {
+					throw new Error("usage unavailable");
+				}
+				const days = Math.floor(reset / 86_400);
+				const hours = Math.floor((reset % 86_400) / 3_600);
 				ctx.ui.setStatus(
 					"codex-usage",
-					ctx.ui.theme.fg("accent", `${Math.max(0, 100 - used)}% left`),
+					ctx.ui.theme.fg(
+						"accent",
+						`${Math.max(0, 100 - used)}% remaining (resets in ${days}d ${hours}h)`,
+					),
 				);
 			} catch {
 				ctx.ui.setStatus("codex-usage", ctx.ui.theme.fg("dim", "usage unavailable"));
