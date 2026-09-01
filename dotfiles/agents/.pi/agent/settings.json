@@ -39,5 +39,6 @@
     },
     "./packages/pi-zentui"
   ],
-  "enableSkillCommands": true
+  "enableSkillCommands": true,
+  "showHardwareCursor": true
 }
