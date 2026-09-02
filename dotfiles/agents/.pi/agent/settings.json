@@ -16,7 +16,7 @@
   ],
   "hideThinkingBlock": true,
   "lastChangelogVersion": "0.84.4",
-  "tuiMode": "regular",
+  "tuiMode": "fullscreen",
   "enableInstallTelemetry": false,
   "quietStartup": false,
   "collapseChangelog": true,
