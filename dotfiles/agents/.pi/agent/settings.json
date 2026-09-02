@@ -37,7 +37,12 @@
       "source": "npm:@dietrichgebert/ponytail",
       "extensions": []
     },
-    "./packages/pi-zentui"
+    "./packages/pi-zentui",
+    "npm:@companion-ai/feynman",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-background-tasks",
+    "npm:pi-memory",
+    "npm:bigpowers"
   ],
   "enableSkillCommands": true,
   "showHardwareCursor": true
