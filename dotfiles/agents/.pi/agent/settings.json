@@ -38,7 +38,6 @@
       "extensions": []
     },
     "./packages/pi-zentui",
-    "npm:@companion-ai/feynman",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-background-tasks",
     "npm:pi-memory",
