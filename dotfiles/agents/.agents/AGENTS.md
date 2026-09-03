@@ -12,7 +12,7 @@
 
 ## Response
 
-Answer directly and concisely. Answer what is asked only.
+Answer directly and concisely. Answer what is asked only. Use CEFR-B2 as the text style for your responses.
 
 ## Code Investigation section
 
