@@ -53,17 +53,6 @@ export default function ponytailExtension(pi: ExtensionAPI) {
 		ctx?.ui?.notify?.(`Ponytail mode set to ${normalized}.`, "info");
 	};
 
-	const sendAlias = (skillName: string, args: string, ctx: any) => {
-		const normalized = String(args || "").trim();
-		const message = normalized ? `${skillName} ${normalized}` : skillName;
-		if (ctx?.isIdle?.() === false) {
-			pi.sendUserMessage(message, { deliverAs: "followUp" });
-			ctx?.ui?.notify?.(`${skillName} queued as follow-up.`, "info");
-			return;
-		}
-		pi.sendUserMessage(message);
-	};
-
 	pi.registerCommand("ponytail", {
 		description: commandDescription,
 		handler: async (args, ctx) => {
@@ -88,13 +77,6 @@ export default function ponytailExtension(pi: ExtensionAPI) {
 			ctx.ui.notify("Unknown or unsupported /ponytail mode.", "warning");
 		},
 	});
-
-	for (const name of ["review", "audit", "gain", "debt", "help"] as const) {
-		pi.registerCommand(`ponytail-${name}`, {
-			description: `Run /skill:ponytail-${name}`,
-			handler: (_args, ctx) => sendAlias(`/skill:ponytail-${name}`, "", ctx),
-		});
-	}
 
 	pi.on("input", async (event) => {
 		if (event?.source !== "extension" && currentMode !== "off" && isDeactivationCommand(String(event?.text || ""))) setMode("off");
