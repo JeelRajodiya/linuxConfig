@@ -1,6 +1,6 @@
 ---
 name: show-chain
-description: Trace code flow for a question by locating entry points and producing a numbered file:line call chain, dumped into a markdown investigation file. Use when asked how code flows, what calls what, or to investigate a code path.
+description: Investigate code flow by locating entry points, tracing calls in execution order, and producing a numbered file:line chain with a concise diagram and key takeaways. Use when asked how code flows, what calls what, or to investigate a code path.
 ---
 
 # Code Investigator
@@ -13,7 +13,8 @@ First check (always use ripgrep to read .codebase-research with hidden flag on) 
 2. Trace the call chain with literal file:line references in order
 3. Do NOT summarize conceptually unless asked
 4. Output: a numbered list of file:line -> what happens
-5. Dump the final result into a markdown file (e.g. `investigation.md`) with these rules under a folder called .codebase-research/ in the current working directory.
+5. One-time repository setup: only when creating `.codebase-research/` for the first time in a Git repository, add `.codebase-research/` to `.git/info/exclude` if absent. On later invocations, skip this setup entirely. Do not modify the shared `.gitignore`.
+6. Dump the final result into a markdown file (e.g. `investigation.md`) under `.codebase-research/` in the current working directory.
    - Use a numbered list of `file:line -> what happens` as the spine
    - Add a small Mermaid diagram (flowchart or sequence) when the call chain has branches, loops, or more than ~4 hops
    - Use short code snippets only when the exact syntax matters
