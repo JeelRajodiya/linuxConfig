@@ -1,0 +1,16 @@
+{
+  "settings": {
+    "hostConfigDiscovery": "off",
+    "mcpFooterStatus": "off",
+    "notifyOnStartupConnect": false
+  },
+  "mcpServers": {
+    "sensei": {
+      "url": "https://sensei.e6data.engineering/api/mcp",
+      "auth": "bearer",
+      "bearerTokenStore": true,
+      "lifecycle": "eager",
+      "directTools": true
+    }
+  }
+}

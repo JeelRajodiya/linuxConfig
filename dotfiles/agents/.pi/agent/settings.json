@@ -40,7 +40,8 @@
     "./packages/pi-zentui",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-background-tasks",
-    "npm:pi-memory"
+    "npm:pi-memory",
+    "npm:pi-mcp-adapter"
   ],
   "enableSkillCommands": true,
   "showHardwareCursor": true

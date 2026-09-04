@@ -57,6 +57,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # ripgrep config path
 export RIPGREP_CONFIG_PATH="$HOME/.config/.ripgreprc"
 
+# Only load MCP servers declared in Pi's global MCP config.
+export PI_MCP_CONFIG_MODE=exclusive
+
 # fzf: exhaustive search — hidden files, gitignored paths, and .git contents included
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --no-ignore --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
