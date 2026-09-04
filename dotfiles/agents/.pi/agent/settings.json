@@ -41,7 +41,8 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:pi-background-tasks",
     "npm:pi-memory",
-    "npm:pi-mcp-adapter"
+    "npm:pi-mcp-adapter",
+    "npm:@narumitw/pi-plan-mode"
   ],
   "enableSkillCommands": true,
   "showHardwareCursor": true
