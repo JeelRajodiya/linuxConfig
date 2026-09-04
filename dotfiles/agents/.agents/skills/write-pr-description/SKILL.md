@@ -12,6 +12,7 @@ Keep the description concise and build a clear narrative:
 1. Use two or three sentences to explain **why** the change was needed.
 2. Use two or three sentences to explain **what** changed and how it addresses the issue.
 3. Explain the issue with concrete examples at the level of detail needed to prove the problem and the fix. Prefer one base example that develops from the old behavior into the new behavior instead of several unrelated examples.
+4. if the existing PR description has some images/charts keep them there. don't remove them as you write the new description.
 
 ## Build an Evidence Chain
 
