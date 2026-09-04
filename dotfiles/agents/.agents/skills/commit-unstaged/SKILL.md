@@ -5,7 +5,7 @@ description: Group related unstaged Git changes into atomic commits named with C
 
 # Commit Unstaged Changes
 
-Inspect `git status` and the complete unstaged diff, including untracked files, before staging anything. Preserve unrelated changes, and do not amend, reset, stash, rewrite history, or push unless the user explicitly requests it.
+Inspect `git status` and the complete unstaged diff, including untracked files, before staging anything. Commit only files and hunks that are clearly part of the requested code or documentation change. Leave generated logs, research notes, plan files, scratch Markdown, and other incidental or ambiguous files untracked/unstaged unless the user explicitly asks to include them. Preserve unrelated changes, and do not amend, reset, stash, rewrite history, or push unless the user explicitly requests it.
 
 Group files and hunks by the smallest independently useful change. Use `git add -p` when a file contains changes for more than one commit. If a safe atomic grouping is ambiguous, ask the user rather than guessing.
 
