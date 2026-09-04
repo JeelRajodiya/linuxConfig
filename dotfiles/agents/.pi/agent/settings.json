@@ -39,10 +39,10 @@
     },
     "./packages/pi-zentui",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-background-tasks",
     "npm:pi-memory",
     "npm:pi-mcp-adapter",
-    "npm:@narumitw/pi-plan-mode"
+    "npm:@narumitw/pi-plan-mode",
+    "npm:pi-bg-tasks"
   ],
   "enableSkillCommands": true,
   "showHardwareCursor": true
