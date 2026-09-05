@@ -102,26 +102,45 @@ function isWorkflowName(value: string): value is WorkflowName {
 	return Object.hasOwn(workflows, value);
 }
 
+interface DefaultState {
+	provider?: string;
+	model?: string;
+	thinkingLevel: ThinkingLevel;
+	tools: string[];
+}
+
 export default function workflowExtension(pi: ExtensionAPI) {
 	let activeWorkflowName: WorkflowName | undefined;
+	let defaultState: DefaultState | undefined;
 
-	async function activate(name: WorkflowName, ctx: ExtensionContext): Promise<boolean> {
+	function snapshot(ctx: ExtensionContext): DefaultState {
+		return {
+			provider: ctx.model?.provider,
+			model: ctx.model?.id,
+			thinkingLevel: pi.getThinkingLevel(),
+			tools: pi.getActiveTools(),
+		};
+	}
+
+	async function activate(name: WorkflowName, ctx: ExtensionContext, persist = true): Promise<boolean> {
 		const workflow = workflows[name];
 		const model = ctx.modelRegistry.find("openai-codex", workflow.model);
 		if (!model) {
 			ctx.ui.notify(`Workflow ${name}: model openai-codex/${workflow.model} not found`, "error");
 			return false;
 		}
+		const previous = defaultState ?? snapshot(ctx);
 		if (!(await pi.setModel(model))) {
 			ctx.ui.notify(`Workflow ${name}: OpenAI Codex authentication is unavailable`, "error");
 			return false;
 		}
 
+		defaultState = previous;
 		pi.setThinkingLevel(workflow.thinkingLevel);
 		const availableTools = new Set(pi.getAllTools().map((tool) => tool.name));
 		pi.setActiveTools(workflow.tools.filter((tool) => availableTools.has(tool)));
 		activeWorkflowName = name;
-		pi.appendEntry("workflow-state", { name });
+		if (persist) pi.appendEntry("workflow-state", { name, defaultState });
 		ctx.ui.setStatus("active-workflow", ctx.ui.theme.fg("accent", name));
 		ctx.ui.notify(`Workflow ${name} activated`, "info");
 		return true;
@@ -146,15 +165,39 @@ export default function workflowExtension(pi: ExtensionAPI) {
 	pi.registerCommand("workflow", {
 		description: "Show or switch the active coding workflow",
 		getArgumentCompletions: (prefix) => {
-			const matches = (Object.keys(workflows) as WorkflowName[])
+			const matches = ["default", ...Object.keys(workflows)]
 				.filter((name) => name.startsWith(prefix))
-				.map((name) => ({ value: name, label: name, description: workflows[name].description }));
+				.map((name) => ({ value: name, label: name, description: name === "default" ? "Return to normal coding mode" : workflows[name as WorkflowName].description }));
 			return matches.length > 0 ? matches : null;
 		},
 		handler: async (args, ctx) => {
 			const name = args.trim();
 			if (!name) {
 				ctx.ui.notify(`Active workflow: ${activeWorkflowName ?? "none"}`, "info");
+				return;
+			}
+			if (name === "default") {
+				if (!ctx.isIdle()) {
+					ctx.ui.notify("Wait for the current turn to finish before switching workflows", "warning");
+					return;
+				}
+				if (defaultState) {
+					if (defaultState.provider && defaultState.model) {
+						const model = ctx.modelRegistry.find(defaultState.provider, defaultState.model);
+						if (!model || !(await pi.setModel(model))) {
+							ctx.ui.notify("Cannot restore the previous model; check its availability and authentication", "error");
+							return;
+						}
+					}
+					pi.setThinkingLevel(defaultState.thinkingLevel);
+					const available = new Set(pi.getAllTools().map(tool => tool.name));
+					pi.setActiveTools(defaultState.tools.filter(tool => available.has(tool)));
+				}
+				activeWorkflowName = undefined;
+				defaultState = undefined;
+				pi.appendEntry("workflow-state", { name: "default" });
+				ctx.ui.setStatus("active-workflow", undefined);
+				ctx.ui.notify("Default coding mode restored", "info");
 				return;
 			}
 			if (!isWorkflowName(name)) {
@@ -189,16 +232,20 @@ export default function workflowExtension(pi: ExtensionAPI) {
 		const state = ctx.sessionManager
 			.getEntries()
 			.filter(
-				(entry): entry is typeof entry & { data: { name: WorkflowName } } =>
+				(entry): entry is typeof entry & { data: { name: WorkflowName | "default"; defaultState?: DefaultState } } =>
 					entry.type === "custom" &&
 					entry.customType === "workflow-state" &&
 					typeof (entry.data as { name?: unknown } | undefined)?.name === "string" &&
-					isWorkflowName((entry.data as { name: string }).name),
+					((entry.data as { name: string }).name === "default" || isWorkflowName((entry.data as { name: string }).name)),
 			)
 			.pop();
 
-		if (state) {
-			await activate(state.data.name, ctx);
+		activeWorkflowName = undefined;
+		defaultState = undefined;
+		if (state && state.data.name !== "default") {
+			// Older sessions did not save their pre-workflow settings; use startup settings.
+			defaultState = state.data.defaultState ?? snapshot(ctx);
+			await activate(state.data.name, ctx, false);
 		} else {
 			ctx.ui.setStatus("active-workflow", undefined);
 		}
