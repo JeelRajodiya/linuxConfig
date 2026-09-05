@@ -1,3 +1,4 @@
 {
-    "app.model.cycleForward": "ctrl+p"
+    "app.model.cycleForward": [],
+    "app.model.cycleBackward": []
 }

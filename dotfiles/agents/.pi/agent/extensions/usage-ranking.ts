@@ -298,12 +298,20 @@ export default function (pi: ExtensionAPI) {
 		}
 	};
 
-	const cycleModel = async (ctx: ExtensionContext, direction: 1 | -1) => {
-		const models = rank<Model<any>>(ctx.modelRegistry.getAvailable(), monthlyModelUsage, modelKey);
-		if (!ctx.model || models.length < 2) return;
-		const current = models.findIndex(model => modelKey(model) === modelKey(ctx.model!));
-		const next = models[(current + direction + models.length) % models.length];
-		if (next && !await pi.setModel(next)) ctx.ui.notify(`No authentication for ${modelKey(next)}`, "error");
+	let cycleQueue = Promise.resolve();
+	const cycleModel = (ctx: ExtensionContext, direction: 1 | -1) => {
+		const generation = sessionGeneration;
+		cycleQueue = cycleQueue.then(async () => {
+			if (generation !== sessionGeneration) return;
+			const models = rank<Model<any>>(ctx.modelRegistry.getAvailable(), monthlyModelUsage, modelKey);
+			if (!ctx.model || models.length < 2) return;
+			const current = models.findIndex(model => modelKey(model) === modelKey(ctx.model!));
+			const next = models[(current + direction + models.length) % models.length];
+			if (next && !await pi.setModel(next) && generation === sessionGeneration) ctx.ui.notify(`No authentication for ${modelKey(next)}`, "error");
+		}).catch(error => {
+			if (generation === sessionGeneration) ctx.ui.notify(`Model cycle: ${String(error)}`, "error");
+		});
+		return cycleQueue;
 	};
 
 	pi.registerShortcut("ctrl+p", {
