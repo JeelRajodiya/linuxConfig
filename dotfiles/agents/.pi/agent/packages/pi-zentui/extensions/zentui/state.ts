@@ -18,6 +18,7 @@ export type FooterState = GitStatusSummary & {
 	modelLabel: string;
 	modelId: string;
 	modelName: string;
+	fast?: boolean;
 	providerLabel: string;
 	contextLabel: string;
 	tokenLabel: string;
@@ -52,12 +53,13 @@ export function createInitialState(gitDefaults: GitStatusSummary): FooterState {
 }
 
 export function modelLabelFor(
-	state: Pick<FooterState, "modelId" | "modelName">,
+	state: Pick<FooterState, "modelId" | "modelName" | "fast">,
 	source: ModelLabelSource,
 ): string {
-	return source === "name"
+	const label = source === "name"
 		? state.modelName || state.modelId || "no-model"
 		: state.modelId || "no-model";
+	return state.fast ? `${label} (fast)` : label;
 }
 
 export function syncState(
@@ -70,6 +72,12 @@ export function syncState(
 	const m = ctx.model;
 	state.modelId = m?.id ?? "";
 	state.modelName = m?.name ?? "";
+	const fastEntry = ctx.sessionManager.getEntries().findLast(
+		(entry) => entry.type === "custom" && entry.customType === "openai-fast",
+	);
+	state.fast = (m?.provider === "openai" || m?.provider === "openai-codex") &&
+		fastEntry?.type === "custom" &&
+		(fastEntry.data as { enabled?: boolean } | undefined)?.enabled === true;
 	// Retained as a compatibility snapshot only; production surfaces format from raw fields.
 	state.modelLabel = modelLabelFor(state, "id");
 	state.providerLabel = formatProviderLabel(ctx.model?.provider);

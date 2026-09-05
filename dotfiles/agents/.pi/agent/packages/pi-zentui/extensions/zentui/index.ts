@@ -1300,7 +1300,15 @@ export default function (pi: ExtensionAPI) {
 		},
 	});
 
+	const unsubscribeFast = pi.events.on("openai-fast:changed", () => {
+		if (activeTuiContext) {
+			syncFooterState(activeTuiContext);
+			refresh();
+		}
+	});
+
 	pi.on("session_shutdown", async (_event, ctx) => {
+		unsubscribeFast();
 		liveContext.clear();
 		interactionMetrics.shutdown();
 		workingLine.dispose(ctx);
