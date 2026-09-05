@@ -21,7 +21,7 @@ import {
 	type Focusable,
 	type TUI,
 } from "@earendil-works/pi-tui";
-import { appendFileSync, mkdirSync, readFileSync, readdirSync } from "node:fs";
+import { appendFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { readFile, readdir } from "node:fs/promises";
 
@@ -33,6 +33,25 @@ const increment = (counts: Map<string, number>, key: string, amount = 1) =>
 	counts.set(key, (counts.get(key) ?? 0) + amount);
 
 const modelKey = (model: Pick<Model<any>, "provider" | "id">) => `${model.provider}/${model.id}`;
+
+const disabledModelsFile = join(getAgentDir(), "states", "disabled-models.json");
+
+function loadDisabledModels(): Set<string> {
+	try {
+		const data = JSON.parse(readFileSync(disabledModelsFile, "utf8"));
+		if (!Array.isArray(data) || data.some(key => typeof key !== "string"))
+			throw new Error("disabled-models.json must contain an array of model keys");
+		return new Set(data);
+	} catch (error) {
+		if ((error as NodeJS.ErrnoException).code === "ENOENT") return new Set();
+		throw error;
+	}
+}
+
+function enabledModels(ctx: ExtensionContext): Model<any>[] {
+	const disabled = loadDisabledModels();
+	return ctx.modelRegistry.getAvailable().filter(model => !disabled.has(modelKey(model)));
+}
 
 function loadUsage() {
 	commandUsage.clear();
@@ -143,6 +162,8 @@ class ModelPicker implements Component, Focusable {
 	private readonly container = new Container();
 	private filtered: Model<any>[] = [];
 	private selected = 0;
+	private disabled = loadDisabledModels();
+	private error = "";
 	private _focused = false;
 
 	get focused() { return this._focused; }
@@ -175,11 +196,11 @@ class ModelPicker implements Component, Focusable {
 		this.container.addChild(new Spacer(1));
 		// Size against the whole catalogue so columns don't move while filtering or scrolling.
 		const rows = alignColumns([
-			["Model", "Msg", "Req", "Req/msg (2mo)", "Cost (est.)", "Output / 1M"],
+			["Model", "Status", "Msg", "Req", "Req/msg (2mo)", "Cost (est.)", "Output / 1M"],
 			...this.models.map(model => {
 				const key = modelKey(model);
 				const cost = this.stats.costs.get(key);
-				return [key, String(this.stats.counts.get(key) ?? 0), String(this.stats.requests.get(key) ?? 0),
+				return [key, this.theme.fg(this.disabled.has(key) ? "error" : "success", this.disabled.has(key) ? "disabled" : "enabled "), String(this.stats.counts.get(key) ?? 0), String(this.stats.requests.get(key) ?? 0),
 					requestsPerMessage(this.stats.ratioRequests.get(key) ?? 0, this.stats.ratioCounts.get(key) ?? 0).replace("req/msg", "").trim(),
 					cost === undefined ? "n/a" : `$${cost.toFixed(2)}`, `$${model.cost.output}`];
 			}),
@@ -193,9 +214,10 @@ class ModelPicker implements Component, Focusable {
 			const text = `${prefix}${modelRows.get(key)}`;
 			this.container.addChild(new Text(index === this.selected ? this.theme.fg("accent", text) : text, 0, 0));
 		}
+		if (this.error) this.container.addChild(new Text(this.theme.fg("error", this.error), 1, 0));
 		if (!this.filtered.length) this.container.addChild(new Text(this.theme.fg("muted", "  No matching models"), 0, 0));
 		this.container.addChild(new Spacer(1));
-		this.container.addChild(new Text(this.theme.fg("dim", "↑↓ navigate · enter select · esc cancel"), 1, 0));
+		this.container.addChild(new Text(this.theme.fg("dim", "↑↓ navigate · space enable/disable · enter select · esc close"), 1, 0));
 		this.container.addChild(new DynamicBorder((text: string) => this.theme.fg("accent", text)));
 	}
 
@@ -204,9 +226,29 @@ class ModelPicker implements Component, Focusable {
 			this.selected = this.filtered.length ? (this.selected - 1 + this.filtered.length) % this.filtered.length : 0;
 		} else if (this.keybindings.matches(data, "tui.select.down")) {
 			this.selected = this.filtered.length ? (this.selected + 1) % this.filtered.length : 0;
+		} else if (matchesKey(data, "space")) {
+			const model = this.filtered[this.selected];
+			if (model) {
+				try {
+					const disabled = loadDisabledModels();
+					const key = modelKey(model);
+					if (disabled.has(key)) disabled.delete(key);
+					else disabled.add(key);
+					writeFileSync(disabledModelsFile, `${JSON.stringify([...disabled], null, 2)}\n`);
+					this.disabled = disabled;
+					this.error = "";
+				} catch (error) {
+					this.error = `Cannot save model status: ${String(error)}`;
+				}
+			}
 		} else if (this.keybindings.matches(data, "tui.select.confirm")) {
-			this.done(this.filtered[this.selected]);
-			return;
+			const model = this.filtered[this.selected];
+			if (model && this.disabled.has(modelKey(model))) {
+				this.error = "Press space to enable this model before selecting it";
+			} else {
+				this.done(model);
+				return;
+			}
 		} else if (this.keybindings.matches(data, "tui.select.cancel")) {
 			this.done();
 			return;
@@ -219,7 +261,7 @@ class ModelPicker implements Component, Focusable {
 	}
 
 	render(width: number) { return this.container.render(width).map(line => truncateToWidth(line, width, "")); }
-	invalidate() { this.container.invalidate(); }
+	invalidate() { this.update(); this.container.invalidate(); }
 }
 
 function completedModelQuery(submitting: boolean, lines: string[]): string | undefined {
@@ -308,15 +350,26 @@ export default function (pi: ExtensionAPI) {
 		}
 	};
 
+	pi.registerCommand("models", {
+		description: "Select models and toggle their enabled status with space",
+		handler: (args, ctx) => {
+			recordCommand("models");
+			return showPicker(ctx, args.trim());
+		},
+	});
+
 	let cycleQueue = Promise.resolve();
 	const cycleModel = (ctx: ExtensionContext, direction: 1 | -1) => {
 		const generation = sessionGeneration;
 		cycleQueue = cycleQueue.then(async () => {
 			if (generation !== sessionGeneration) return;
-			const models = rank<Model<any>>(ctx.modelRegistry.getAvailable(), monthlyModelUsage, modelKey);
-			if (!ctx.model || models.length < 2) return;
-			const current = models.findIndex(model => modelKey(model) === modelKey(ctx.model!));
-			const next = models[(current + direction + models.length) % models.length];
+			const models = rank<Model<any>>(enabledModels(ctx), monthlyModelUsage, modelKey);
+			if (!models.length) {
+				ctx.ui.notify("No enabled models; use /models to enable one", "warning");
+				return;
+			}
+			const current = models.findIndex(model => ctx.model && modelKey(model) === modelKey(ctx.model));
+			const next = models[current < 0 ? (direction === 1 ? 0 : models.length - 1) : (current + direction + models.length) % models.length];
 			if (next && !await pi.setModel(next) && generation === sessionGeneration) ctx.ui.notify(`No authentication for ${modelKey(next)}`, "error");
 		}).catch(error => {
 			if (generation === sessionGeneration) ctx.ui.notify(`Model cycle: ${String(error)}`, "error");
@@ -343,14 +396,14 @@ export default function (pi: ExtensionAPI) {
 		const explicitModel = process.argv.some(arg => /^(--model|--provider)(=|$)/.test(arg));
 		const freshSession = !ctx.sessionManager.getEntries().some(entry => entry.type === "message");
 		if (event.reason === "new" || (event.reason === "startup" && freshSession && !explicitModel)) {
-			const first = rank<Model<any>>(ctx.modelRegistry.getAvailable(), monthlyModelUsage, modelKey)[0];
+			const first = rank<Model<any>>(enabledModels(ctx), monthlyModelUsage, modelKey)[0];
 			if (first && !await pi.setModel(first)) ctx.ui.notify(`No authentication for ${modelKey(first)}`, "error");
 		}
 		const knownCommands = new Set([...pi.getCommands().map(command => command.name), "reload", "quit", "exit"]);
 		let submitting = false;
 		let recordedCommand: string | undefined;
 		const recordSubmission = (command: string | undefined) => {
-			if (!command || command.startsWith("skill:") || recordedCommand === command) return;
+			if (!command || command === "models" || command.startsWith("skill:") || recordedCommand === command) return;
 			recordCommand(command);
 			recordedCommand = command;
 		};
