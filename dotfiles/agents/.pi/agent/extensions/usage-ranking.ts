@@ -42,7 +42,7 @@ function loadUsage() {
 			if (!line) continue;
 			try {
 				const event = JSON.parse(line);
-				if (event.type === "command") increment(commandUsage, event.key);
+				if (event.type === "command" && isInMonths(event.timestamp)) increment(commandUsage, event.key);
 			} catch {}
 		}
 	} catch {}
@@ -56,7 +56,7 @@ function commandFromText(text: string): string | undefined {
 function recordCommand(key: string) {
 	increment(commandUsage, key);
 	// ponytail: append-only avoids cross-process lost updates; compact if this reaches megabytes.
-	appendFileSync(usageFile, `${JSON.stringify({ type: "command", key })}\n`);
+	appendFileSync(usageFile, `${JSON.stringify({ type: "command", key, timestamp: new Date().toISOString() })}\n`);
 }
 
 function rank<T>(items: T[], counts: Map<string, number>, key: (item: T) => string): T[] {
@@ -337,9 +337,15 @@ export default function (pi: ExtensionAPI) {
 		if (ctx.model) increment(monthlyModelUsage, modelKey(ctx.model));
 	});
 
-	pi.on("session_start", (_event, ctx) => {
+	pi.on("session_start", async (event, ctx) => {
 		sessionGeneration++;
 		if (ctx.mode !== "tui") return;
+		const explicitModel = process.argv.some(arg => /^(--model|--provider)(=|$)/.test(arg));
+		const freshSession = !ctx.sessionManager.getEntries().some(entry => entry.type === "message");
+		if (event.reason === "new" || (event.reason === "startup" && freshSession && !explicitModel)) {
+			const first = rank<Model<any>>(ctx.modelRegistry.getAvailable(), monthlyModelUsage, modelKey)[0];
+			if (first && !await pi.setModel(first)) ctx.ui.notify(`No authentication for ${modelKey(first)}`, "error");
+		}
 		const knownCommands = new Set([...pi.getCommands().map(command => command.name), "reload", "quit", "exit"]);
 		let submitting = false;
 		let recordedCommand: string | undefined;
