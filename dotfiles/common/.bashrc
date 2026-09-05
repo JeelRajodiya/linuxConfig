@@ -50,19 +50,6 @@ nvm() {
 # =====================================================
 
 # -----------------------------------------------------
-# Bash-only aliases (not in .profile)
-# -----------------------------------------------------
-alias rw='~/dotfiles/waybar/reload.sh'
-
-# -----------------------------------------------------
-# ML4W Apps
-# -----------------------------------------------------
-alias ml4w-settings='~/dotfiles/apps/ML4W_Dotfiles_Settings-x86_64.AppImage'
-alias ml4w-sidebar='~/dotfiles/eww/ml4w-sidebar/launch.sh'
-alias ml4w-hyprland='~/dotfiles/apps/ML4W_Hyprland_Settings-x86_64.AppImage'
-alias ml4w-diagnosis='~/dotfiles/scripts/diagnosis.sh'
-
-# -----------------------------------------------------
 # Window Managers
 # -----------------------------------------------------
 alias Qtile='startx'
@@ -75,10 +62,8 @@ alias gcredential="git config credential.helper store"
 # -----------------------------------------------------
 # SCRIPTS
 # -----------------------------------------------------
-alias gr='python ~/dotfiles/scripts/growthrate.py'
 alias ChatGPT='python ~/mychatgpt/mychatgpt.py'
 alias chat='python ~/mychatgpt/mychatgpt.py'
-alias ascii='~/dotfiles/scripts/figlet.sh'
 
 # -----------------------------------------------------
 # VIRTUAL MACHINE

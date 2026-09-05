@@ -229,13 +229,7 @@ fixD() {
 # Dotfiles / scripts shortcuts
 # -----------------------------------------------------
 alias dot="cd ~/.config"
-alias hypr="cd ~/dotfiles/hypr"
-alias cleanup='~/dotfiles/scripts/cleanup.sh'
-alias ts='~/dotfiles/scripts/snapshot.sh'
-alias res_idle='~/dotfiles/hypr/scripts/restart-hypridle.sh'
-alias tw='~/dotfiles/waybar/toggle.sh'
 alias winclass="xprop | grep 'CLASS'"
-alias ml4w='~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage'
 
 # -----------------------------------------------------
 # Misc / work
@@ -263,7 +257,6 @@ ghcs() {
 # -----------------------------------------------------
 # EDIT CONFIG FILES
 # -----------------------------------------------------
-alias confq='$EDITOR ~/dotfiles/qtile/config.py'
 alias confp='$EDITOR ~/.profile'
 alias confb='$EDITOR ~/.bashrc'
 alias confz='$EDITOR ~/.zshrc'
