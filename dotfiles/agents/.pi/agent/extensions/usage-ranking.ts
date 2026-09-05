@@ -351,14 +351,6 @@ export default function (pi: ExtensionAPI) {
 		}
 	};
 
-	pi.registerCommand("models", {
-		description: "Select models and toggle their enabled status with space",
-		handler: (args, ctx) => {
-			recordCommand("models");
-			return showPicker(ctx, args.trim());
-		},
-	});
-
 	let cycleQueue = Promise.resolve();
 	const cycleModel = (ctx: ExtensionContext, direction: 1 | -1) => {
 		const generation = sessionGeneration;
@@ -366,7 +358,7 @@ export default function (pi: ExtensionAPI) {
 			if (generation !== sessionGeneration) return;
 			const models = rank<Model<any>>(enabledModels(ctx), monthlyModelUsage, modelKey);
 			if (!models.length) {
-				ctx.ui.notify("No enabled models; use /models to enable one", "warning");
+				ctx.ui.notify("No enabled models; use /model to enable one", "warning");
 				return;
 			}
 			const current = models.findIndex(model => ctx.model && modelKey(model) === modelKey(ctx.model));
@@ -404,7 +396,7 @@ export default function (pi: ExtensionAPI) {
 		let submitting = false;
 		let recordedCommand: string | undefined;
 		const recordSubmission = (command: string | undefined) => {
-			if (!command || command === "models" || command.startsWith("skill:") || recordedCommand === command) return;
+			if (!command || command.startsWith("skill:") || recordedCommand === command) return;
 			recordCommand(command);
 			recordedCommand = command;
 		};
