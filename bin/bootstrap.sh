@@ -54,8 +54,6 @@ if [ "$OS" = "Linux" ]; then
     curl -fsSL https://alexpasmantier.github.io/television/install.sh | bash
     # Install Atuin shell history.
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-    # Install zoxide directory navigation.
-    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
     # Install Rust before building Yazi.
     if ! command -v cargo &>/dev/null; then
