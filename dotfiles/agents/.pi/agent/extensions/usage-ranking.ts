@@ -78,13 +78,20 @@ function recordCommand(key: string) {
 	appendFileSync(usageFile, `${JSON.stringify({ type: "command", key, timestamp: new Date().toISOString() })}\n`);
 }
 
-function rank<T>(items: T[], counts: Map<string, number>, key: (item: T) => string): T[] {
-	return items
+function rank<T>(items: T[], counts: Map<string, number>, key: (item: T) => string, query = "", text = key): T[] {
+	const ranked = items
 		.map((item, index) => ({ item, index }))
 		.sort((a, b) =>
 			(counts.get(key(b.item)) ?? 0) - (counts.get(key(a.item)) ?? 0) || a.index - b.index,
 		)
 		.map(({ item }) => item);
+	// Stable fuzzy sorting keeps usage as a tie-breaker, never above match quality.
+	return fuzzyFilter(ranked, query, text);
+}
+
+function commandSearchText(value: string, query: string): string {
+	const explicitSkill = "skill:".startsWith(query.toLowerCase()) || query.toLowerCase().startsWith("skill:");
+	return explicitSkill ? value : value.replace(/^skill:/, "");
 }
 
 function isInMonths(timestamp: unknown, months = 1, now = new Date()): boolean {
@@ -184,10 +191,8 @@ class ModelPicker implements Component, Focusable {
 
 	private update() {
 		const query = this.input.getValue();
-		const matches = query
-			? fuzzyFilter(this.models, query, model => `${model.provider} ${model.id} ${model.name}`)
-			: this.models;
-		this.filtered = rank<Model<any>>(matches, this.stats.counts, modelKey);
+		this.filtered = rank<Model<any>>(this.models, this.stats.counts, modelKey, query,
+			model => `${model.provider} ${model.id} ${model.name}`);
 		this.selected = Math.min(this.selected, Math.max(0, this.filtered.length - 1));
 		this.container.clear();
 		this.container.addChild(new DynamicBorder((text: string) => this.theme.fg("accent", text)));
@@ -313,6 +318,24 @@ if (process.env.PI_USAGE_RANK_SELF_TEST) {
 	if (requestsPerMessage(5, 2) !== "2.5 req/msg" || requestsPerMessage(0, 1) !== "0.0 req/msg" || requestsPerMessage(5, 0) !== "req/msg n/a") throw new Error("Request/message ratio failed");
 	const counts = new Map([["b", 2], ["c", 1]]);
 	console.assert(rank(["a", "b", "c"], counts, value => value).join("") === "bca");
+	const commands = ["understand", "understand-fast", "understand-thorough", "skill:commit-unstaged", "subagents-doctor"];
+	const usage = new Map([["skill:commit-unstaged", 1000], ["understand-fast", 100]]);
+	for (const [query, first] of [["", "skill:commit-unstaged"], ["und", "understand-fast"],
+		["UNDERSTAND", "understand"], ["skill:commit", "skill:commit-unstaged"]]) {
+		if (rank(commands, usage, value => value, query)[0] !== first) throw new Error(`Search ranking failed: ${query}`);
+	}
+	const matches = rank(commands, new Map([["skill:commit-unstaged", 1000]]), value => value, "und");
+	if (matches[0] !== "understand" || matches.length !== commands.length) throw new Error("Command relevance regression");
+	const skillCommands = ["compact", "skill:commit-unstaged", "skill:commit-push-pr", "understand"];
+	for (const [query, first] of [["com", "skill:commit-unstaged"], ["COM", "skill:commit-unstaged"],
+		["compact", "compact"], ["ski", "skill:commit-unstaged"], ["skill:com", "skill:commit-unstaged"],
+		["und", "understand"], ["", "skill:commit-unstaged"]]) {
+		if (rank(skillCommands, usage, value => value, query, value => commandSearchText(value, query))[0] !== first)
+			throw new Error(`Skill namespace ranking failed: ${query}`);
+	}
+	const models = [{ id: "a", name: "Sol" }, { id: "b", name: "Something old" }];
+	if (rank(models, new Map([["b", 1000]]), model => model.id, "sol", model => model.name)[0].id !== "a")
+		throw new Error("Model name relevance regression");
 	for (const [submit, lines, expected] of [
 		[true, ["/model "], ""],
 		[true, ["/model sol"], "sol"],
@@ -410,8 +433,11 @@ export default function (pi: ExtensionAPI) {
 				if (/^\/[^ ]*$/.test(beforeCursor)) {
 					loadUsage();
 					for (const item of result.items) knownCommands.add(item.value);
-					result.items = rank(result.items, commandUsage, item => item.value);
-				} else if (beforeCursor.startsWith("/model ")) {
+					const query = beforeCursor.slice(1);
+					result.items = rank(result.items, commandUsage, item => item.value, query,
+						item => commandSearchText(item.value, query));
+				} else if (beforeCursor.startsWith("/model ") && !beforeCursor.slice(7).trim()) {
+					// Typed model searches retain the provider's relevance order (including display-name matches).
 					result.items = rank(result.items, monthlyModelUsage, item => item.value);
 				}
 				return result;
