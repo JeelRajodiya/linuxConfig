@@ -36,7 +36,10 @@
     "npm:pi-memory",
     "npm:pi-mcp-adapter",
     "npm:@narumitw/pi-plan-mode",
-    "npm:pi-bg-tasks"
+    {
+      "source": "npm:pi-bg-tasks@0.1.3",
+      "extensions": []
+    }
   ],
   "enableSkillCommands": true,
   "showHardwareCursor": true
