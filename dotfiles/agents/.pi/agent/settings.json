@@ -8,12 +8,6 @@
     "openai-codex/gpt-5.6-luna": "medium",
     "openai-codex/gpt-5.3-codex-spark": "medium"
   },
-  "enabledModels": [
-    "openai-codex/gpt-5.6-terra",
-    "openai-codex/gpt-5.6-sol",
-    "openai-codex/gpt-5.6-luna",
-    "openai-codex/gpt-5.3-codex-spark"
-  ],
   "hideThinkingBlock": true,
   "lastChangelogVersion": "0.84.4",
   "tuiMode": "fullscreen",
@@ -27,7 +21,7 @@
   "followUpMode": "one-at-a-time",
   "compaction": {
     "enabled": true,
-    "reserveTokens": 100000,
+    "reserveTokens": 16384,
     "keepRecentTokens": 20000
   },
   "packages": [
