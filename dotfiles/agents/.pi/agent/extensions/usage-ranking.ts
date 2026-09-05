@@ -71,8 +71,12 @@ function rank<T>(items: T[], counts: Map<string, number>, key: (item: T) => stri
 function isInMonths(timestamp: unknown, months = 1, now = new Date()): boolean {
 	if (typeof timestamp !== "string") return false;
 	const date = new Date(timestamp);
-	const age = (now.getFullYear() - date.getFullYear()) * 12 + now.getMonth() - date.getMonth();
-	return age >= 0 && age < months;
+	const start = new Date(now);
+	start.setDate(1);
+	start.setMonth(start.getMonth() - months);
+	const lastDay = new Date(start.getFullYear(), start.getMonth() + 1, 0).getDate();
+	start.setDate(Math.min(now.getDate(), lastDay));
+	return date >= start && date <= now;
 }
 
 function scanSession(lines: string[], counts?: Map<string, number>, costs?: Map<string, number>, requests?: Map<string, number>, months = 1, now = new Date()) {
@@ -166,7 +170,7 @@ class ModelPicker implements Component, Focusable {
 		this.selected = Math.min(this.selected, Math.max(0, this.filtered.length - 1));
 		this.container.clear();
 		this.container.addChild(new DynamicBorder((text: string) => this.theme.fg("accent", text)));
-		this.container.addChild(new Text(this.theme.fg("accent", this.theme.bold("Select model · this month")), 1, 0));
+		this.container.addChild(new Text(this.theme.fg("accent", this.theme.bold("Select model · past month")), 1, 0));
 		this.container.addChild(this.input);
 		this.container.addChild(new Spacer(1));
 		// Size against the whole catalogue so columns don't move while filtering or scrolling.
@@ -236,13 +240,19 @@ if (process.env.PI_USAGE_RANK_SELF_TEST) {
 	const now = new Date(2026, 0, 15);
 	for (const [timestamp, monthly, twoMonths] of [
 		[new Date(2026, 0, 1).toISOString(), true, true],
-		[new Date(2025, 11, 1).toISOString(), false, true],
-		[new Date(2025, 10, 30).toISOString(), false, false],
+		[new Date(2025, 11, 15).toISOString(), true, true],
+		[new Date(2025, 11, 14).toISOString(), false, true],
+		[new Date(2025, 10, 15).toISOString(), false, true],
+		[new Date(2025, 10, 14).toISOString(), false, false],
+		[new Date(2025, 10, 30).toISOString(), false, true],
 		[new Date(2026, 1, 1).toISOString(), false, false],
 		["invalid", false, false],
 	] as const) {
 		if (isInMonths(timestamp, 1, now) !== monthly || isInMonths(timestamp, 2, now) !== twoMonths) throw new Error("Month window failed");
 	}
+	if (!isInMonths(new Date(2026, 1, 28).toISOString(), 1, new Date(2026, 2, 31)) ||
+		isInMonths(new Date(2026, 1, 27).toISOString(), 1, new Date(2026, 2, 31)) ||
+		isInMonths(new Date(2026, 0, 16).toISOString(), 1, now)) throw new Error("Rolling month boundary failed");
 	const messages = new Map<string, number>();
 	const requests = new Map<string, number>();
 	const costs = new Map<string, number>();
