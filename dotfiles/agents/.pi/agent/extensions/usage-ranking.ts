@@ -15,6 +15,7 @@ import {
 	Spacer,
 	Text,
 	truncateToWidth,
+	visibleWidth,
 	type AutocompleteItem,
 	type Component,
 	type Focusable,
@@ -117,6 +118,14 @@ function requestsPerMessage(requests: number, messages: number): string {
 	return messages > 0 ? `${(requests / messages).toFixed(1)} req/msg` : "req/msg n/a";
 }
 
+function alignColumns(rows: string[][]): string[] {
+	const widths = rows[0].map((_, column) => Math.max(...rows.map(row => visibleWidth(row[column]))));
+	return rows.map(row => row.map((cell, column) => {
+		const padding = " ".repeat(widths[column] - visibleWidth(cell));
+		return column === 0 ? cell + padding : padding + cell;
+	}).join("  "));
+}
+
 class ModelPicker implements Component, Focusable {
 	private readonly input = new Input();
 	private readonly container = new Container();
@@ -152,15 +161,24 @@ class ModelPicker implements Component, Focusable {
 		this.container.addChild(new Text(this.theme.fg("accent", this.theme.bold("Select model · this month")), 1, 0));
 		this.container.addChild(this.input);
 		this.container.addChild(new Spacer(1));
+		// Size against the whole catalogue so columns don't move while filtering or scrolling.
+		const rows = alignColumns([
+			["Model", "Msg", "Req", "Req/msg (2mo)", "Cost (est.)", "Output / 1M"],
+			...this.models.map(model => {
+				const key = modelKey(model);
+				const cost = this.stats.costs.get(key);
+				return [key, String(this.stats.counts.get(key) ?? 0), String(this.stats.requests.get(key) ?? 0),
+					requestsPerMessage(this.stats.ratioRequests.get(key) ?? 0, this.stats.ratioCounts.get(key) ?? 0).replace("req/msg", "").trim(),
+					cost === undefined ? "n/a" : `$${cost.toFixed(2)}`, `$${model.cost.output}`];
+			}),
+		]);
+		const modelRows = new Map(this.models.map((model, index) => [modelKey(model), rows[index + 1]]));
+		this.container.addChild(new Text(this.theme.fg("dim", `  ${rows[0]}`), 0, 0));
 		const start = Math.max(0, Math.min(this.selected - 5, this.filtered.length - 10));
 		for (let index = start; index < Math.min(start + 10, this.filtered.length); index++) {
-			const model = this.filtered[index]!;
-			const key = modelKey(model);
+			const key = modelKey(this.filtered[index]!);
 			const prefix = index === this.selected ? "→ " : "  ";
-			const count = this.stats.counts.get(key) ?? 0;
-			const requests = this.stats.requests.get(key) ?? 0;
-			const cost = this.stats.costs.get(key);
-			const text = `${prefix}${key} · ${count} msg · ${requests} req · ${requestsPerMessage(this.stats.ratioRequests.get(key) ?? 0, this.stats.ratioCounts.get(key) ?? 0)} (2mo) · ${cost === undefined ? "cost n/a" : `$${cost.toFixed(2)} est.`} · $${model.cost.output}/1M output`;
+			const text = `${prefix}${modelRows.get(key)}`;
 			this.container.addChild(new Text(index === this.selected ? this.theme.fg("accent", text) : text, 0, 0));
 		}
 		if (!this.filtered.length) this.container.addChild(new Text(this.theme.fg("muted", "  No matching models"), 0, 0));
@@ -202,6 +220,8 @@ loadUsage();
 loadMonthlyUsage();
 
 if (process.env.PI_USAGE_RANK_SELF_TEST) {
+	const aligned = alignColumns([["Model", "Msg", "Cost"], ["模型", "1", "$2"], ["long-model", "123", "n/a"]]);
+	if (new Set(aligned.map(visibleWidth)).size !== 1 || !aligned[1].includes("  1    $2")) throw new Error("Column alignment failed");
 	const now = new Date(2026, 0, 15);
 	for (const [timestamp, monthly, twoMonths] of [
 		[new Date(2026, 0, 1).toISOString(), true, true],
