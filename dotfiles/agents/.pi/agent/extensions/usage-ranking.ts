@@ -35,14 +35,22 @@ const increment = (counts: Map<string, number>, key: string, amount = 1) =>
 const modelKey = (model: Pick<Model<any>, "provider" | "id">) => `${model.provider}/${model.id}`;
 
 function loadUsage() {
+	commandUsage.clear();
 	mkdirSync(getAgentDir(), { recursive: true });
 	try {
 		for (const line of readFileSync(usageFile, "utf8").split("\n")) {
 			if (!line) continue;
-			const event = JSON.parse(line);
-			if (event.type === "command") increment(commandUsage, event.key);
+			try {
+				const event = JSON.parse(line);
+				if (event.type === "command") increment(commandUsage, event.key);
+			} catch {}
 		}
 	} catch {}
+}
+
+function commandFromText(text: string): string | undefined {
+	const skill = text.trimStart().match(/^<skill\s+name="([^"]+)"/);
+	return skill ? `skill:${skill[1]}` : text.trim().match(/^\/([^\s]+)/)?.[1];
 }
 
 function recordCommand(key: string) {
@@ -220,6 +228,9 @@ loadUsage();
 loadMonthlyUsage();
 
 if (process.env.PI_USAGE_RANK_SELF_TEST) {
+	if (commandFromText('/skill:commit-unstaged') !== 'skill:commit-unstaged' ||
+		commandFromText('<skill name="commit-unstaged" location="/tmp/SKILL.md">') !== 'skill:commit-unstaged' ||
+		commandFromText('ordinary message') !== undefined) throw new Error('Skill command recognition failed');
 	const aligned = alignColumns([["Model", "Msg", "Cost"], ["模型", "1", "$2"], ["long-model", "123", "n/a"]]);
 	if (new Set(aligned.map(visibleWidth)).size !== 1 || !aligned[1].includes("  1    $2")) throw new Error("Column alignment failed");
 	const now = new Date(2026, 0, 15);
@@ -260,6 +271,10 @@ if (process.env.PI_USAGE_RANK_SELF_TEST) {
 }
 
 export default function (pi: ExtensionAPI) {
+	pi.on("before_agent_start", event => {
+		const command = commandFromText(event.prompt);
+		if (command?.startsWith("skill:")) recordCommand(command);
+	});
 	let sessionGeneration = 0;
 	pi.on("session_shutdown", () => { sessionGeneration++; });
 	let pickerOpen = false;
@@ -307,8 +322,14 @@ export default function (pi: ExtensionAPI) {
 	pi.on("session_start", (_event, ctx) => {
 		sessionGeneration++;
 		if (ctx.mode !== "tui") return;
-		const knownCommands = new Set(pi.getCommands().map(command => command.name));
+		const knownCommands = new Set([...pi.getCommands().map(command => command.name), "reload", "quit", "exit"]);
 		let submitting = false;
+		let recordedCommand: string | undefined;
+		const recordSubmission = (command: string | undefined) => {
+			if (!command || command.startsWith("skill:") || recordedCommand === command) return;
+			recordCommand(command);
+			recordedCommand = command;
+		};
 
 		ctx.ui.addAutocompleteProvider(current => ({
 			triggerCharacters: current.triggerCharacters,
@@ -317,6 +338,7 @@ export default function (pi: ExtensionAPI) {
 				if (!result) return result;
 				const beforeCursor = (lines[line] ?? "").slice(0, col);
 				if (/^\/[^ ]*$/.test(beforeCursor)) {
+					loadUsage();
 					for (const item of result.items) knownCommands.add(item.value);
 					result.items = rank(result.items, commandUsage, item => item.value);
 				} else if (beforeCursor.startsWith("/model ")) {
@@ -326,12 +348,12 @@ export default function (pi: ExtensionAPI) {
 			},
 			applyCompletion: (lines, line, col, item: AutocompleteItem, prefix) => {
 				const result = current.applyCompletion(lines, line, col, item, prefix);
+				if (submitting) recordSubmission(commandFromText(result.lines.join("\n")));
 				const query = completedModelQuery(submitting, result.lines);
 				if (query !== undefined) {
 					const generation = sessionGeneration;
 					queueMicrotask(() => {
 						if (generation !== sessionGeneration) return;
-						recordCommand("model");
 						showPicker(ctx, query);
 					});
 					return { lines: [""], cursorLine: 0, cursorCol: 0 };
@@ -345,22 +367,20 @@ export default function (pi: ExtensionAPI) {
 		ctx.ui.onTerminalInput(data => {
 			submitting = matchesKey(data, "enter");
 			if (!submitting || pickerOpen) return;
+			recordedCommand = undefined;
 			const text = ctx.ui.getEditorText().trim();
 			const match = text.match(/^\/([^\s]+)(?:\s+(.*))?$/);
 			if (!match) return;
 			const [, command, args = ""] = match;
 
 			if (command === "model" && (!args || !ctx.modelRegistry.getAvailable().some(model => modelKey(model) === args))) {
-				recordCommand(command);
+				recordSubmission(command);
 				showPicker(ctx, args);
 				return { consume: true };
 			}
 
-			const generation = sessionGeneration;
-			queueMicrotask(() => {
-				if (generation !== sessionGeneration) return;
-				if (knownCommands.has(command) && ctx.ui.getEditorText().trim() !== text) recordCommand(command);
-			});
+			// Persist before /reload or /exit invalidates the extension context.
+			if (knownCommands.has(command)) recordSubmission(command);
 		});
 	});
 }
