@@ -2,7 +2,7 @@ import { getAgentDir, type ExtensionAPI } from "@earendil-works/pi-coding-agent"
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const preferenceFile = join(getAgentDir(), "openai-fast.json");
+const preferenceFile = join(getAgentDir(), "states", "openai-fast.json");
 const STATE_TYPE = "openai-fast";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
