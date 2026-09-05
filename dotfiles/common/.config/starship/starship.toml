@@ -7,9 +7,6 @@ right_format = """
 $battery$time
 """
 
-[fill]
-symbol = ' '
-
 # Time on the first line (right)
 [time]
 disabled = false
