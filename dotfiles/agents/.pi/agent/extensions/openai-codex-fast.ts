@@ -1,5 +1,8 @@
-import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import { getAgentDir, type ExtensionAPI } from "@earendil-works/pi-coding-agent";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
+const preferenceFile = join(getAgentDir(), "openai-fast.json");
 const STATE_TYPE = "openai-fast";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -16,17 +19,40 @@ export default function openAICodexFast(pi: ExtensionAPI) {
 				enabled = entry.data.enabled === true;
 			}
 		}
+		try {
+			const saved = JSON.parse(readFileSync(preferenceFile, "utf8"));
+			if (typeof saved?.enabled === "boolean") enabled = saved.enabled;
+		} catch (error) {
+			ctx.ui.notify(`Cannot read fast-mode preference: ${String(error)}`, "warning");
+		}
+		pi.appendEntry(STATE_TYPE, { enabled });
+		pi.events.emit("openai-fast:changed", { enabled });
+	});
+
+	pi.on("session_shutdown", (_event, ctx) => {
+		try {
+			writeFileSync(preferenceFile, `${JSON.stringify({ enabled })}\n`);
+		} catch (error) {
+			ctx.ui.notify(`Cannot save fast-mode preference: ${String(error)}`, "error");
+		}
 	});
 
 	pi.registerCommand("fast", {
-		description: "Toggle OpenAI priority mode for this session (default: off); /fast [on|off]",
+		description: "Toggle OpenAI priority mode (remembered across sessions); /fast [on|off]",
 		handler: async (args, ctx) => {
 			const value = args.trim().toLowerCase();
 			if (value && value !== "on" && value !== "off") {
 				ctx.ui.notify("Usage: /fast [on|off]", "warning");
 				return;
 			}
-			enabled = value ? value === "on" : !enabled;
+			const next = value ? value === "on" : !enabled;
+			try {
+				writeFileSync(preferenceFile, `${JSON.stringify({ enabled: next })}\n`);
+			} catch (error) {
+				ctx.ui.notify(`Cannot save fast-mode preference: ${String(error)}`, "error");
+				return;
+			}
+			enabled = next;
 			pi.appendEntry(STATE_TYPE, { enabled });
 			pi.events.emit("openai-fast:changed", { enabled });
 			ctx.ui.notify(

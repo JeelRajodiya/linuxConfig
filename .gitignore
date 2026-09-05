@@ -1,2 +1,3 @@
 .env
 /.codex/
+/dotfiles/agents/.pi/agent/openai-fast.json
