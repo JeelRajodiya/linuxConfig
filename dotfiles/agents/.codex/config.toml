@@ -1,4 +1,4 @@
-service_tier = "fast"
+service_tier = "default"
 model = "gpt-5.6-sol"
 model_context_window = 600000
 model_auto_compact_token_limit = 500000
