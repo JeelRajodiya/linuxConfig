@@ -153,7 +153,7 @@ function alignColumns(rows: string[][]): string[] {
 	const widths = rows[0].map((_, column) => Math.max(...rows.map(row => visibleWidth(row[column]))));
 	return rows.map(row => row.map((cell, column) => {
 		const padding = " ".repeat(widths[column] - visibleWidth(cell));
-		return column === 0 ? cell + padding : padding + cell;
+		return column === 0 || rows[0][column] === "Status" ? cell + padding : padding + cell;
 	}).join("  "));
 }
 
@@ -196,13 +196,14 @@ class ModelPicker implements Component, Focusable {
 		this.container.addChild(new Spacer(1));
 		// Size against the whole catalogue so columns don't move while filtering or scrolling.
 		const rows = alignColumns([
-			["Model", "Status", "Msg", "Req", "Req/msg (2mo)", "Cost (est.)", "Output / 1M"],
+			["Model", "Msg", "Req", "Req/msg (2mo)", "Cost (est.)", "Output / 1M", "Status"],
 			...this.models.map(model => {
 				const key = modelKey(model);
 				const cost = this.stats.costs.get(key);
-				return [key, this.theme.fg(this.disabled.has(key) ? "error" : "success", this.disabled.has(key) ? "disabled" : "enabled "), String(this.stats.counts.get(key) ?? 0), String(this.stats.requests.get(key) ?? 0),
+				return [key, String(this.stats.counts.get(key) ?? 0), String(this.stats.requests.get(key) ?? 0),
 					requestsPerMessage(this.stats.ratioRequests.get(key) ?? 0, this.stats.ratioCounts.get(key) ?? 0).replace("req/msg", "").trim(),
-					cost === undefined ? "n/a" : `$${cost.toFixed(2)}`, `$${model.cost.output}`];
+					cost === undefined ? "n/a" : `$${cost.toFixed(2)}`, `$${model.cost.output}`,
+					this.theme.fg(this.disabled.has(key) ? "error" : "success", this.disabled.has(key) ? "disabled" : "enabled")];
 			}),
 		]);
 		const modelRows = new Map(this.models.map((model, index) => [modelKey(model), rows[index + 1]]));
